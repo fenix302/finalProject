@@ -155,8 +155,9 @@ public class UserController implements HttpSessionListener{
 		session.removeAttribute("id");
 		session.removeAttribute("userCode");
 		session.invalidate();
-		Cookie ck = new Cookie("JSESSIONID", null);
+		Cookie ck = new Cookie("login", null);
 		ck.setMaxAge(0);
+		ck.setPath("/");
 		response.addCookie(ck);
 		return "redirect:http://localhost:3000";
 
