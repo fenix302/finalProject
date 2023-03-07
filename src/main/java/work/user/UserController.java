@@ -77,16 +77,14 @@ public class UserController implements HttpSessionListener{
 		HttpSession session = request.getSession();
 
 		UserBean userBean = userService.retrieveSessionInfo(bean.getId());
-		
+
 		String userCode = userBean.getUserCode();
 		String id = userBean.getId();
 		String grade = userBean.getGrade();
-		String name = userBean.getName();
 
 		session.setAttribute("userCode", userCode);
 		session.setAttribute("grade", grade);
 		session.setAttribute("id", id);
-		session.setAttribute("name", name);
 
 		session.setMaxInactiveInterval(-1); //세션 무한대
 		return "redirect:/work/product/goMain.do";
@@ -150,16 +148,12 @@ public class UserController implements HttpSessionListener{
 	}
 
 	@RequestMapping(value="/work/user/logout.do")
-	public String logout(HttpServletRequest request, HttpServletResponse response){
+	public String logout(HttpServletRequest request){
 		HttpSession session = request.getSession();
 		session.removeAttribute("id");
 		session.removeAttribute("userCode");
 		session.invalidate();
-		Cookie ck = new Cookie("login", null);
-		ck.setMaxAge(0);
-		ck.setPath("/");
-		response.addCookie(ck);
-		return "redirect:http://localhost:3000";
+		return "redirect:/work/product/goMain.do";
 
 	}
 
