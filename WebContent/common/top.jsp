@@ -48,7 +48,7 @@ a{
             <nav class="navbar navbar-expand-lg navbar-light container justify-content-between" id="navbar-example2">
         <!-- 로고 -->
 	        	<ul class="navbar-brand">
-					<li><a href="${homeUrl}"><img src="${context}/css/images/logo.png" alt="JEWELL"></a></li>
+					<li><a href="http://localhost:3000/"><img src="${context}/css/images/logo.png" alt="JEWELL"></a></li>
 				</ul>
         <!-- 네비게이션 바 -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
@@ -75,14 +77,16 @@ public class UserController implements HttpSessionListener{
 		HttpSession session = request.getSession();
 
 		UserBean userBean = userService.retrieveSessionInfo(bean.getId());
-
+		
 		String userCode = userBean.getUserCode();
 		String id = userBean.getId();
 		String grade = userBean.getGrade();
+		String name = userBean.getName();
 
 		session.setAttribute("userCode", userCode);
 		session.setAttribute("grade", grade);
 		session.setAttribute("id", id);
+		session.setAttribute("name", name);
 
 		session.setMaxInactiveInterval(-1); //세션 무한대
 		return "redirect:/work/product/goMain.do";
@@ -146,12 +150,15 @@ public class UserController implements HttpSessionListener{
 	}
 
 	@RequestMapping(value="/work/user/logout.do")
-	public String logout(HttpServletRequest request){
+	public String logout(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session = request.getSession();
 		session.removeAttribute("id");
 		session.removeAttribute("userCode");
 		session.invalidate();
-		return "redirect:/work/product/goMain.do";
+		Cookie ck = new Cookie("JSESSIONID", null);
+		ck.setMaxAge(0);
+		response.addCookie(ck);
+		return "redirect:http://localhost:3000";
 
 	}
 
