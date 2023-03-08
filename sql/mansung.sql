@@ -1,3 +1,15 @@
+-- mini_admin 계정 생성 및 권한 부여
+
+CREATE USER mini_admin IDENTIFIED BY mini_admin;
+GRANT CONNECT, RESOURCE TO mini_admin;
+GRANT ALTER SESSION TO mini_admin;
+
+show user
+
+conn mini_admin/mini_admin
+
+show user
+
 -- 회원 시퀀스
 DROP SEQUENCE USER_SEQ;
 CREATE SEQUENCE USER_SEQ;
@@ -48,7 +60,7 @@ INSERT INTO TB_COM_CODE(COMM_TY_CD, COMM_CD, COMM_CD_NM) VALUES('CODE0101', 'E',
 DROP TABLE TB_COM_USER CASCADE CONSTRAINT;
 CREATE TABLE TB_COM_USER(
   USER_CODE VARCHAR2(20),             -- 유저코드
-  ID VARCHAR2(20),                  -- 아이디
+  ID VARCHAR2(255),                  -- 아이디
   PW VARCHAR2(20),                   -- 패스워드
   EMAIL VARCHAR2(50),                      -- 이메일
   USER_IMAGE VARCHAR2(100),               -- 유저이미지
@@ -76,31 +88,6 @@ INSERT INTO TB_COM_USER(USER_CODE, ID, PW, EMAIL, USER_IMAGE, NAME, BIRTH, POST_
           '01', '5551-3774', '서울시 노원구 상계3동 한신아파트', '2020-08-02');
 
 commit;
-
---댓글정보
-DROP TABLE TB_REPLY CASCADE CONSTRAINT;
-CREATE TABLE TB_REPLY(
-  PRODUCT_CODE VARCHAR2(30),                  -- 투표코드
-  USER_CODE VARCHAR2(20),                  -- 유저코드
-  USER_REPLY_NO NUMBER(3),           -- 댓글일련번호
-  USER_REPLY VARCHAR2(1000),         -- 댓글내용
-  REPLY_DATE VARCHAR2(30),           -- 댓글날짜
-  CONSTRAINT TB_REPLY_PK PRIMARY KEY(PRODUCT_CODE, USER_CODE, USER_REPLY_NO),
-  CONSTRAINT TB_REPLY_FK_PRODUCT FOREIGN KEY(PRODUCT_CODE) REFERENCES TB_PRODUCT(PRODUCT_CODE),
-  CONSTRAINT TB_REPLY_FK_USER FOREIGN KEY(USER_CODE) REFERENCES TB_COM_USER(USER_CODE)
-);
-
---별점정보
-DROP TABLE TB_MARK CASCADE CONSTRAINT;
-CREATE TABLE TB_MARK(
-  PRODUCT_CODE VARCHAR2(30),                  -- 투표코드
-  USER_CODE VARCHAR2(20),                  -- 유저코드
-  MARK_RATING NUMBER,        		 -- 별점(5점만점)
-  CONSTRAINT TB_MARK_PK PRIMARY KEY(PRODUCT_CODE, USER_CODE),
-  CONSTRAINT TB_MARK_FK_PRODUCT FOREIGN KEY(PRODUCT_CODE) REFERENCES TB_PRODUCT(PRODUCT_CODE),
-  CONSTRAINT TB_MARK_FK_USER FOREIGN KEY(USER_CODE) REFERENCES TB_COM_USER(USER_CODE)
-);
-
 
 
 --제품정보
@@ -183,6 +170,30 @@ CREATE TABLE TB_CART(
   CONSTRAINT TB_CART_FK_USER FOREIGN KEY(USER_CODE) REFERENCES TB_COM_USER(USER_CODE)
 );
 
+--댓글정보
+DROP TABLE TB_REPLY CASCADE CONSTRAINT;
+CREATE TABLE TB_REPLY(
+  PRODUCT_CODE VARCHAR2(30),                  -- 투표코드
+  USER_CODE VARCHAR2(20),                  -- 유저코드
+  USER_REPLY_NO NUMBER(3),           -- 댓글일련번호
+  USER_REPLY VARCHAR2(1000),         -- 댓글내용
+  REPLY_DATE VARCHAR2(30),           -- 댓글날짜
+  CONSTRAINT TB_REPLY_PK PRIMARY KEY(PRODUCT_CODE, USER_CODE, USER_REPLY_NO),
+  CONSTRAINT TB_REPLY_FK_PRODUCT FOREIGN KEY(PRODUCT_CODE) REFERENCES TB_PRODUCT(PRODUCT_CODE),
+  CONSTRAINT TB_REPLY_FK_USER FOREIGN KEY(USER_CODE) REFERENCES TB_COM_USER(USER_CODE)
+);
+
+--별점정보
+DROP TABLE TB_MARK CASCADE CONSTRAINT;
+CREATE TABLE TB_MARK(
+  PRODUCT_CODE VARCHAR2(30),                  -- 투표코드
+  USER_CODE VARCHAR2(20),                  -- 유저코드
+  MARK_RATING NUMBER,        		 -- 별점(5점만점)
+  CONSTRAINT TB_MARK_PK PRIMARY KEY(PRODUCT_CODE, USER_CODE),
+  CONSTRAINT TB_MARK_FK_PRODUCT FOREIGN KEY(PRODUCT_CODE) REFERENCES TB_PRODUCT(PRODUCT_CODE),
+  CONSTRAINT TB_MARK_FK_USER FOREIGN KEY(USER_CODE) REFERENCES TB_COM_USER(USER_CODE)
+);
+
 
 -- 카드결제 정보
 drop table pay_import cascade constraint;
@@ -261,24 +272,24 @@ alter table tb_jw_consulting add constraint pk_consulting primary key (bno);
 COMMIT;
 
 -- 자유게시판 정보
--- drop sequence seq_jw_general;
+drop sequence seq_jw_general;
 
--- create sequence seq_jw_general
--- increment by 1
--- start with 0
--- maxvalue 9999999
--- minvalue 0;
+create sequence seq_jw_general
+increment by 1
+start with 0
+maxvalue 9999999
+minvalue 0;
 
--- drop table tb_jw_general;
+drop table tb_jw_general;
 
--- create table tb_jw_general (
--- bno number(10, 0),
--- title varchar2(200) not null,
--- content varchar2(2000) not null,
--- writer varchar2(50) not null,
--- regdate date default sysdate
--- );
+create table tb_jw_general (
+bno number(10, 0),
+title varchar2(200) not null,
+content varchar2(2000) not null,
+writer varchar2(50) not null,
+regdate date default sysdate
+);
 
--- alter table tb_jw_general add constraint pk_general primary key (bno);
+alter table tb_jw_general add constraint pk_general primary key (bno);
 
--- commit;
+commit;
