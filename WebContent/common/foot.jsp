@@ -20,39 +20,33 @@
 			<!-- 아이콘 로고 / svg -->
 			<div id="first_foot">
 				<div>
-				아이콘
+					<div class="brand_logo">
+						<a href="#"><img src="${context}/css/images/logo.png"
+							alt=""></a>
+					</div>
 				</div>
 				
 				<div class="sns_logo">
-					<!-- 인스타그램 -->
+					<!-- sns 로고 -->
 					<div class="sns">
 						<a href="#"><img src="${context}/css/images/044-instagram.svg"
 							alt=""></a>
-					</div>
-					
-					<!-- 트위터 -->					
-					<div class="sns">
+							
 						<a href="#"><img src="${context}/css/images/095-twitter.svg"
-							alt=""></a>
-					</div>
-					
-					<!-- 페이스북 -->					
-					<div class="sns">
+							alt=""></a>							
+							
 						<a href="#"><img src="${context}/css/images/023-facebook.svg"
 							alt=""></a>
 					</div>
-				</div>
 			</div>
 			
 			<!-- 내용 -->
 			<div id="scnd_foot">
-				<p class="company_foot">
-					
+				<p class="company_foot">					
 					<strong>Company</strong> : (주)천성(ChunSung Inc.) <br/>
 					<strong>사업자등록번호</strong> :  111-11-11111 | <strong>대표자</strong> : 안주현 <br/>
 					<strong>주소</strong> : 경기도 용인시 기흥구 서천로 201번길 14, 322호 <br/>
-					<strong>Tel</strong> : 070 1234 1234 | <strong>Fax</strong> : 1234 123 1234 <br/>
-					
+					<strong>Tel</strong> : 070 1234 1234 | <strong>Fax</strong> : 1234 123 1234 <br/>					
 				</p>
 				
 				<p class="Center_foot">
@@ -60,8 +54,8 @@
 				</p>
 				<p class="Center_ann_foot">
 					<strong>Tel</strong> : 070 1234 4321 <br/>
-					월-금 9:00~18:00(주말/공휴일 제외) <br/>
-					점심시간 12:00-13:00
+					<strong>월-금</strong> 9:00~18:00 <thin>(주말/공휴일 제외)</thin> <br/>
+					<strong>점심시간</strong> 12:00-13:00
 				</p>
 			</div>
 			

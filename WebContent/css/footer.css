@@ -12,6 +12,12 @@
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
+/* 브랜드 로고 */
+.brand_logo>a>img{
+	width: 100px;
+	margin-bottom: 20px;
+}
+
 
 /* 본문 */
 footer {
@@ -24,8 +30,14 @@ footer {
 #contain_foot {
 	max-width: 1440px;
 	margin: 0 auto;
-	padding: 0px 16px 0px 16px
+	padding: 0px 16px 0px 16px;
 }
+
+#scnd_foot{
+	clear: both;
+}
+
+
 
 /* 폰트 */
 .company_foot, .Center_ann_foot {
@@ -37,16 +49,26 @@ footer {
 .Center_foot{
 	font-weight: 700;
 	font-size: 16px;
-	margin: 16px 0px 0px 0px !important;
+	margin: 20px 0px 0px 0px !important;
 	text-align: center;
-	color: #d0d4e0;
+	color: #fff;
+}
+
+thin{
+	font-size: 12px;
 }
 
 
 /* sns 로고 */
+
+.sns_logo{
+	text-align: center;
+}
+
 .sns>a>img {
 	width: 20px;
-	margin-left: 20px;
+	margin-left: 16px;
+	margin-bottom: 20px;
 }
 
 
@@ -54,17 +76,16 @@ footer {
 /* 미디어 쿼리 */
 @media (min-width: 1440px) {
 
+	#contain_foot{
+		padding: 0px !important;
+	}
+
 	.company_foot, .Center_ann_foot {
-		color: #d0d4e0;
-		 font-size: 14px;
 		 text-align: left;
 	}
 	
 	.Center_foot{
-		font-weight: 700;
-		font-size: 18px;
-		margin: 16px 0px 0px 0px !important;
-		 text-align: left;
-		color: #d0d4e0;
+		text-align: left;
+
 }
   }
