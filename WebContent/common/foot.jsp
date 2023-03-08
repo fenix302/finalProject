@@ -9,23 +9,60 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="${context}/css/footer.css" rel="stylesheet">
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200&display=swap"
-	rel="stylesheet" />
 
 <title>푸터</title>
 </head>
 <body>
 	<footer>
 		<!-- contain_foot -->
-		<div class="contain_foot">
+		<div id="contain_foot">
+		
 			<!-- 아이콘 로고 / svg -->
-			<div>
-			아이콘 로고랑 svg 아이콘
+			<div id="first_foot">
+				<div>
+				아이콘
+				</div>
+				
+				<div class="sns_logo">
+					<!-- 인스타그램 -->
+					<div class="sns">
+						<a href="#"><img src="${context}/css/images/044-instagram.svg"
+							alt=""></a>
+					</div>
+					
+					<!-- 트위터 -->					
+					<div class="sns">
+						<a href="#"><img src="${context}/css/images/095-twitter.svg"
+							alt=""></a>
+					</div>
+					
+					<!-- 페이스북 -->					
+					<div class="sns">
+						<a href="#"><img src="${context}/css/images/023-facebook.svg"
+							alt=""></a>
+					</div>
+				</div>
 			</div>
 			
 			<!-- 내용 -->
-			<div>
+			<div id="scnd_foot">
+				<p class="company_foot">
+					
+					<strong>Company</strong> : (주)천성(ChunSung Inc.) <br/>
+					<strong>사업자등록번호</strong> :  111-11-11111 | <strong>대표자</strong> : 안주현 <br/>
+					<strong>주소</strong> : 경기도 용인시 기흥구 서천로 201번길 14, 322호 <br/>
+					<strong>Tel</strong> : 070 1234 1234 | <strong>Fax</strong> : 1234 123 1234 <br/>
+					
+				</p>
+				
+				<p class="Center_foot">
+				고객센터
+				</p>
+				<p class="Center_ann_foot">
+					<strong>Tel</strong> : 070 1234 4321 <br/>
+					월-금 9:00~18:00(주말/공휴일 제외) <br/>
+					점심시간 12:00-13:00
+				</p>
 			</div>
 			
 		</div>
