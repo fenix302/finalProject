@@ -67,7 +67,6 @@
 					if(result['loginYn'] == 'success'){
 						alert("로그인에 성공하였습니다.");
 						$("#loginFrm").submit();
-						document.setcookie('id', id, 1);
 					}else{
 						alert('로그인에 실패하셨습니다.');
 						$("#id").val('');

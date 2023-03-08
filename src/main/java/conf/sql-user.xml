@@ -72,7 +72,7 @@
 				  , ADDRESS
 				  , ENT_DATE
 				  ) VALUES(
-				  'USER' || LPAD(USER_SEQ.NEXTVAL, 4, 0)
+				  USER_SEQ.NEXTVAL
 				  , #{id}
 				  , #{pw}
 				  , #{email}
