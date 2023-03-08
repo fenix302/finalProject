@@ -28,7 +28,7 @@ footer {
 }
 
 /* 폰트 */
-p {
+.company_foot, .Center_ann_foot {
 	color: #d0d4e0;
 	 font-size: 14px;
 	 text-align: center;
@@ -37,7 +37,9 @@ p {
 .Center_foot{
 	font-weight: 700;
 	font-size: 16px;
-	margin-top: 16px;
+	margin: 16px 0px 0px 0px !important;
+	text-align: center;
+	color: #d0d4e0;
 }
 
 
@@ -46,3 +48,23 @@ p {
 	width: 20px;
 	margin-left: 20px;
 }
+
+
+
+/* 미디어 쿼리 */
+@media (min-width: 1440px) {
+
+	.company_foot, .Center_ann_foot {
+		color: #d0d4e0;
+		 font-size: 14px;
+		 text-align: left;
+	}
+	
+	.Center_foot{
+		font-weight: 700;
+		font-size: 18px;
+		margin: 16px 0px 0px 0px !important;
+		 text-align: left;
+		color: #d0d4e0;
+}
+  }
