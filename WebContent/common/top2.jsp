@@ -9,9 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 천성 </title>
-    <link href="${context}/css/top.css" rel="stylesheet">
+    <link href="${context}/css/top2.css" rel="stylesheet">
 
-    <script src="${context}/js/common.js"></script>
+    <script src="${context}/js/common2.js"></script>
  	
  	
 </head>
@@ -30,6 +30,24 @@
 <body>
     <div id="top">
 
+	    <nav class="navbar">
+	      <div class="navbar__logo">
+	        <i class="fab fa-accusoft"></i>
+	        <a href="">DreamCoding</a>
+	      </div>
+	      
+	      <ul class="navbar__menu">
+	        <li><a href="">Home</a></li>
+	        <li><a href="">Gallery</a></li>
+	        <li><a href="">Weddings</a></li>
+	        <li><a href="">FAQ</a></li>
+	        <li><a href="">Bookings</a></li>
+	      </ul>
+	
+	      <a href="#" class="navbar__toggleBtn">
+	          <i class="fas fa-bars"></i>
+	      </a>
+	    </nav>
         
     </div>
     
