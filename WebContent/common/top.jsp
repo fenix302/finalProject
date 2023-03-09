@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> JEWELL </title>
+    <link href="${context}/css/bootstrap.css" rel="stylesheet">
     <link href="${context}/css/top.css" rel="stylesheet">
     <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200&display=swap"
@@ -16,6 +17,7 @@
  />
 
     <script src="${context}/js/common.js"></script>
+ 	<script src="${context}/js/bootstrap.bundle.js"></script>
  	
  	
 <style type="text/css">
