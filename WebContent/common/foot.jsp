@@ -21,7 +21,7 @@
 			<div id="first_foot">
 				<div>
 					<div class="brand_logo">
-						<a href="#"><img src="${context}/css/images/logo.png"
+						<a href="#"><img src="${context}/css/images/logo2.png"
 							alt=""></a>
 					</div>
 				</div>
@@ -38,12 +38,13 @@
 						<a href="#"><img src="${context}/css/images/023-facebook.svg"
 							alt=""></a>
 					</div>
+				</div>
 			</div>
 			
 			<!-- 내용 -->
 			<div id="scnd_foot">
 				<p class="company_foot">					
-					<strong>Company</strong> : (주)천성(ChunSung Inc.) <br/>
+					<!-- <strong>Company</strong> : (주)천성 <thin>(ChunSung Inc.)</thin> <br/> -->
 					<strong>사업자등록번호</strong> :  111-11-11111 | <strong>대표자</strong> : 안주현 <br/>
 					<strong>주소</strong> : 경기도 용인시 기흥구 서천로 201번길 14, 322호 <br/>
 					<strong>Tel</strong> : 070 1234 1234 | <strong>Fax</strong> : 1234 123 1234 <br/>					

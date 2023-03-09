@@ -15,7 +15,12 @@
 /* 브랜드 로고 */
 .brand_logo>a>img{
 	width: 100px;
-	margin-bottom: 20px;
+	margin-bottom: 24px;
+}
+
+.brand_logo{
+	text-align: center;
+	margin-top: 16px;
 }
 
 
@@ -86,6 +91,19 @@ thin{
 	
 	.Center_foot{
 		text-align: left;
-
+	}
+	
+	.brand_logo{
+		float: left;
+	}
+	
+	.brand_logo>a>img{
+		margin-bottom: 10px;
 }
+	
+	.sns_logo{
+		float: right;
+		margin-top: 16px;
+	}
+	
   }
