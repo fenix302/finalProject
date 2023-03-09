@@ -7,7 +7,7 @@
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	text-decoration: none;
+	text-decoration: none !important;
 	word-break: keep-all;
 	font-family: 'Noto Sans KR', sans-serif;
 }
@@ -35,7 +35,7 @@ footer {
 #contain_foot {
 	max-width: 1440px;
 	margin: 0 auto;
-	padding: 0px 16px 0px 16px;
+	padding: 0px 16px 0px 16px !important;
 }
 
 #scnd_foot{
@@ -49,6 +49,10 @@ footer {
 	color: #d0d4e0;
 	 font-size: 14px;
 	 text-align: center;
+}
+
+.Center_ann_foot{
+	margin-bottom: 1rem;
 }
 
 .Center_foot{
