@@ -41,16 +41,11 @@
 	});
 </script>
 
-<title>JEWELL</title>
+<title>천성</title>
 </head>
 
 
-
-
-
-
-
-<c:set var="loginUrl">${context}/user/login.jsp</c:set>
+<%-- <c:set var="loginUrl">${context}/user/login.jsp</c:set>
 
 <c:set var="earUrl1">${context}/work/product/retrieveProduct.do?productCode=E0026</c:set>
 <c:set var="neckUrl1">${context}/work/product/retrieveProduct.do?productCode=N0016</c:set>
@@ -63,12 +58,7 @@
 
 <c:set var="productManageUrl">${context}/work/product/retrieveProductListForManage.do</c:set>
 <c:set var="statisticsForProductUrl">${context}/work/sell/retrieveStatisticsForProduct.do</c:set>
-<c:set var="statisticsForStockUrl">${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=R</c:set>
-
-
-
-
-
+<c:set var="statisticsForStockUrl">${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=R</c:set> --%>
 
 
 
@@ -77,9 +67,10 @@
 
 	<c:if test="${sessionScope.grade != 'A'}">
 
-		<!-- 배너 -->
-		<div class="con">
-			<div class="banner">
+		<!-- 전체 -->
+		<div class="con_main">
+			<!-- 배너 -->
+			<div class="banner_main">
 				<div class="owl-carousel">
 					<div class="banner_img">
 						<img src="/css/images/banner_01.jpg" alt="#">
@@ -108,13 +99,18 @@
 					});
 				</script>
 			</div>
-
-
-			<!-- 콘텐츠-BEST -->
-			<div class="content">
-			</div>
+			<!-- 배너 끝 -->
+			
+			
+			
 		</div>
+		<!-- 전체 끝 -->
 	</c:if>
+
+
+
+
+
 
 
 	<!--     관리자 페이지 입니다 -->
