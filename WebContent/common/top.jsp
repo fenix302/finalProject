@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> JEWELL </title>
+    <title> 카페 천성 </title>
     <link href="${context}/css/bootstrap.css" rel="stylesheet">
     <link href="${context}/css/top.css" rel="stylesheet">
     <link

@@ -39,7 +39,7 @@
         });
     </script>
 
-    <title>JEWELL</title>
+    <title>카페 천성</title>
 </head>
 
 
