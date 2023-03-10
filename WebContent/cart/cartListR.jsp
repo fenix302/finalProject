@@ -102,19 +102,19 @@
 			                         	<td style="text-align: center; vertical-align: middle;">${cartIdx.count}</td>
 			                            <td style="text-align: center; vertical-align: middle;">
 										<a href="${context}/work/product/retrieveProduct.do?productCode=${dsCartList.PRODUCT_CODE}">
-											<img name="image" width="110px" height="110px" src="${context}/binderImg/${dsCartList.PRODUCT_IMAGE}" class="img-thumbnail">
+											<img name="image" width="110px" height="110px" src="${context}/coffeeImg/${dsCartList.PRODUCT_IMAGE}" class="img-thumbnail">
 										</a>
 											<script type="text/javascript">
 											 	var productCategoryCd = '${dsCartList.PRODUCT_CATEGORY_CD}';
 
-											 	if(productCategoryCd == 'N'){
-													imageFolder = "neckImg";
+											 	if(productCategoryCd == 'C'){
+													imageFolder = "coffeeImg";
+												}else if(productCategoryCd == 'G'){
+													imageFolder = "goodsImg";
+												}else if(productCategoryCd == 'P'){
+													imageFolder = "presentImg";
 												}else if(productCategoryCd == 'R'){
-													imageFolder = "ringImg";
-												}else if(productCategoryCd == 'E'){
-													imageFolder = "earImg";
-												}else if(productCategoryCd == 'B'){
-													imageFolder = "braceletImg";
+													imageFolder = "regularImg";
 												}
 												path = $("img[name='image']").eq('${cartIdx.index}').attr("src");
 
