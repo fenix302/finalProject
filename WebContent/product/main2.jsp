@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="${context}/css/owl.carousel.min.css">
 <script src="${context}/js/owl.carousel.min.js"></script>
 
+
 <title>천성</title>
 </head>
 
@@ -73,7 +74,8 @@
 						margin : 0,
 						autoplay : true,
 						autoplayTimeout : 3000,
-						autoplayHoverPause : true
+						autoplayHoverPause : true,
+						dots:false
 					});
 				</script>
 			</div>
@@ -105,7 +107,8 @@
 						margin : 0,
 						autoplay : true,
 						autoplayTimeout : 3000,
-						autoplayHoverPause : true
+						autoplayHoverPause : true,
+						dots:false
 					});
 				</script>				
 			</div>
