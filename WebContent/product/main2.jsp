@@ -42,10 +42,14 @@
 
 
 <body>
+	<!-- 헤더 -->
 	<jsp:include page="../common/top.jsp"></jsp:include>
+	
+
+<!-- ---------------------------------------------------------------------------------------------- -->
+
 
 	<c:if test="${sessionScope.grade != 'A'}">
-
 		<!-- 전체 -->
 		<div class="con_main">
 			<!-- 배너 -->
@@ -81,6 +85,7 @@
 			</div>
 			<!-- 배너 끝 -->
 			
+			
 			<!-- 컨텐츠 1 시작 -->
 			<div id="forU_main">
 			</div>
@@ -91,10 +96,14 @@
 			<div id="announce_main">
 				<div class="owl-carousel">
 					<div class="ann_img">
-						<img src="/css/images/announce_main01.png" alt="#">
+						<a>
+							<img src="/css/images/announce_main01.png" alt="#">					
+						</a>
 					</div>
 					<div class="ann_img">
-						<img src="/css/images/announce_main02.png" alt="#">
+						<a>
+							<img src="/css/images/announce_main02.png" alt="#">
+						</a>
 					</div>
 				</div>
 
@@ -126,7 +135,7 @@
 
 
 
-
+<!-- ---------------------------------------------------------------------------------------------- -->
 
 
 
@@ -174,6 +183,11 @@
 			</div>
 		</div>
 	</c:if>
+	
+	
+<!-- ---------------------------------------------------------------------------------------------- -->
+
+	<!-- 푸터 -->
 	<jsp:include page="../common/foot.jsp"></jsp:include>
 </body>
 </html>
