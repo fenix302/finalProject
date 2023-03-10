@@ -55,18 +55,18 @@
 			<div class="row">
 				<c:forEach items="${dsProductList}" var="dsProductList" varStatus="dsProductIdx">
 					<div class="col-md-6">
-						<a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}"><img name="image" src="${context}/braceletImg/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail"></a>
+						<a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}"><img name="image" src="${context}/coffeeImg/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail"></a>
 						<script type="text/javascript">
 						 	var productCategoryCd = '${dsProductList.PRODUCT_CATEGORY_CD}';
 
-							if(productCategoryCd == 'N'){
-								imageFolder = "neckImg";
+							if(productCategoryCd == 'C'){
+								imageFolder = "coffeeImg";
+							}else if(productCategoryCd == 'G'){
+								imageFolder = "goodsImg";
+							}else if(productCategoryCd == 'P'){
+								imageFolder = "presentImg";
 							}else if(productCategoryCd == 'R'){
-								imageFolder = "ringImg";
-							}else if(productCategoryCd == 'E'){
-								imageFolder = "earImg";
-							}else if(productCategoryCd == 'B'){
-								imageFolder = "braceletImg";
+								imageFolder = "regularImg";
 							}
 							path = $("img[name='image']").eq('${dsProductIdx.index}').attr("src");
 

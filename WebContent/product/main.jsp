@@ -50,14 +50,14 @@
 
 <c:set var="loginUrl">${context}/user/login.jsp</c:set>
 
-<c:set var="earUrl1">${context}/work/product/retrieveProduct.do?productCode=E0026</c:set>
-<c:set var="neckUrl1">${context}/work/product/retrieveProduct.do?productCode=N0016</c:set>
-<c:set var="ringUrl1">${context}/work/product/retrieveProduct.do?productCode=R003</c:set>
-<c:set var="braceletUrl1">${context}/work/product/retrieveProduct.do?productCode=B0035</c:set>
-<c:set var="earUrl2">${context}/work/product/retrieveProduct.do?productCode=E0023</c:set>
-<c:set var="neckUrl2">${context}/work/product/retrieveProduct.do?productCode=N0012</c:set>
-<c:set var="ringUrl2">${context}/work/product/retrieveProduct.do?productCode=R001</c:set>
-<c:set var="braceletUrl2">${context}/work/product/retrieveProduct.do?productCode=B0029</c:set>
+<c:set var="coffeeUrl1">${context}/work/product/retrieveProduct.do?productCode=C0016</c:set>
+<c:set var="goodsUrl1">${context}/work/product/retrieveProduct.do?productCode=G003</c:set>
+<c:set var="presentUrl1">${context}/work/product/retrieveProduct.do?productCode=P0026</c:set>
+<c:set var="regularUrl1">${context}/work/product/retrieveProduct.do?productCode=R0035</c:set>
+<c:set var="coffeeUrl2">${context}/work/product/retrieveProduct.do?productCode=C0012</c:set>
+<c:set var="goodsUrl2">${context}/work/product/retrieveProduct.do?productCode=G001</c:set>
+<c:set var="presentUrl2">${context}/work/product/retrieveProduct.do?productCode=P0023</c:set>
+<c:set var="regularUrl2">${context}/work/product/retrieveProduct.do?productCode=R0029</c:set>
 
 <c:set var="productManageUrl">${context}/work/product/retrieveProductListForManage.do</c:set>
 <c:set var="statisticsForProductUrl">${context}/work/sell/retrieveStatisticsForProduct.do</c:set>
