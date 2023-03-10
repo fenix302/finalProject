@@ -9,7 +9,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="description" content="main.jsp">
 
-
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200&display=swap"
+	rel="stylesheet" />
 <link rel="stylesheet" href="${context}/css/main2.css">
 <script src="${context}/js/jquery-1.9.1.js"></script>
 
