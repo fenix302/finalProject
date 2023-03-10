@@ -45,46 +45,24 @@
 	        yearRange: "1980:2015"
 	    });
 	});
-    function sample4_execDaumPostcode() {
-        new daum.Postcode({
-            oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-                // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var roadAddr = data.roadAddress; // 도로명 주소 변수
-                var extraRoadAddr = ''; // 참고 항목 변수
-
-                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                    extraRoadAddr += data.bname;
-                }
-                // 건물명이 있고, 공동주택일 경우 추가한다.
-                if(data.buildingName !== '' && data.apartment === 'Y'){
-                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                }
-                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                if(extraRoadAddr !== ''){
-                    extraRoadAddr = ' (' + extraRoadAddr + ')';
-                }
-
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('postNum1').value = data.zonecode;
-                document.getElementById("postNum2").value = roadAddr;
-                document.getElementById("postNum3").value = data.jibunAddress;
-                
-                // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
-                if(roadAddr !== ''){
-                    document.getElementById("address1").value = extraRoadAddr;
-                } else {
-                    document.getElementById("address1").value = '';
-                }
-            }
-    	}).open();
-    }	
-
-	function fn_save(){
+	
+	
+	// 행정안전부 도로명 주소 API 적용 시작!!!
+	<%-- 주소검색 팝업을 호출합니다 --%>
+	function fn_openAddressPopup() {
+		var url = "/user/addressAPIPopup.jsp";
+		var name = "AddressPopup";
+		var option = "width=650, height=500, top=100, left=200, location=no"
+		window.open(url, name, option);
+	}
+	<%-- 주소검색 팝업 호출 콜백 callback_openAddressPopup() 메서드 입니다  --%>
+	function callback_openAddressPopup(aParam) {
+		document.getElementById("zipNo").value = aParam["zipNo"];
+		document.getElementById("mainAddress").value = aParam["roadAddr"];
+	}
+	
+	
+    function fn_save(){
 		if(!fn_validation()) return;
 		if($("#flag").val() == "false"){
 			alert("이미 사용중인 ID입니다");
@@ -94,8 +72,8 @@
 
 
 		$("#phoneNum").val($("#phone1").val() + "-" + $("#phone2").val());
- 		$("#postNum").val($("#postNum1").val());
- 		$("#address").val($("#postNum2").val() + "/" + $("#postNum3").val() + "/" + $("#address1").val());
+ 		$("#postNum").val($("#zipNo").val());
+ 		$("#address").val($("#mainAddress").val() + "/" + $("#subAddress").val());
 
  		$("#joinFrm").submit();
 	}
@@ -244,14 +222,14 @@
 							<label for="postnum1" class="control-label"><b id="naming">주소</b></label>              
 		                    <p id="nameTag"></p>
 		                    <div class="find_add">
-		                        <input class="form-control" type="text" id="postNum1" placeholder="우편번호" disabled="disabled">
+		                        <input class="form-control" type="text" id="zipNo" placeholder="우편번호" disabled="disabled">
 		                    </div>
 		                    
 		                    <!-- 우편번호 찾기 -->
 		                    <div class="find_btn2">
 		                    	<label class="control-label"><b></b></label>
 		                    	<div class="find_btn2">
-			                        <input type="button" class="btn user-post-btn find_btn" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
+			                        <input type="button" class="btn user-post-btn find_btn" onclick="javascript:fn_openAddressPopup();" value="우편번호 찾기">
 		                    	</div>	
 			                    <input type="hidden" id="postNum" name="postNum"> 
 		                    </div>
@@ -263,24 +241,17 @@
 	                    <div class="form-group box2">
 							<label for="postnum2" class="control-label add_label"></label>	                    
 		                    <div>
-		                       <input class="form-control" type="text" id="postNum2" placeholder="도로명주소" disabled="disabled"/>
+		                       <input class="form-control" type="text" id="mainAddress" placeholder="도로명주소" disabled="disabled"/>
 		                    </div>
 		                       <!--  <input type="hidden" id="postNum" name="postNum"> -->
 	                    </div>
-	                    
-	                    <!-- 지번주소 -->	                    
-	                    <div class="form-group box2">
-	                   		<label for="postnum3" class="control-label add_label"></label>
-		                    <div>
-		                       <input class="form-control" type="text" id="postNum3" placeholder="지번주소" disabled="disabled"/>
-		                    </div>
-	                    </div>
+	                  
 
 	                    <!-- 상세 주소 -->	                    
 	                    <div class="form-group box2">
 	                    	<label for="address1" class="control-label col-md-3"></label>
 		                    <div>
-								<input class="form-control" type="text" id="address1" placeholder="상세주소"/>
+								<input class="form-control" type="text" id="subAddress" placeholder="상세주소"/>
 		                    </div>
 		                    <input type="hidden" id="address" name="address">
 	                    </div>	                    	                    
