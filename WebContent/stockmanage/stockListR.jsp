@@ -9,7 +9,7 @@
 	<meta name="description" content="stockListR.jsp">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>문구점</title>
+	<title>카페 천성</title>
 
 	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
@@ -85,18 +85,18 @@
 			                         <tr>
 			                         	<td style="text-align: center; vertical-align: middle;">${dsProductList.PRODUCT_CODE}</td>
 			                            <td style="text-align: center; vertical-align: middle;">
-										<img name="image" width="110px" height="110px" src="${context}/braceletImg/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail">
+										<img name="image" width="110px" height="110px" src="${context}/coffeeImg/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail">
 											<script type="text/javascript">
 											 	var productCategoryCd = '${dsProductList.PRODUCT_CATEGORY_CD}';
 
-											 	if(productCategoryCd == 'N'){
-													imageFolder = "neckImg";
+											 	if(productCategoryCd == 'C'){
+													imageFolder = "coffeeImg";
+												}else if(productCategoryCd == 'G'){
+													imageFolder = "goodsImg";
+												}else if(productCategoryCd == 'P'){
+													imageFolder = "presentImg";
 												}else if(productCategoryCd == 'R'){
-													imageFolder = "ringImg";
-												}else if(productCategoryCd == 'E'){
-													imageFolder = "earImg";
-												}else if(productCategoryCd == 'B'){
-													imageFolder = "braceletImg";
+													imageFolder = "regularImg";
 												}
 												path = $("img[name='image']").eq('${productIdx.index}').attr("src");
 

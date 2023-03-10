@@ -57,14 +57,14 @@
 				<script type="text/javascript">
 				 	var productCategoryCd1 = '${dsProductList.PRODUCT_CATEGORY_CD}';
 					
-					if(productCategoryCd1 == 'N'){
-						imageFolder = "neckImg";
-					}else if(productCategoryCd1 == 'R'){
-						imageFolder = "ringImg";
-					}else if(productCategoryCd1 == 'E'){
-						imageFolder = "earImg";
-					}else if(productCategoryCd1 == 'B'){
-						imageFolder = "braceletImg";
+				 	if(productCategoryCd == 'C'){
+						imageFolder = "coffeeImg";
+					}else if(productCategoryCd == 'G'){
+						imageFolder = "goodsImg";
+					}else if(productCategoryCd == 'P'){
+						imageFolder = "presentImg";
+					}else if(productCategoryCd == 'R'){
+						imageFolder = "regularImg";
 					}
 					path = $("img[name='image1']").eq('${dsProductIdx.index}').attr("src");
 
@@ -97,18 +97,18 @@
 			<c:forEach items="${dsProductList}" var="dsProductList" varStatus="dsProductIdx" >
 			<div class="col-md-3" style="margin-bottom: 100px;">
 <!-- 			클래스 img-thumbnail로 사진 스타일 변경 가능 -->
-				<img name="image" src="${context}/binderImg/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail mb-3">
+				<img name="image" src="${context}/coffeeImg/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail mb-3">
 				<script type="text/javascript">
 				 	var productCategoryCd = '${dsProductList.PRODUCT_CATEGORY_CD}';
 					
-					if(productCategoryCd == 'N'){
-						imageFolder = "neckImg";
+				 	if(productCategoryCd == 'C'){
+						imageFolder = "coffeeImg";
+					}else if(productCategoryCd == 'G'){
+						imageFolder = "goodsImg";
+					}else if(productCategoryCd == 'P'){
+						imageFolder = "presentImg";
 					}else if(productCategoryCd == 'R'){
-						imageFolder = "ringImg";
-					}else if(productCategoryCd == 'E'){
-						imageFolder = "earImg";
-					}else if(productCategoryCd == 'B'){
-						imageFolder = "braceletImg";
+						imageFolder = "regularImg";
 					}
 					path = $("img[name='image']").eq('${dsProductIdx.index}').attr("src");
 

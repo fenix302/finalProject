@@ -48,16 +48,14 @@
     	$("#sort").change(function(){
     		sort = $("#sort").val();
 
-    		if(sort == 'stockP'){
+    		if(sort == 'stockC'){
+				url = "${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=C";
+    		}else if(sort == 'stockG'){
+				url = "${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=G";
+    		}else if(sort == 'stockP'){
 				url = "${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=P";
-    		}else if(sort == 'stockO'){
-				url = "${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=O";
-    		}else if(sort == 'stockS'){
-				url = "${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=S";
-    		}else if(sort == 'stockB'){
-				url = "${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=B";
-    		}else if(sort == 'stockD'){
-				url = "${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=D";
+    		}else if(sort == 'stockR'){
+				url = "${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=R";
     		}else if(sort == 'sell'){
     			url = "${context}/work/product/retrieveStatisticsForSell.do";
     		}
@@ -101,11 +99,10 @@
 		<div class="row">
 			<div class="col-md-3">
 				<select class="form-control" id="sort" name="sort">
-					<option value="stockP">재고현황[필기류]</option>
-					<option value="stockO">재고현황[사무용품]</option>
-					<option value="stockS">재고현황[정리/수납용품]</option>
-					<option value="stockB">재고현황[화일/바인더]</option>
-					<option value="stockD">재고현황[디자인문구]</option>
+					<option value="stockC">재고현황[원액]</option>
+					<option value="stockG">재고현황[굿즈]</option>
+					<option value="stockP">재고현황[선물용]</option>
+					<option value="stockR">[정기구매]</option>
 					<option value="sell">판매현황</option>
 				</select>
 			</div>
