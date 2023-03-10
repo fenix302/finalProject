@@ -101,8 +101,39 @@
 			</div>
 			<!-- 배너 끝 -->
 			
+			<!-- 컨텐츠 1 시작 -->
+			<div id="forU_main">
+			</div>
+			<!-- 컨텐츠1 끝 -->
 			
 			
+			<!-- 컨텐츠 2 시작 -->
+			<div id="announce_main">
+				<div class="owl-carousel">
+					<div class="ann_img">
+						<img src="/css/images/announce_main01.png" alt="#">
+					</div>
+					<div class="ann_img">
+						<img src="/css/images/announce_main02.png" alt="#">
+					</div>
+				</div>
+
+				<!-- 캐러셀 스크립트 -->
+				<script>
+					var owl = $('.owl-carousel');
+					owl.owlCarousel({
+						items : 1,
+						loop : true,
+						margin : 0,
+						autoplay : true,
+						autoplayTimeout : 3000,
+						autoplayHoverPause : true
+					});
+				</script>				
+			</div>
+			<!-- 컨텐츠 2 끝 -->
+			
+						
 		</div>
 		<!-- 전체 끝 -->
 	</c:if>

@@ -24,19 +24,35 @@ a{
 .banner_main{
     width: 100%;
     max-height: 750px;
-    margin-bottom: 145px;
 }
 
 
-.content_main{
-    max-width: 1440px;
-    margin: 0 auto;
-    margin-bottom: 140px;
+
+/* 배너 이미지 */
+.banner_img>img{
+    object-fit: cover;
+    max-height: 750px;
 }
+
+
+/* 컨텐츠1 - 당신을 위한 */
+#forU_main{
+	width: 100%;
+	min-height: 780px;
+	background-color: #E6EAEC;
+}
+
+
+/* 컨텐츠2 */
+#announce_main{
+	width: 100%;
+	max-height: 750px;
+}
+
 
 /* 배너 이미지 */
 
-.banner_img>img{
+.ann_img>img{
     object-fit: cover;
     max-height: 750px;
 }
