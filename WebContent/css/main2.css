@@ -1,5 +1,7 @@
-/* 珥덇린�솕 */
+/* 초기화*/
 @charset "utf=8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
 
 * {
    margin: 0;
@@ -10,6 +12,10 @@
    font-family: 'Noto Sans KR', sans-serif;
 }
 
+
+/* --------------------------------------------- */
+
+
 a{
 	cursor: pointer;
 }
@@ -19,6 +25,8 @@ a{
 }
 
 
+/* --------------------------------------------- */
+
 
 /* 배너 */
 .banner_main{
@@ -27,12 +35,13 @@ a{
 }
 
 
-
 /* 배너 이미지 */
 .banner_img>img{
     object-fit: cover;
     max-height: 750px;
 }
+
+/* --------------------------------------------- */
 
 
 /* 컨텐츠1 - 당신을 위한 */
@@ -43,17 +52,31 @@ a{
 }
 
 
+/* --------------------------------------------- */
+
+
 /* 컨텐츠2 */
 #announce_main{
 	width: 100%;
 	max-height: 750px;
 }
 
-
-/* 배너 이미지 */
+/* 컨텐츠2 이미지 */
 
 .ann_img>img{
     object-fit: cover;
     max-height: 750px;
+    filter: brightness(60%); 
 }
 
+
+/* --------------------------------------------- */
+
+
+/* 컨텐츠3 */
+#review_main{
+	max-width: 1440px;
+	background-color: #115361;
+	height: 800px;
+	margin: 0 auto;
+}
