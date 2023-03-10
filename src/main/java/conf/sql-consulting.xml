@@ -42,7 +42,7 @@
 				, BOARD.WRITER
 				, BOARD.COUNSELOR
 				, BOARD.REGDATE 
-			FROM tb_jw_consulting BOARD 
+			FROM tb_consulting BOARD 
 			WHERE  1=1
 			ORDER BY BOARD.BNO DESC
 		]]>
@@ -57,7 +57,7 @@
 				 , BOARD.WRITER
 				 , BOARD.COUNSELOR
 				 , BOARD.REGDATE
-			FROM   TB_JW_CONSULTING BOARD
+			FROM   TB_CONSULTING BOARD
 			WHERE  1=1
 			AND    BNO = #{BNO}
 		]]>
@@ -66,12 +66,12 @@
 		<![CDATA[
 		/*	retrieveMaxBoardNo	*/
 			SELECT MAX(BOARD.BNO)
-			FROM   tb_jw_consulting BOARD
+			FROM   tb_consulting BOARD
 		]]>
 	</select>
 	<insert id="createBoard" parameterType="consulting">
 		<![CDATA[
-			INSERT INTO TB_JW_CONSULTING(
+			INSERT INTO TB_CONSULTING(
 				BNO
 				, TITLE
 				, CONTENT
@@ -92,7 +92,7 @@
 	<update id="updateBoard" parameterType="consulting">
 		<![CDATA[
 		/*	updateBoard	*/
-			UPDATE tb_jw_consulting
+			UPDATE tb_consulting
 			SET TITLE = #{title}
 			, CONTENT = #{content}
 			WHERE BNO = #{bno}
@@ -101,7 +101,7 @@
 	<update id="updateBoardHits" parameterType="consulting">
 		<![CDATA[
 		/*	updateBoardHits	*/
-			UPDATE tb_jw_consulting
+			UPDATE tb_consulting
 			SET BOARD_HITS          =  BOARD_HITS + 1
 			WHERE BNO = #{BNO}
 		]]>
@@ -112,7 +112,7 @@
 		<![CDATA[
 		/*	deleteBoard	*/
 			DELETE
-			FROM  tb_jw_consulting
+			FROM  tb_consulting
 			WHERE 1=1
 			AND BNO = #{BNO}
 		]]>
@@ -122,7 +122,7 @@
 		<![CDATA[
 		/*	deleteBoard2	*/
 			DELETE
-			FROM  tb_jw_consulting
+			FROM  tb_consulting
 			WHERE 1=1
 			AND USER_CODE = (SELECT USER_CODE FROM TB_COM_USER WHERE ID = #{ID})
 		]]>
@@ -140,9 +140,9 @@
 		SELECT
 		    BNO, TITLE, CONTENT, WRITER, COUNSELOR, REGDATE
 	    from(
-		    SELECT /*+INDEX_DESC(tb_jw_consulting pk_consulting) */
+		    SELECT /*+INDEX_DESC(tb_consulting pk_consulting) */
 		        ROWNUM rn, bno, title, content, writer, counselor, regdate
-		    FROM tb_jw_consulting
+		    FROM tb_consulting
 		    WHERE 
 		]]>	
 			<trim prefix="(" suffix=") AND " prefixOverrides="OR">
@@ -172,7 +172,7 @@
 	
 	<select id="getTotalCount" resultType="int">
 		<![CDATA[
-			select count(*) from tb_jw_consulting 
+			select count(*) from tb_consulting 
 			
 			where 
 		]]>
@@ -181,13 +181,6 @@
 			bno > 0
 		]]>
 	</select>
-	
-	
-	
-	
-	
-	
-	
 	
 	
 </mapper>

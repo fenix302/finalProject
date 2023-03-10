@@ -40,7 +40,7 @@
 				, BOARD.CONTENT
 				, BOARD.WRITER
 				, BOARD.REGDATE 
-			FROM tb_jw_general BOARD 
+			FROM tb_general BOARD 
 			WHERE  1=1
 			ORDER BY BOARD.BNO DESC
 		]]>
@@ -54,7 +54,7 @@
 				 , BOARD.CONTENT
 				 , BOARD.WRITER
 				 , BOARD.REGDATE
-			FROM   TB_JW_GENERAL BOARD
+			FROM   TB_GENERAL BOARD
 			WHERE  1=1
 			AND    BNO = #{BNO}
 		]]>
@@ -63,12 +63,12 @@
 		<![CDATA[
 		/*	retrieveMaxBoardNo	*/
 			SELECT MAX(BOARD.BNO)
-			FROM   tb_jw_general BOARD
+			FROM   tb_general BOARD
 		]]>
 	</select>
 	<insert id="createBoard" parameterType="generalboard">
 		<![CDATA[
-			INSERT INTO TB_JW_GENERAL(
+			INSERT INTO TB_GENERAL(
 				BNO
 				, TITLE
 				, CONTENT
@@ -87,7 +87,7 @@
 	<update id="updateBoard" parameterType="generalboard">
 		<![CDATA[
 		/*	updateBoard	*/
-			UPDATE tb_jw_general
+			UPDATE tb_general
 			SET TITLE = #{title}
 			, CONTENT = #{content}
 			WHERE BNO = #{bno}
@@ -96,7 +96,7 @@
 	<update id="updateBoardHits" parameterType="generalboard">
 		<![CDATA[
 		/*	updateBoardHits	*/
-			UPDATE tb_jw_general
+			UPDATE tb_general
 			SET BOARD_HITS          =  BOARD_HITS + 1
 			WHERE BNO = #{BNO}
 		]]>
@@ -107,7 +107,7 @@
 		<![CDATA[
 		/*	deleteBoard	*/
 			DELETE
-			FROM  tb_jw_general
+			FROM  tb_general
 			WHERE 1=1
 			AND BNO = #{BNO}
 		]]>
@@ -117,7 +117,7 @@
 		<![CDATA[
 		/*	deleteBoard2	*/
 			DELETE
-			FROM  tb_jw_general
+			FROM  tb_general
 			WHERE 1=1
 			AND USER_CODE = (SELECT USER_CODE FROM TB_COM_USER WHERE ID = #{ID})
 		]]>
@@ -135,9 +135,9 @@
 		SELECT
 		    BNO, TITLE, CONTENT, WRITER, REGDATE
 	    from(
-		    SELECT /*+INDEX_DESC(tb_jw_general pk_general) */
+		    SELECT /*+INDEX_DESC(tb_general pk_general) */
 		        ROWNUM rn, bno, title, content, writer, regdate
-		    FROM tb_jw_general
+		    FROM tb_general
 		    WHERE 
 		]]>	
 			<trim prefix="(" suffix=") AND " prefixOverrides="OR">
@@ -167,7 +167,7 @@
 	
 	<select id="getTotalCount" resultType="int">
 		<![CDATA[
-			select count(*) from tb_jw_general 
+			select count(*) from tb_general 
 			
 			where 
 		]]>
@@ -176,12 +176,6 @@
 			bno > 0
 		]]>
 	</select>
-	
-	
-	
-	
-	
-	
 	
 	
 	

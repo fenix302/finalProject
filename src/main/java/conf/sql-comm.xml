@@ -40,7 +40,7 @@
 				, BOARD.CONTENT
 				, BOARD.WRITER
 				, BOARD.REGDATE 
-			FROM tb_jw_comm BOARD 
+			FROM tb_comm BOARD 
 			WHERE  1=1
 			ORDER BY BOARD.BNO DESC
 		]]>
@@ -54,7 +54,7 @@
 				 , BOARD.CONTENT
 				 , BOARD.WRITER
 				 , BOARD.REGDATE
-			FROM   TB_JW_COMM BOARD
+			FROM   TB_COMM BOARD
 			WHERE  1=1
 			AND    BNO = #{BNO}
 		]]>
@@ -63,12 +63,12 @@
 		<![CDATA[
 		/*	retrieveMaxBoardNo	*/
 			SELECT MAX(BOARD.BNO)
-			FROM   tb_jw_comm BOARD
+			FROM   tb_comm BOARD
 		]]>
 	</select>
 	<insert id="createBoard" parameterType="comm">
 		<![CDATA[
-			INSERT INTO TB_JW_COMM(
+			INSERT INTO TB_COMM(
 				BNO
 				, TITLE
 				, CONTENT
@@ -87,7 +87,7 @@
 	<update id="updateBoard" parameterType="comm">
 		<![CDATA[
 		/*	updateBoard	*/
-			UPDATE tb_jw_comm
+			UPDATE tb_comm
 			SET TITLE = #{title}
 			, CONTENT = #{content}
 			WHERE BNO = #{bno}
@@ -96,7 +96,7 @@
 	<update id="updateBoardHits" parameterType="comm">
 		<![CDATA[
 		/*	updateBoardHits	*/
-			UPDATE tb_jw_comm
+			UPDATE tb_comm
 			SET BOARD_HITS          =  BOARD_HITS + 1
 			WHERE BNO = #{BNO}
 		]]>
@@ -107,7 +107,7 @@
 		<![CDATA[
 		/*	deleteBoard	*/
 			DELETE
-			FROM  tb_jw_comm
+			FROM  tb_comm
 			WHERE 1=1
 			AND BNO = #{BNO}
 		]]>
@@ -117,7 +117,7 @@
 		<![CDATA[
 		/*	deleteBoard2	*/
 			DELETE
-			FROM  tb_jw_comm
+			FROM  tb_comm
 			WHERE 1=1
 			AND USER_CODE = (SELECT USER_CODE FROM TB_COM_USER WHERE ID = #{ID})
 		]]>
@@ -135,9 +135,9 @@
 		SELECT
 		    BNO, TITLE, CONTENT, WRITER, REGDATE
 	    from(
-		    SELECT /*+INDEX_DESC(tb_jw_comm pk_comm) */
+		    SELECT /*+INDEX_DESC(tb_comm pk_comm) */
 		        ROWNUM rn, bno, title, content, writer, regdate
-		    FROM tb_jw_comm
+		    FROM tb_comm
 		    WHERE 
 		]]>	
 			<trim prefix="(" suffix=") AND " prefixOverrides="OR">
@@ -167,7 +167,7 @@
 	
 	<select id="getTotalCount" resultType="int">
 		<![CDATA[
-			select count(*) from tb_jw_comm 
+			select count(*) from tb_comm 
 			
 			where 
 		]]>
@@ -176,11 +176,6 @@
 			bno > 0
 		]]>
 	</select>
-	
-	
-	
-	
-	
 	
 	
 	

@@ -53,23 +53,23 @@
 <!--        <h4 style="font-size: 14px; font-weight: 100; text-align: right;">see more</h4> -->
 			<c:forEach items="${dsProductList}" var="dsProductList" varStatus="dsProductIdx" begin="0" end="3">
 			<div class="col-md-3" style="margin-bottom: 100px;">
-				<img name="image1" src="${context}/binderImg/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail mb-3">
+				<img name="image1" src="${context}/goodsImg/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail mb-3">
 				<script type="text/javascript">
-				 	var productCategoryCd1 = '${dsProductList.PRODUCT_CATEGORY_CD}';
-					
-				 	if(productCategoryCd == 'C'){
-						imageFolder = "coffeeImg";
-					}else if(productCategoryCd == 'G'){
-						imageFolder = "goodsImg";
-					}else if(productCategoryCd == 'P'){
-						imageFolder = "presentImg";
-					}else if(productCategoryCd == 'R'){
-						imageFolder = "regularImg";
-					}
-					path = $("img[name='image1']").eq('${dsProductIdx.index}').attr("src");
+			 	var productCategoryCd = '${dsProductList.PRODUCT_CATEGORY_CD}';
+				
+			 	if(productCategoryCd == 'C'){
+					imageFolder = "coffeeImg";
+				}else if(productCategoryCd == 'G'){
+					imageFolder = "goodsImg";
+				}else if(productCategoryCd == 'P'){
+					imageFolder = "presentImg";
+				}else if(productCategoryCd == 'R'){
+					imageFolder = "regularImg";
+				}
+				path = $("img[name='image1']").eq('${dsProductIdx.index}').attr("src");
 
-					existFolder = path.split("/")[1];
-					$("img[name='image1']").eq('${dsProductIdx.index}').attr("src", path.replace(existFolder, imageFolder));
+				existFolder = path.split("/")[1];
+				$("img[name='image1']").eq('${dsProductIdx.index}').attr("src", path.replace(existFolder, imageFolder));
 				</script>
 				<div class="row">
 					<div class="col-md-12">

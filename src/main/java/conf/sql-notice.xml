@@ -54,7 +54,7 @@
 				 , BOARD.CONTENT
 				 , BOARD.WRITER
 				 , BOARD.REGDATE
-			FROM   TB_JW_NOTICE BOARD
+			FROM   TB_NOTICE BOARD
 			WHERE  1=1
 			AND    BNO = #{BNO}
 		]]>
@@ -63,12 +63,12 @@
 		<![CDATA[
 		/*	retrieveMaxBoardNo	*/
 			SELECT MAX(BOARD.BNO)
-			FROM   tb_jw_notice BOARD
+			FROM   tb_notice BOARD
 		]]>
 	</select>
 	<insert id="createBoard" parameterType="notice">
 		<![CDATA[
-			INSERT INTO TB_JW_NOTICE(
+			INSERT INTO TB_NOTICE(
 				BNO
 				, TITLE
 				, CONTENT
@@ -96,7 +96,7 @@
 	<update id="updateBoardHits" parameterType="notice">
 		<![CDATA[
 		/*	updateBoardHits	*/
-			UPDATE tb_jw_notice
+			UPDATE tb_notice
 			SET BOARD_HITS          =  BOARD_HITS + 1
 			WHERE BNO = #{BNO}
 		]]>
@@ -107,7 +107,7 @@
 		<![CDATA[
 		/*	deleteBoard	*/
 			DELETE
-			FROM  tb_jw_notice
+			FROM  tb_notice
 			WHERE 1=1
 			AND BNO = #{BNO}
 		]]>
@@ -117,7 +117,7 @@
 		<![CDATA[
 		/*	deleteBoard2	*/
 			DELETE
-			FROM  tb_jw_notice
+			FROM  tb_notice
 			WHERE 1=1
 			AND USER_CODE = (SELECT USER_CODE FROM TB_COM_USER WHERE ID = #{ID})
 		]]>
@@ -135,9 +135,9 @@
 		SELECT
 		    BNO, TITLE, CONTENT, WRITER, REGDATE
 	    from(
-		    SELECT /*+INDEX_DESC(tb_jw_notice pk_notice) */
+		    SELECT /*+INDEX_DESC(tb_notice pk_notice) */
 		        ROWNUM rn, bno, title, content, writer, regdate
-		    FROM tb_jw_notice
+		    FROM tb_notice
 		    WHERE 
 		]]>	
 			<trim prefix="(" suffix=") AND " prefixOverrides="OR">
@@ -167,7 +167,7 @@
 	
 	<select id="getTotalCount" resultType="int">
 		<![CDATA[
-			select count(*) from tb_jw_notice 
+			select count(*) from tb_notice 
 			
 			where 
 		]]>

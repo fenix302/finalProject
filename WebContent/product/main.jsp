@@ -61,7 +61,7 @@
 
 <c:set var="productManageUrl">${context}/work/product/retrieveProductListForManage.do</c:set>
 <c:set var="statisticsForProductUrl">${context}/work/sell/retrieveStatisticsForProduct.do</c:set>
-<c:set var="statisticsForStockUrl">${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=R</c:set>
+<c:set var="statisticsForStockUrl">${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=C</c:set>
 
 
 
@@ -146,40 +146,40 @@
                 <div class="inner_group">
                     <div class="item1">
 	                    <div class="img">
-	                       <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${earUrl1}')" ><img src="${context}/earImg/ear06.jpg" ></a>
+	                       <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${coffeeUrl1}')" ><img src="${context}/coffeeImg/latte01.jpg" ></a>
 	                    </div>
                         <div class="item">
-                            <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${earUrl1}')" ><p class="item_name">3chain drop earring</p></a>
+                            <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${coffeeUrl1}')" ><p class="item_name">3chain drop earring</p></a>
                             <p class="item_ann">각기 다른 세가지 체인이 믹스되어 찰랑거리며 반짝이는 것이 포인트인 드롭 귀걸이</p>
                         </div>
                     </div>
 
                     <div class="item2">
 	                    <div class="img">
-	                       <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${neckUrl1}')" ><img src="${context}/neckImg/neck06.jpg" ></a>
+	                       <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${goodsUrl1}')" ><img src="${context}/goodsImg/goods01.jpg" ></a>
 	                    </div>
                         <div class="item">
-                            <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${neckUrl1}')" ><p class="item_name">14k 라운드 콤비 목걸이</p></a>
+                            <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${goodsUrl1}')" ><p class="item_name">14k 라운드 콤비 목걸이</p></a>
                             <p class="item_ann">섬세한 디테일이 돋보이는 두개의 링이 콤비로 제작된 목걸이</p>
                         </div>
                     </div>
 
                     <div class="item3">
 	                    <div class="img">
-	                       <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${ringUrl1}')" ><img src="${context}/ringImg/ring03.jpg" ></a>
+	                       <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${presentUrl1}')" ><img src="${context}/presentImg/present01.jpg" ></a>
 	                    </div>
                         <div class="item">
-                            <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${ringUrl1}')" ><p class="item_name">탄생석 하트 체인반지</p></a>
+                            <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${presentUrl1}')" ><p class="item_name">탄생석 하트 체인반지</p></a>
                             <p class="item_ann">빛나는 당신의 일상 속 나만의 탄생석을 입힌 작은 별</p>
                         </div>
                     </div>
 
                     <div class="item4">
 	                    <div class="img">
-	                       <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${braceletUrl1}')" ><img src="${context}/braceletImg/bracelet07.jpg" ></a>
+	                       <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${regularUrl1}')" ><img src="${context}/regularImg/reg01.jpg" ></a>
 	                    </div>
                         <div class="item">
-                            <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${braceletUrl1}')" ><p class="item_name">Slim ballchain Bracelet (믹스체인/골드)</p></a>
+                            <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${regularUrl1}')" ><p class="item_name">Slim ballchain Bracelet (믹스체인/골드)</p></a>
                             <p class="item_ann">로맨틱함으로 룩에 포인트를 줄 수 있는 아이템</p>
                         </div>
                     </div>
@@ -197,40 +197,40 @@
                 <div class="inner_group">
                     <div class="item1">
 	                    <div class="img">
-	                       <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${earUrl2}')" ><img src="${context}/earImg/ear03.jpg" ></a>
+	                       <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${coffeeUrl2}')" ><img src="${context}/coffeeImg/latte02.jpg"></a>
 	                    </div>
                         <div class="item">
-                            <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${earUrl2}')" ><p class="item_name">blueberries</p></a>
+                            <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${coffeeUrl2}')" ><p class="item_name">blueberries</p></a>
                             <p class="item_ann">실버 볼이 지닌 구 형태의 조형성과 반지가 가진 원의 조합을 떠올리며 진행한 디자인</p>
                         </div>
                     </div>
 
                     <div class="item2">
 	                    <div class="img">
-	                       <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${neckUrl2}')" ><img src="${context}/neckImg/neck02.jpg" ></a>
+	                       <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${goodsUrl2}')" ><img src="${context}/goodsImg/goods02.jpg" ></a>
 	                    </div>
                         <div class="item">
-                            <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${neckUrl2}')" ><p class="item_name">애비로드 실버 목걸이</p></a>
+                            <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${goodsUrl2}')" ><p class="item_name">애비로드 실버 목걸이</p></a>
                             <p class="item_ann">레이스 체인과 모던 클래식한 커브 체인을 두 줄 믹스로 레이어드한 목걸이</p>
                         </div>
                     </div>
 
                     <div class="item3">
 	                    <div class="img">
-	                       <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${ringUrl2}')" ><img src="${context}/ringImg/ring01.jpg" ></a>
+	                       <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${presentUrl2}')" ><img src="${context}/presentImg/present02.jpg" ></a>
 	                    </div>
                         <div class="item">
-                            <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${ringUrl2}')" ><p class="item_name">실버 볼 하트 반지</p></a>
+                            <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${presentUrl2}')" ><p class="item_name">실버 볼 하트 반지</p></a>
                             <p class="item_ann">러블리한 하트 이니셜 팬던트와 볼 쉐입으로 즐기는 드롭형 반지</p>
                         </div>
                     </div>
 
                     <div class="item4">
 	                    <div class="img">
-	                       <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${braceletUrl2}')" ><img src="${context}/braceletImg/bracelet01.jpg" ></a>
+	                       <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${regularUrl2}')" ><img src="${context}/regularImg/reg02.jpg" ></a>
 	                    </div>
                         <div class="item">
-                            <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${braceletUrl2}')" ><p class="item_name">Lucky days Bracelet</p></a>
+                            <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${regularUrl2}')" ><p class="item_name">Lucky days Bracelet</p></a>
                             <p class="item_ann">초록색 젬스톤과 하트, 말발굽 참 장식, 행운 가득한 브레이슬릿</p>
                         </div>
                     </div>
