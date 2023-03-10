@@ -19,27 +19,6 @@
 <link rel="stylesheet" href="${context}/css/owl.carousel.min.css">
 <script src="${context}/js/owl.carousel.min.js"></script>
 
-<!-- popup -->
-<script src="${context}/js/jquery.cookie.js"></script>
-<script>
-	$(function() {
-		//쿠키("popup")의 값이 'none'이면 id 값이 인 요소를 숨김니다.
-		if ($.cookie('popup') == 'none') {
-			$('#modal').hide();
-		}
-		var $expireChk = $('#expireChk');
-		$('.closeBtn').on('click', closePop);
-		function closePop() {
-			if ($expireChk.is(':checked')) {
-				$.cookie('popup', 'none', {
-					expires : 3,
-					path : '/'
-				});
-			}
-			$('#modal').fadeOut('fast');
-		}
-	});
-</script>
 
 <title>천성</title>
 </head>
@@ -69,8 +48,6 @@
 
 		<!-- 전체 -->
 		<div class="con_main">
-		
-		
 			<!-- 배너 -->
 			<div class="banner_main">
 				<div class="owl-carousel">
@@ -97,12 +74,12 @@
 						margin : 0,
 						autoplay : true,
 						autoplayTimeout : 3000,
-						autoplayHoverPause : true
+						autoplayHoverPause : true,
+						dots:false
 					});
 				</script>
 			</div>
 			<!-- 배너 끝 -->
-			
 			
 			<!-- 컨텐츠 1 시작 -->
 			<div id="forU_main">
@@ -130,7 +107,8 @@
 						margin : 0,
 						autoplay : true,
 						autoplayTimeout : 3000,
-						autoplayHoverPause : true
+						autoplayHoverPause : true,
+						dots:false
 					});
 				</script>				
 			</div>
