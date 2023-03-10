@@ -9,37 +9,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="description" content="main.jsp">
 
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200&display=swap"
-	rel="stylesheet" />
+
 <link rel="stylesheet" href="${context}/css/main2.css">
 <script src="${context}/js/jquery-1.9.1.js"></script>
 
 <!-- owl.carousel -->
 <link rel="stylesheet" href="${context}/css/owl.carousel.min.css">
 <script src="${context}/js/owl.carousel.min.js"></script>
-
-<!-- popup -->
-<script src="${context}/js/jquery.cookie.js"></script>
-<script>
-	$(function() {
-		//쿠키("popup")의 값이 'none'이면 id 값이 인 요소를 숨김니다.
-		if ($.cookie('popup') == 'none') {
-			$('#modal').hide();
-		}
-		var $expireChk = $('#expireChk');
-		$('.closeBtn').on('click', closePop);
-		function closePop() {
-			if ($expireChk.is(':checked')) {
-				$.cookie('popup', 'none', {
-					expires : 3,
-					path : '/'
-				});
-			}
-			$('#modal').fadeOut('fast');
-		}
-	});
-</script>
 
 <title>천성</title>
 </head>
@@ -69,8 +45,6 @@
 
 		<!-- 전체 -->
 		<div class="con_main">
-		
-		
 			<!-- 배너 -->
 			<div class="banner_main">
 				<div class="owl-carousel">
@@ -102,7 +76,6 @@
 				</script>
 			</div>
 			<!-- 배너 끝 -->
-			
 			
 			<!-- 컨텐츠 1 시작 -->
 			<div id="forU_main">
