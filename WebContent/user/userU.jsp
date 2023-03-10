@@ -245,7 +245,7 @@
 		                    <div class="find_btn2">
 		                    	<label class="control-label"><b></b></label>
 		                    	<div class="find_btn2">
-			                        <input type="button" class="btn user-post-btn find_btn" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
+			                        <input type="button" class="btn user-post-btn find_btn" onclick="javascript:fn_openAddressPopup();" value="우편번호 찾기">
 		                    	</div>	
 			                    <input type="hidden" id="postNum" name="postNum"> 
 		                    </div>
