@@ -26,7 +26,6 @@
 	<script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script>
     <script src="${context}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
 
-	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <%-- 	<script src="${context}/js/bootstrap.bundle.js"></script> --%>
 	<script type="text/javascript">
 
@@ -211,7 +210,6 @@
 						<input type="hidden" id="phoneNum" name="phoneNum">
 	                </div>	
 	                	             	
-	         <label></label> 
 	         
 	                <!-- 주소 -->  	
 	                <div class="q1 form-group">	                
@@ -219,15 +217,14 @@
 												
 	                    <!-- 우편번호 -->							                
 	                    <div class="form-group box2">
-							<label for="postnum1" class="control-label"><b id="naming">주소</b></label>              
+							<label for="zipNo" class="control-label"><span></span><b id="naming">주소</b></label>              
 		                    <p id="nameTag"></p>
 		                    <div class="find_add">
-		                        <input class="form-control" type="text" id="zipNo" placeholder="우편번호" disabled="disabled">
+		                        <input class="form-control" type="text" id="zipNo" placeholder="우편번호" disabled="disabled" required="required" />
 		                    </div>
 		                    
 		                    <!-- 우편번호 찾기 -->
 		                    <div class="find_btn2">
-		                    	<label class="control-label"><b></b></label>
 		                    	<div class="find_btn2">
 			                        <input type="button" class="btn user-post-btn find_btn" onclick="javascript:fn_openAddressPopup();" value="우편번호 찾기">
 		                    	</div>	
@@ -239,7 +236,7 @@
 	                    
 	                    <!-- 도로명주소 -->
 	                    <div class="form-group box2">
-							<label for="postnum2" class="control-label add_label"></label>	                    
+							<label for="mainAddress" class="control-label add_label"></label>	                    
 		                    <div>
 		                       <input class="form-control" type="text" id="mainAddress" placeholder="도로명주소" disabled="disabled"/>
 		                    </div>
@@ -249,7 +246,7 @@
 
 	                    <!-- 상세 주소 -->	                    
 	                    <div class="form-group box2">
-	                    	<label for="address1" class="control-label col-md-3"></label>
+	                    	<label for="subAddress" class="control-label col-md-3"></label>
 		                    <div>
 								<input class="form-control" type="text" id="subAddress" placeholder="상세주소"/>
 		                    </div>

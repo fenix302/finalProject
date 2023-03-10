@@ -91,8 +91,7 @@
 			<input type="hidden" name="currentPage" value="1"/>
 			<input type="hidden" name="countPerPage" value="100"/>
 			<input type="hidden" name="resultType" value="json"/>
-			<input type="hidden" id="confmKey" name="confmKey" value="devU01TX0FVVEgyMDIzMDExMTEyMTMzNjExMzQxNzM=		
-"/>
+			<input type="hidden" id="confmKey" name="confmKey" value="devU01TX0FVVEgyMDIzMDExMTEyMTMzNjExMzQxNzM="/>
 		
 			<div class="form-group">
 				<input type="text" id="keyword" name="keyword" class="form-control" placeholder="도로명+건물번호, 건물명, 지번을 입력하세요." onkeypress="javascript:enterSearch();" />

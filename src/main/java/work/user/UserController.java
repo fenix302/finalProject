@@ -218,44 +218,6 @@ public class UserController implements HttpSessionListener{
 		session.invalidate();
 	}
 
-	@RequestMapping(value="/work/applicant/retrievePostByDong.do")
-	@ResponseBody
-	public ResponseEntity<List<Map<String, String>>> retrievePostByDong(HttpServletRequest request){
-		String paramdong = request.getParameter("dong");
-
-		Map<String, String> userParam = new HashMap<String, String>();
-
-		userParam.put("dong", paramdong);
-
-		List<Map<String, String>> dsPost = userService.retrievePostByDong(userParam);
-
-		JSONArray jsonPostArr = new JSONArray();
-		JSONObject jsonObj = null;
-
-		for(int i = 0; i < dsPost.size(); i++){
-			jsonObj = new JSONObject();
-			String zipcode = dsPost.get(i).get("ZIPCODE");
-			String sido = dsPost.get(i).get("SIDO");
-			String gugun = dsPost.get(i).get("GUGUN");
-			String dong = dsPost.get(i).get("DONG");
-			String bunji = dsPost.get(i).get("BUNJI");
-
-			jsonObj.put("zipcode", zipcode);
-			jsonObj.put("sido", sido);
-			jsonObj.put("gugun", gugun);
-			jsonObj.put("dong", dong);
-			jsonObj.put("bunji", bunji);
-
-			jsonPostArr.add(jsonObj);
-		}
-
-		HttpHeaders resHeader = new HttpHeaders();
-		resHeader.add("Content-Type","text/javascript;charset=UTF-8");
-
-		ResponseEntity resultMsg = new ResponseEntity<List<Map<String, String>>>(jsonPostArr, resHeader, HttpStatus.OK);
-		return resultMsg;
-	}
-
 
 
 }

@@ -28,7 +28,6 @@
 	<script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script>
     <script src="${context}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
 
-	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <%-- 	<script src="${context}/js/bootstrap.bundle.js"></script> --%>
 	<script type="text/javascript">
 
