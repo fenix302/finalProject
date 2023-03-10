@@ -280,7 +280,7 @@ label {
 
 
 /* 주소 */
-#postNum1{
+#zipNo{
 	width: 120px !important;
 	display: inline-block;
 	margin-right: 6px;
@@ -316,4 +316,15 @@ textarea {
 }
 
 
+/* 도로명주소 popup */
+.my_address1{
+	display: inline-block !important;
+	width: 84% !important;
+}
 
+.my_address2{
+	display: inline-block !important;
+	height: 50px;
+	margin-bottom: 5px;
+	margin-left: 15px;
+}

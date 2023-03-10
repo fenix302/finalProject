@@ -86,17 +86,17 @@
 </script>
 </head>
 <div class="container" style="margin-top:25px;">
-	<div id="memberSearchDiv" class="text-center">
+	<div id="memberSearchDiv" class="text-center" >
 		<form id="searchForm" name="searchForm" method="post" class="navbar-form navbar-left" role="search" onsubmit="event.preventDefault();">
 			<input type="hidden" name="currentPage" value="1"/>
 			<input type="hidden" name="countPerPage" value="100"/>
 			<input type="hidden" name="resultType" value="json"/>
 			<input type="hidden" id="confmKey" name="confmKey" value="devU01TX0FVVEgyMDIzMDExMTEyMTMzNjExMzQxNzM="/>
 		
-			<div class="form-group">
+			<div class="form-group my_address1">
 				<input type="text" id="keyword" name="keyword" class="form-control" placeholder="도로명+건물번호, 건물명, 지번을 입력하세요." onkeypress="javascript:enterSearch();" />
 			</div>
-			<button type="button" class="btn btn-default" onclick="javascript:fn_search();">검색</button>
+			<button type="button" class="btn btn-default my_address2" onclick="javascript:fn_search();">검색</button>
 		</form>
 		
 	</div>

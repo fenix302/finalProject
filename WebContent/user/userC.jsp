@@ -246,7 +246,7 @@
 
 	                    <!-- 상세 주소 -->	                    
 	                    <div class="form-group box2">
-	                    	<label for="subAddress" class="control-label col-md-3"></label>
+	                    	<label for="subAddress" class="control-label"></label>
 		                    <div>
 								<input class="form-control" type="text" id="subAddress" placeholder="상세주소"/>
 		                    </div>
