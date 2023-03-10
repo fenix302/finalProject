@@ -114,10 +114,10 @@
     <div class="con">
         <div class="banner">
             <div class="owl-carousel">
-                <div class="banner_img"> <img src="/css/images/banner_01.png" alt="#"> </div>
-                <div class="banner_img"> <img src="/css/images/banner_02.png" alt="#"> </div>
-                <div class="banner_img"> <img src="/css/images/banner_03.png" alt="#"> </div>
-                <div class="banner_img"> <img src="/css/images/banner_04.png" alt="#"> </div>
+                <div class="banner_img"> <img src="/css/images/banner_01.jpg" alt="#"> </div>
+                <div class="banner_img"> <img src="/css/images/banner_02.jpg" alt="#"> </div>
+                <div class="banner_img"> <img src="/css/images/banner_03.jpg" alt="#"> </div>
+                <div class="banner_img"> <img src="/css/images/banner_04.jpg" alt="#"> </div>
                 <!-- 이미지 배너 사이즈 맞게 수정 예정 -->
             </div>
 

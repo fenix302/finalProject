@@ -1,0 +1,43 @@
+/* 珥덇린�솕 */
+@charset "utf=8";
+
+* {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   text-decoration: none;
+   word-break: keep-all;
+   font-family: 'Noto Sans KR', sans-serif;
+}
+
+a{
+	cursor: pointer;
+}
+
+.con{
+    max-width: 100%;
+}
+
+
+
+/* 배너 */
+.banner{
+    width: 100%;
+    max-height: 750px;
+    margin-bottom: 145px;
+}
+
+
+.content{
+    max-width: 1440px;
+    margin: 0 auto;
+    margin-bottom: 140px;
+}
+
+/* 배너 이미지 */
+
+.banner_img>img{
+    object-fit: cover;
+    max-height: 750px;
+}
+
