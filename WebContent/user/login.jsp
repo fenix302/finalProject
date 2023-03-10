@@ -119,20 +119,22 @@
 	                        <div class="form-group d-grid gap-2 mt-4">
 	                            <button type="button" class="btn btn-lg user-login-btn btn-block" onclick="ajaxLoginCheck();"><strong>Login</strong></button>
 	                            
+	                            <button type="button" class="btn btn-lg user-join-btn btn-block" onclick="location.href = '${context}/user/userC.jsp'"><strong>회원가입</strong></button>
 	                            
-	                            <ul class="btn btn-lg btn-block user-kakao-btn">
-						           <li onclick="kakaoLogin();">
-						               <a href="javascript:void(0)">
-						               		<button type="button" class="btn btn-lg btn-block kakao-btn" ><strong>카카오로그인</strong></button>
-								           <!-- <img alt="카카오로그인" src="/userImg/kakao_login.png" style="width: 100%;"> -->
-								       </a>
-								    </li>
-						        </ul>
+	                            
+	                            
+<!-- 	                            <ul class="btn btn-lg btn-block user-kakao-btn"> -->
+<!-- 						           <li onclick="kakaoLogin();"> -->
+<!-- 						               <a href="javascript:void(0)"> -->
+<!-- 						               		<button type="button" class="btn btn-lg btn-block kakao-btn" ><strong>카카오로그인</strong></button> -->
+<!-- 								           <img alt="카카오로그인" src="/userImg/kakao_login.png" style="width: 100%;"> -->
+<!-- 								       </a> -->
+<!-- 								    </li> -->
+<!-- 						        </ul> -->
 							</div>
 							
 	                        <div class="form-group user-find">
-	                            <span><a href="${context}/user/idFind.jsp">아이디 찾기</a>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="pwFind.jsp">비밀번호 찾기</a></span> 
-	                            <span>&nbsp;&nbsp;|&nbsp;&nbsp; <a href="${context}/work/user/createUser.do">회원가입</a></span><br>
+	                            <span><a href="${context}/user/idFind.jsp">아이디 찾기</a></span> 
 	                        </div>
                     	</fieldset>
                     </form>
@@ -143,27 +145,27 @@
 	<jsp:include page="../common/foot.jsp"></jsp:include>
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script>
-Kakao.init('66ca82d13bdbacc72649b8f16cf511ed'); //발급받은 키 중 javascript키를 사용해준다.
-console.log(Kakao.isInitialized()); // sdk초기화여부판단
-//카카오로그인
-function kakaoLogin() {
-    Kakao.Auth.login({
-      success: function (response) {
-        Kakao.API.request({
-          url: '/v2/user/me',
-          success: function (response) {
-        	  console.log(response)
-          },
-          fail: function (error) {
-            console.log(error)
-          },
-        })
-      },
-      fail: function (error) {
-        console.log(error)
-      },
-    })
-  }
+// Kakao.init('66ca82d13bdbacc72649b8f16cf511ed'); //발급받은 키 중 javascript키를 사용해준다.
+// console.log(Kakao.isInitialized()); // sdk초기화여부판단
+// //카카오로그인
+// function kakaoLogin() {
+//     Kakao.Auth.login({
+//       success: function (response) {
+//         Kakao.API.request({
+//           url: '/v2/user/me',
+//           success: function (response) {
+//         	  console.log(response)
+//           },
+//           fail: function (error) {
+//             console.log(error)
+//           },
+//         })
+//       },
+//       fail: function (error) {
+//         console.log(error)
+//       },
+//     })
+//   }
 </script>
 </body>
 </html>

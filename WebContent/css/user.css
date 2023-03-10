@@ -143,6 +143,14 @@
 	height: 50px !important;
 }
 
+/* 회원가입 버튼*/
+.user-join-btn{
+	background-color: pink !important;	
+	height: 50px !important;
+	color : #fff !important;
+	font-size : 16px !important;
+}
+
 
 /* 아이디찾기/비밀번호찾기 */
 .email-group{
