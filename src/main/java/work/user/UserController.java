@@ -106,7 +106,7 @@ public class UserController implements HttpSessionListener{
 		}else{
 			checkMsg = "<div class='col-md-5 col-md-offset-2'>"
 					+ "<p>회원님의 ID는 <font color='red'><strong>" + id + "</strong></font>입니다."
-					+ " <a href='login.jsp'>로그인 페이지로 이동</a> | <a href='pwFind.jsp'>PW찾기</a></p>"
+					+ " <a href='login.jsp'>로그인 페이지로 이동</a></p>"
 					+ "</div>";
 		}
 
