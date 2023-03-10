@@ -33,10 +33,10 @@ a{
 <c:set var="homeUrl">${context}/work/product/goMain.do</c:set>
 <c:set var="loginUrl">${context}/user/login.jsp</c:set>
 
-<c:set var="neckUrl">${context}/work/product/retrieveProductList.do?category=N</c:set>
-<c:set var="ringUrl">${context}/work/product/retrieveProductList.do?category=R</c:set>
-<c:set var="braceletUrl">${context}/work/product/retrieveProductList.do?category=B</c:set>
-<c:set var="earUrl">${context}/work/product/retrieveProductList.do?category=E</c:set>
+<c:set var="coffeeUrl">${context}/work/product/retrieveProductList.do?category=C</c:set>
+<c:set var="goodsUrl">${context}/work/product/retrieveProductList.do?category=G</c:set>
+<c:set var="presentUrl">${context}/work/product/retrieveProductList.do?category=P</c:set>
+<c:set var="regularUrl">${context}/work/product/retrieveProductList.do?category=R</c:set>
 
 
 
@@ -68,10 +68,10 @@ a{
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${earUrl}')">귀걸이</a></li>
-                                <li><a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${neckUrl}')">목걸이</a></li>
-                                <li><a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${ringUrl}')">반지</a></li>
-                                <li><a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${braceletUrl}')">팔찌</a></li>
+                                <li><a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${coffeeUrl}')">원액</a></li>
+                                <li><a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${goodsUrl}')">굿즈</a></li>
+                                <li><a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${presentUrl}')">선물용</a></li>
+                                <li><a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${regularUrl}')">정기구매</a></li>
                             </ul>
                         </li>
     

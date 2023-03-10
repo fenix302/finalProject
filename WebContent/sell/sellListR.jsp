@@ -192,18 +192,18 @@
 			                         <tr>
 			                         	<td style="text-align: center; vertical-align: middle;">${dsSellList.SELL_CODE}</td>
 			                            <td style="text-align: center; vertical-align: middle;">
-										<img name="image" width="110px" height="110px" src="${context}/braceletImg/${dsSellList.PRODUCT_IMAGE}" class="img-thumbnail">
+										<img name="image" width="110px" height="110px" src="${context}/coffeeImg/${dsSellList.PRODUCT_IMAGE}" class="img-thumbnail">
 											<script type="text/javascript">
 											 	var productCategoryCd = '${dsSellList.PRODUCT_CATEGORY_CD}';
 
-											 	if(productCategoryCd == 'N'){
-													imageFolder = "neckImg";
+											 	if(productCategoryCd == 'C'){
+													imageFolder = "coffeeImg";
+												}else if(productCategoryCd == 'G'){
+													imageFolder = "goodsImg";
+												}else if(productCategoryCd == 'P'){
+													imageFolder = "presentImg";
 												}else if(productCategoryCd == 'R'){
-													imageFolder = "ringImg";
-												}else if(productCategoryCd == 'E'){
-													imageFolder = "earImg";
-												}else if(productCategoryCd == 'B'){
-													imageFolder = "braceletImg";
+													imageFolder = "regularImg";
 												}
 												path = $("img[name='image']").eq('${dsProductIdx.index}').attr("src");
 
