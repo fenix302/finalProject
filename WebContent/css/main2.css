@@ -46,9 +46,36 @@ a {
 	width: 100%;
 	min-height: 780px;
 	background-color: #E6EAEC;
+	padding-bottom: 80px;
+}
+
+.forU_main{
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+.forU_img{
+	margin: 0 
+}
+
+.forU_main>.forU_img{
+	text-align: center;
+}
+
+.forU_main>.forU_img>a>img{
+	margin: 20px 20px 20px 20px;
+}
+
+.f3{
+	font-size: 24px;
+	font-weight: 700;
+	padding: 100px 0px 0px 0px; 
+	text-align: center;
+	color: #011E41;
 }
 
 /* --------------------------------------------- */
+
 
 /* 컨텐츠2 */
 #announce_main, .ann_img {
@@ -82,7 +109,7 @@ a {
 }
 
 .ann_positon{
-	padding: 150px 0px 150px 0px;
+	padding: 120px 0px 120px 0px;
 	max-width: 1440px;
 }
 

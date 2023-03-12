@@ -19,15 +19,17 @@
 <link rel="stylesheet" href="${context}/css/owl.carousel.min.css">
 <script src="${context}/js/owl.carousel.min.js"></script>
 
-
+<!-- aos  -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    
+    
 <title>천성</title>
 
+</head>
 
 
 <!-- ---------------------------------------------------------------------------------------------- -->
-
-
-</head>
 
 
 <%-- <c:set var="loginUrl">${context}/user/login.jsp</c:set>
@@ -94,6 +96,39 @@
 			
 			<!-- 컨텐츠 1 시작 -->
 			<div id="forU_main">
+				<div class="forU_main">
+					<p class="f3">For U!</p>
+				</div>
+				
+				<div class="forU_main">
+					<div data-aos="fade-right" class="forU_img">
+						<a>
+							<img alt="혜택1" src="/css/images/forU_1.jpg"/>
+						</a>
+					</div>
+					<div data-aos="fade-right" class="forU_img">
+						<a>
+							<img alt="혜택1" src="/css/images/forU_2.jpg"/>
+						</a>
+					</div>
+					
+					<div data-aos="fade-right" class="forU_img">
+						<a>
+							<img alt="혜택1" src="/css/images/forU_3.jpg"/>
+						</a>
+					</div>
+					
+					<div data-aos="fade-right" class="forU_img">
+						<a>
+							<img alt="혜택1" src="/css/images/forU_4.jpg"/>
+						</a>
+					</div>
+					
+					<!-- aos 스크립트 -->												
+			        <script> 
+			            AOS.init(); // 자바스크립트로 init()을 해야 동작한다.
+			        </script>				
+				</div>
 			</div>
 			<!-- 컨텐츠1 끝 -->
 			
@@ -101,6 +136,7 @@
 			<!-- 컨텐츠 2 시작 -->
 			<div id="announce_main">
 				<div class="owl-carousel">
+					<!-- 2-1 -->
 					<div class="ann_img ann_img_first">
 						<div class="ann_word">
 							<div class="ann_positon">
@@ -110,10 +146,10 @@
 								</p>
 								<p class="f6"> 자세히 알아보기 ▶ </p>													
 							</div>
-						</div>		
-						
+						</div>							
 					</div>
 					
+					<!-- 2-2 -->
 					<div class="ann_img ann_img_snd">
 						<div class="ann_word">
 							<div class="ann_positon">
@@ -135,7 +171,7 @@
 						loop : true,
 						margin : 0,
 						autoplay : true,
-						autoplayTimeout : 3000,
+						autoplayTimeout : 4000,
 						autoplayHoverPause : true,
 						dots:false
 					});
