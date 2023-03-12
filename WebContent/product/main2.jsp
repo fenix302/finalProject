@@ -101,15 +101,29 @@
 			<!-- 컨텐츠 2 시작 -->
 			<div id="announce_main">
 				<div class="owl-carousel">
-					<div class="ann_img">
-						<a>
-							<img src="/css/images/announce_main01.png" alt="#">					
-						</a>
+					<div class="ann_img ann_img_first">
+						<div class="ann_word">
+							<div class="ann_positon">
+								<p class="f4"> 카페, 천성은?</p>	
+								<p class="f5"> 카페 천성은 어떤 브랜드고, <br/>
+									어떤 브랜드인지 궁금하신 가요?
+								</p>
+								<p class="f6"> 자세히 알아보기 ▶ </p>													
+							</div>
+						</div>		
+						
 					</div>
-					<div class="ann_img">
-						<a>
-							<img src="/css/images/announce_main02.png" alt="#">
-						</a>
+					
+					<div class="ann_img ann_img_snd">
+						<div class="ann_word">
+							<div class="ann_positon">
+								<p class="f4"> 카페, 천성은?</p>	
+								<p class="f5"> 카페 천성은 어떤 브랜드고, <br/>
+									어떤 브랜드인지 궁금하신 가요?
+								</p>
+								<p class="f6"> 자세히 알아보기 ▶ </p>													
+							</div>					
+						</div>
 					</div>
 				</div>
 
