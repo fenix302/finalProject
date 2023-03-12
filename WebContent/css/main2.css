@@ -176,10 +176,56 @@ a {
 
 /* --------------------------------------------- */
 
-/* 컨텐츠3 */
+
+/* 컨텐츠3 - 리뷰 */
 #review_main {
-	max-width: 1440px;
-	background-color: #115361;
-	height: 800px;
+	max-width: 1000px;
+	height : auto;
+	margin: 0 auto;
+	padding-bottom: 140px;
+}
+
+.review_img > a> img{
+	max-width: 100%; 
+	height: auto;
+}
+
+.f7{
+	font-size: 16px;
+	font-weight: 300;
+	margin-top: 20px !important;
+	margin-bottom : 0px !important;
+	text-align: center !important;	
+	color: 666666;
+}
+
+.btn_box_main{
+	margin-top: 40px;
+	text-align: center;
 	margin: 0 auto;
 }
+
+.btn_main{
+	width: 200px;
+	height: 50px;
+	border: solid #011E41 2px;
+	margin-top: 40px;
+}
+
+.f8{
+	line-height: 45px !important;
+	text-align: center !important;
+	color: #011E41;
+	font-weight : 500 ;
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+.btn_main:hover, .f8:hover {
+	background-color: #011E41;
+	color: #fff;
+}
+
+/* --------------------------------------------- */
+
+

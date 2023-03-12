@@ -182,6 +182,26 @@
 			
 			<!-- 컨텐츠 3 - 리뷰 시작 -->
 			<div id="review_main">
+				<div class="review_fro">
+					<p class="f3">REVIEW</p>
+					<p class="f7"> 누적 후기 1.2만개 | 평균 별점 ★★★★★  4.9</p>
+				</div>
+				
+				<!-- 이미지 -->
+				<div class="review_img">
+					<a>
+						<img alt="review" src="/css/images/review_large.png"/>
+					</a>
+				</div>
+				
+				<!-- 버튼 -->
+				<div  class="btn_box_main">
+					<a>
+						<button class="btn_main">
+							<p class="f8">리뷰 더보기</p>
+						</button>
+					</a>
+				</div>				
 			</div>
 			<!-- 컨텐츠 3 끝 -->			
 						
