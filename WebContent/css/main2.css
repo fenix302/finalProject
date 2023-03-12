@@ -44,7 +44,7 @@ a {
 /* 컨텐츠1 - 당신을 위한 */
 #forU_main {
 	width: 100%;
-	min-height: 780px;
+	min-height: 760px;
 	background-color: #E6EAEC;
 	padding-bottom: 80px;
 }
@@ -69,9 +69,33 @@ a {
 .f3{
 	font-size: 24px;
 	font-weight: 700;
-	padding: 100px 0px 0px 0px; 
+	padding: 120px 0px 0px 0px; 
 	text-align: center;
 	color: #011E41;
+	margin-bottom: 10px !important;
+}
+
+/* 컨텐츠1 미디어쿼리 */
+@media (min-width: 1440px){
+	
+	#forU_main {
+		min-height: 760px;
+		padding-bottom: 0px !important;
+	}
+	
+	.forU_main{
+		display: flex;
+		max-width: 1440px;
+	}
+	
+	.forU_main>.forU_img>a>img{
+	margin: 20px 20px 20px 0px;
+	max-width: 340px;
+	}
+	
+	.f3{
+		margin-bottom: 0px !important;
+	}	
 }
 
 /* --------------------------------------------- */
@@ -133,6 +157,21 @@ a {
 .f6{
 	font-size: 14px;
 	margin-top: 40px !important;
+}
+
+
+/* 컨텐츠2 미디어쿼리 */
+@media (min-width: 1440px){
+	.f4, .f5, .f6 {
+		margin: 0px 0px 0px 0px;
+		text-align: left !important;
+		color: #fff
+	}
+	
+	.ann_positon{
+		padding: 150px 0px 150px 0px;
+		max-width: 1440px;
+	}
 }
 
 /* --------------------------------------------- */

@@ -106,19 +106,19 @@
 							<img alt="혜택1" src="/css/images/forU_1.jpg"/>
 						</a>
 					</div>
-					<div data-aos="fade-right" class="forU_img">
+					<div data-aos="fade-right"  data-aos-delay="100" class="forU_img">
 						<a>
 							<img alt="혜택1" src="/css/images/forU_2.jpg"/>
 						</a>
 					</div>
 					
-					<div data-aos="fade-right" class="forU_img">
+					<div data-aos="fade-right"  data-aos-delay="200" class="forU_img">
 						<a>
 							<img alt="혜택1" src="/css/images/forU_3.jpg"/>
 						</a>
 					</div>
 					
-					<div data-aos="fade-right" class="forU_img">
+					<div data-aos="fade-right"  data-aos-delay="300" class="forU_img">
 						<a>
 							<img alt="혜택1" src="/css/images/forU_4.jpg"/>
 						</a>
