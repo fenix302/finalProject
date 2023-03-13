@@ -76,7 +76,7 @@
 						<h4><b>${dsProductList.PRODUCT_NAME}</b></font></h4>
 			        </div>
 			        <div class="col-md-12">
-			        <button type="btn" style="width: 100%;"><a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}">"Add to Cart ------ ${dsProductList.PRODUCT_UNIT_PRICE}원"</a></button>
+			       <p><a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}">"${dsProductList.PRODUCT_UNIT_PRICE}원"</a></p>
 <%-- 			        	<h4 style="font-family: inherit;"><b>${dsProductList.PRODUCT_UNIT_PRICE}원</b></h4> --%>
 			        </div>
 <!-- 			        <div class="col-md-12"> -->
@@ -120,7 +120,7 @@
 						<h4><b>${dsProductList.PRODUCT_NAME}</b></font></h4>
 			        </div>
 			        <div class="col-md-12">
-			        <button type="btn" style="width: 100%;"><a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}">"Add to Cart ------ ${dsProductList.PRODUCT_UNIT_PRICE}원"</a></button>
+			       <p><a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}">"${dsProductList.PRODUCT_UNIT_PRICE}원"</a></p>
 <%-- 			        	<h4 style="font-family: inherit;"><b>${dsProductList.PRODUCT_UNIT_PRICE}원</b></h4> --%>
 			        </div>
 <!-- 			        <div class="col-md-12"> -->

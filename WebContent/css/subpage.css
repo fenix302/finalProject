@@ -82,6 +82,15 @@ h3{
  	font-size: 18px !important;
  }
  
+ .col-md-3{
+ border: 1px solid #C7C7C7;
+	padding: 0px !important;
+	margin-left: 20px !important;
+	 box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);}
+ 
+ 
+ p{padding-left: 220px;
+color: #000 !important;}
  
 /*  main{
     width: 1441px; height: 2394px;
