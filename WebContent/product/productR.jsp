@@ -263,30 +263,42 @@
 			<div class="col-md-12">
 		    	<div class="well well-sm">
 		            <div class="text-right">
-		                <a class="btn btn-danger btn-lg" href="#reviews-anchor" id="open-review-box"><b>상품평입력</b></a>
+		                <a class="btn btn-danger btn-lg" href="#reviews-anchor" id="open-review-box"><b>상품평입력 ${dsReplyList[0].REPLY_COUNT}</b></a>
 		            </div>
-
-		            <div class="row" id="post-review-box" style="display:none;">
-		                <div class="col-md-12">
-		                    <form id="createReply" accept-charset="UTF-8" action="${context}/work/reply/createReply.do" method="post">
-		                        <input id="ratings-hidden" name="markRating" type="hidden">
-		                        <textarea class="form-control animated" cols="50" id="userReply" name="userReply" placeholder="상품평을 입력하세요..." rows="5"></textarea>
-
-		                        <div class="text-right">
-			                        <c:if test="${dsProduct.MARK_YN == 'N'}">
-			                            <div class="stars starrr" data-rating="0"></div>
-			                        </c:if>
-		                            <a class="btn btn-danger btn-sm" href="#" id="close-review-box" style="display:none; margin-right: 10px;">
-		                            <span class="glyphicon glyphicon-remove"></span>Cancel</a>
-		                            <button class="btn btn-success btn-lg" onclick="return fn_save()">Save</button>
-		                        </div>
-		                        <input type="hidden" id="productCode" name="productCode" value="${dsProduct.PRODUCT_CODE}">
-		                        <input type="hidden" id="markYn" name="markYn" value="${dsProduct.MARK_YN}">
-		                    </form>
-		                </div>
-		            </div>
+					<c:forEach items="${dsReplyList}" var="dsReplyList">
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-3" align="center">
+								<img alt="User Pic" id="userImage" src="${context}/userImg/${dsReplyList.USER_IMAGE}" height="200px" width="140px" class="img-circle">
+							</div>
+							<div class="col-md-9">
+								<table class="table table-user-information">
+									<tbody>
+										<tr>
+											<td><b>${dsReplyList.USER_ID}</b>&nbsp;&nbsp;<font size="1px;" color="gray">${dsReplyList.REPLY_DATE}</font>&nbsp;&nbsp;&nbsp;
+											<span class="stars starrr replyStar" data-rating="${dsReplyList.MARK_RATING}"></span>
+											</td>
+										</tr>
+										<tr>
+											<td>${dsReplyList.USER_REPLY}</td>
+										</tr>
+                 				   </tbody>
+                  			  </table>
+               			  </div>
+             		 </div>
+           		 </div>
+				<div class="panel-footer">
+					<c:if test="${sessionScope.userCode == dsReplyList.USER_CODE}">
+	                    <span class="pull-right">
+	                        <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" onclick="javascript:fn_remove('${dsReplyList.USER_REPLY_NO}')"><i class="glyphicon glyphicon-remove"></i></a>
+                  	  </span>
+                    </c:if>
+                    <br><br>
+                </div>
+			</c:forEach>
 		        </div>
 			</div>
+		<button class="btn btn-success btn-sm" style="float: right;" onclick="fn_back()">뒤로가기</button>
 		</div>
 	</div>
 </c:if>
