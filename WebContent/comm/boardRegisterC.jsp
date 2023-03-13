@@ -87,7 +87,7 @@
 			<div class="form-group">
 				<label for="boardWriter" class="control-label col-md-1"><b>작성자</b></label>
 				<div class="col-md-11">
-					<input class="form-control" type="text" name="writer" id="writer" required="required" maxlength="50"/>
+					<input class="form-control" type="text" name="writer" id="writer" required="required" maxlength="50" value="${sessionScope.id}" readonly="readonly"/>
 				</div>
 			</div>
 

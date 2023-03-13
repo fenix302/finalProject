@@ -99,7 +99,6 @@
 		<!-- 						select 태그의 내부는 삼항 연산자를 이용해서 해당 조건으로 검색되었다면  			-->
 		<!-- 						'selected'라는 문자열을 출력하게 해서 화면에서 선택된 항목으로 보이도록 처리합니다.  	-->
 									<select name="type">
-										<option value="" <c:out value="${pageMaker.cri.type == null ? 'selected': ''}"/>>--</option>					
 											<option value="T" <c:out value="${pageMaker.cri.type eq 'T' ? 'selected': ''}"/>>제목</option>
 											<option value="C" <c:out value="${pageMaker.cri.type eq 'C' ? 'selected': ''}"/>>내용</option>
 											<option value="W" <c:out value="${pageMaker.cri.type eq 'W' ? 'selected': ''}"/>>작성자</option>
@@ -234,9 +233,6 @@
 							
 							searchForm.submit();
 						});
-						
-						
-						
 						
 					});
 		</script>
