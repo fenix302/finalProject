@@ -19,10 +19,10 @@
 				 , (SELECT ID FROM TB_COM_USER WHERE USER_CODE = REPLY.USER_CODE) AS USER_ID
 				 , REPLY.REPLY
 				 , REPLY.REPLYDATE
-				 , (SELECT COUNT(*) FROM COMM_REPLY WHERE bno = #{bno}) AS REPLY_COUNT
+				 , (SELECT COUNT(*) FROM COMM_REPLY WHERE bno = #{BNO}) AS REPLY_COUNT
             FROM   COMM_REPLY REPLY
 			WHERE  1=1
-			AND    BNO = #{bno}
+			AND    BNO = #{BNO}
 			ORDER BY REPLY.REPLYDATE DESC
 		]]>
 	</select>
@@ -35,10 +35,10 @@
                  , (SELECT ID FROM TB_COM_USER WHERE USER_CODE = REPLY.USER_CODE) AS USER_ID
 				 , REPLY.REPLY
 				 , REPLY.REPLYDATE
-				 , (SELECT COUNT(*) FROM COMM_REPLY WHERE bno = #{bno}) AS REPLY_COUNT
+				 , (SELECT COUNT(*) FROM COMM_REPLY WHERE bno = #{BNO}) AS REPLY_COUNT
             FROM   COMM_REPLY REPLY
 			WHERE  1=1
-			AND    BNO = #{bno}
+			AND    BNO = #{BNO}
 			AND    USER_CODE = #{userCode}
 		]]>
 	</select>
@@ -67,9 +67,9 @@
 			DELETE
 			FROM  COMM_REPLY
 			WHERE 1=1
-			AND BNO = #{bno}
+			AND BNO = #{BNO}
 			AND USER_CODE = #{userCode}
-			AND RNO = #{rno}
+			AND RNO = #{RNO}
 		]]>
 	</delete>
 </mapper>

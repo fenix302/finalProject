@@ -62,23 +62,19 @@ public class CommController {
 	@RequestMapping(value="/work/comm/retrieveBoard.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView retrieveBoard(HttpServletRequest request){
 		ModelAndView mv = new ModelAndView();
-		HttpSession session = request.getSession();
-		String boardNo = request.getParameter("BNO");
-		String userCode = (String)session.getAttribute("userCode");
+		String boardNo = request.getParameter("bno");
 		
 		Map<String, String> boardParam = new HashMap<String, String>();
 		Map<String, String> replyParam = new HashMap<String, String>();
-		Map<String, String> dsBoard = commService.retrieveBoard(boardParam);
-		List<Map<String, String>> dsReplyList = commReplyService.retrieveReplyList(replyParam);
-
+		
 		boardParam.put("BNO", boardNo);
 		replyParam.put("BNO", boardNo);
-		replyParam.put("userCode", userCode);
 
-		mv.addObject("dsReplyList", dsReplyList);
-
+		Map<String, String> dsBoard = commService.retrieveBoard(boardParam);
+		List<Map<String, String>> dsReplyList = commReplyService.retrieveReplyList(replyParam);
+		
 		mv.addObject("dsBoard", dsBoard);
-
+		mv.addObject("dsReplyList", dsReplyList);
 		mv.setViewName("/comm/boardR");
 
 		return mv;

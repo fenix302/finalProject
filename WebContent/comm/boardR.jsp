@@ -171,7 +171,7 @@ li{
 					<div class="form-group">
 						<label>작성자</label> <input class="form-control" name="writer" value='<c:out value="${dsBoard.WRITER}" />' readonly="readonly">
 					</div>
-					<c:if test="${sessionScope.id == dsBoard.WRITER}">
+					<c:if test="${sessionScope.id == dsBoard.WRITER || sessionScope.grade == 'A'}">
 						<button id="buttons" data-oper='modify' class="btn btn-dark" onclick="location.href='/comm/boardRegisterU.jsp'">수정</button>
 					</c:if>	
 					<button id="buttons" data-oper='list' class="btn btn-secondary" onclick="location.href='/comm/boardListR.jsp'">목록</button>
@@ -213,28 +213,21 @@ li{
 						<label>번호</label> <input class="form-control" name="bno" value='<c:out value="${dsReplyList.RNO}" />' readonly="readonly">
 					</div>
 					<div class="form-group">
-						<label>내용</label> <input class="form-control" name="title" value='<c:out value="${dsReplyList.REPLY}" />' readonly="readonly">
+						<label>아이디</label> <input class="form-control" name="userCode" value='<c:out value="${dsReplyList.USER_CODE}" />' readonly="readonly">
 					</div>
 					<div class="form-group">
-						<label>아이디</label> 
-						<textarea class="form-control" rows="3" name="content" readonly="readonly"><c:out value="${dsReplyList.USER_CODE}"/>
+						<label>내용</label> 
+						<textarea class="form-control" rows="3" name="reply" readonly="readonly"><c:out value="${dsReplyList.REPLY}"/>
 						</textarea>
 					</div>
 					<div class="form-group">
-						<label>작성일자</label> <input class="form-control" name="writer" value='<c:out value="${dsReplyList.REPLYDATE}" />' readonly="readonly">
+						<label>작성일자</label> <input class="form-control" name="replyDate" value='<c:out value="${dsReplyList.REPLYDATE}" />' readonly="readonly">
 					</div>
 					<c:if test="${sessionScope.id == dsBoard.WRITER}">
 						<button id="buttons" data-oper='modify' class="btn btn-dark" onclick="location.href='/comm/boardRegisterU.jsp'">수정</button>
 					</c:if>	
 					<button id="buttons" data-oper='list' class="btn btn-secondary" onclick="location.href='/comm/boardListR.jsp'">목록</button>
 					
-					<form id="operForm" action="/comm/boardRegisterU" method="get">
-						<input type="hidden" name="bno" value='<c:out value="${dsBoard.BNO}"/>'>
-<%-- 						<input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}"/>'> --%>
-<%-- 						<input type="hidden" name="amount" value='<c:out value="${cri.amount}"/>'> --%>
-<%-- 						<input type="hidden" name="keyword" value='<c:out value="${cri.keyword}"/>'> --%>
-<%-- 						<input type="hidden" name="type" value='<c:out value="${cri.type}"/>'> --%>
-					</form>			
                 </div>
                 <!-- end /.panel-body -->
             </div>
