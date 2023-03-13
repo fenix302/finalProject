@@ -193,6 +193,59 @@ li{
     <!-- /.row -->
 </div>
 
+<div class="container" style="margin-top: 2%; margin-bottom: 10%;">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header"></h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+					
+					<div class="form-group">
+						<label>번호</label> <input class="form-control" name="bno" value='<c:out value="${dsReplyList.RNO}" />' readonly="readonly">
+					</div>
+					<div class="form-group">
+						<label>내용</label> <input class="form-control" name="title" value='<c:out value="${dsReplyList.REPLY}" />' readonly="readonly">
+					</div>
+					<div class="form-group">
+						<label>아이디</label> 
+						<textarea class="form-control" rows="3" name="content" readonly="readonly"><c:out value="${dsReplyList.USER_CODE}"/>
+						</textarea>
+					</div>
+					<div class="form-group">
+						<label>작성일자</label> <input class="form-control" name="writer" value='<c:out value="${dsReplyList.REPLYDATE}" />' readonly="readonly">
+					</div>
+					<c:if test="${sessionScope.id == dsBoard.WRITER}">
+						<button id="buttons" data-oper='modify' class="btn btn-dark" onclick="location.href='/comm/boardRegisterU.jsp'">수정</button>
+					</c:if>	
+					<button id="buttons" data-oper='list' class="btn btn-secondary" onclick="location.href='/comm/boardListR.jsp'">목록</button>
+					
+					<form id="operForm" action="/comm/boardRegisterU" method="get">
+						<input type="hidden" name="bno" value='<c:out value="${dsBoard.BNO}"/>'>
+<%-- 						<input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}"/>'> --%>
+<%-- 						<input type="hidden" name="amount" value='<c:out value="${cri.amount}"/>'> --%>
+<%-- 						<input type="hidden" name="keyword" value='<c:out value="${cri.keyword}"/>'> --%>
+<%-- 						<input type="hidden" name="type" value='<c:out value="${cri.type}"/>'> --%>
+					</form>			
+                </div>
+                <!-- end /.panel-body -->
+            </div>
+            <!-- end /.panel -->
+        </div>
+        <!-- /.col-lg-6 -->
+    </div>
+    <!-- /.row -->
+</div>
+
+
 <!-- 댓글 시작  -->
 <div class="container">
 		<div class="row" style="margin-top:40px; margin-bottom: 50px;">

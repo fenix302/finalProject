@@ -14,11 +14,12 @@
 		<![CDATA[
 		/*	retrieveReplyList	*/
 			SELECT REPLY.RNO
+				 , REPLY.BNO
 				 , REPLY.USER_CODE
 				 , (SELECT ID FROM TB_COM_USER WHERE USER_CODE = REPLY.USER_CODE) AS USER_ID
 				 , REPLY.REPLY
 				 , REPLY.REPLYDATE
-				 , (SELECT COUNT(*) FROM TB_REPLY WHERE bno = #{bno}) AS REPLY_COUNT
+				 , (SELECT COUNT(*) FROM COMM_REPLY WHERE bno = #{bno}) AS REPLY_COUNT
             FROM   COMM_REPLY REPLY
 			WHERE  1=1
 			AND    BNO = #{bno}
@@ -34,7 +35,7 @@
                  , (SELECT ID FROM TB_COM_USER WHERE USER_CODE = REPLY.USER_CODE) AS USER_ID
 				 , REPLY.REPLY
 				 , REPLY.REPLYDATE
-				 , (SELECT COUNT(*) FROM TB_REPLY WHERE bno = #{bno}) AS REPLY_COUNT
+				 , (SELECT COUNT(*) FROM COMM_REPLY WHERE bno = #{bno}) AS REPLY_COUNT
             FROM   COMM_REPLY REPLY
 			WHERE  1=1
 			AND    BNO = #{bno}
@@ -53,7 +54,7 @@
 			) VALUES (
 			  #{productCode}
 			, #{userCode}
-			, (SELECT NVL(MAX(USER_REPLY_NO), 0) + 1 FROM TB_REPLY WHERE 1=1 AND USER_CODE = #{userCode})
+			, (SELECT NVL(MAX(RNO), 0) + 1 FROM COMM_REPLY WHERE 1=1 AND USER_CODE = #{userCode})
 			, #{reply}
 			, SYSDATE
 			)

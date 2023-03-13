@@ -37,13 +37,13 @@ public class CommReplyController {
 		Map<String, String> boardParam = new HashMap<String, String>();
 
 		String userCode = (String)session.getAttribute("userCode");
-		String rno = request.getParameter("rno");
+		String rno = request.getParameter("RNO");
 		
-		String boardNo = request.getParameter("bno");
+		String boardNo = request.getParameter("BNO");
 		boardParam.put("BNO", boardNo);
 
 		replyParam.put("userCode", userCode);
-		replyParam.put("rno", rno);
+		replyParam.put("RNO", rno);
 
 		//댓글 생성
 		commReplyService.createReply(replyParam);

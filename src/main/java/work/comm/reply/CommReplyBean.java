@@ -13,8 +13,8 @@ public class CommReplyBean implements Serializable{
 		super();
 	}
 
-	public CommReplyBean(String productCode, String userCode, int userReplyNo,
-			String userReply, String replyDate) {
+	public CommReplyBean(Long bno, String userCode, int rno,
+			String reply, String replyDate) {
 		super();
 		this.bno = bno;
 		this.userCode = userCode;
