@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+				  "dtd/mybatis-3-mapper.dtd">
+<mapper namespace="commReply">
+	<resultMap id="replyResult" type="commReply">
+		<result property="rno" column="RNO" />
+		<result property="bno" column="BNO" />
+		<result property="userCode" column="USER_CODE" />
+		<result property="reply" column="REPLY" />
+		<result property="replyDate" column="REPLYDATE" />
+	</resultMap>
+
+	<select id="retrieveReplyList" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	retrieveReplyList	*/
+			SELECT REPLY.RNO
+				 , REPLY.USER_CODE
+				 , (SELECT ID FROM TB_COM_USER WHERE USER_CODE = REPLY.USER_CODE) AS USER_ID
+				 , REPLY.REPLY
+				 , REPLY.REPLYDATE
+				 , (SELECT COUNT(*) FROM TB_REPLY WHERE bno = #{bno}) AS REPLY_COUNT
+            FROM   COMM_REPLY REPLY
+			WHERE  1=1
+			AND    BNO = #{bno}
+			ORDER BY REPLY.REPLYDATE DESC
+		]]>
+	</select>
+
+	<select id="retrieveReply" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	retrieveReply	*/
+			SELECT REPLY.RNO
+				 , REPLY.USER_CODE
+                 , (SELECT ID FROM TB_COM_USER WHERE USER_CODE = REPLY.USER_CODE) AS USER_ID
+				 , REPLY.REPLY
+				 , REPLY.REPLYDATE
+				 , (SELECT COUNT(*) FROM TB_REPLY WHERE bno = #{bno}) AS REPLY_COUNT
+            FROM   COMM_REPLY REPLY
+			WHERE  1=1
+			AND    BNO = #{bno}
+			AND    USER_CODE = #{userCode}
+		]]>
+	</select>
+
+	<insert id="createReply" parameterType="map">
+		<![CDATA[
+		/*	createReply	*/
+			INSERT INTO COMM_REPLY(
+			, USER_CODE
+			, RNO
+			, REPLY
+			, REPLYDATE
+			) VALUES (
+			  #{productCode}
+			, #{userCode}
+			, (SELECT NVL(MAX(USER_REPLY_NO), 0) + 1 FROM TB_REPLY WHERE 1=1 AND USER_CODE = #{userCode})
+			, #{reply}
+			, SYSDATE
+			)
+		]]>
+	</insert>
+
+	<delete id="deleteReply" parameterType="map">
+		<![CDATA[
+		/*	deleteReply	*/
+			DELETE
+			FROM  COMM_REPLY
+			WHERE 1=1
+			AND BNO = #{bno}
+			AND USER_CODE = #{userCode}
+			AND RNO = #{rno}
+		]]>
+	</delete>
+</mapper>

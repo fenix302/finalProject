@@ -7,28 +7,28 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-@Service("replyService")
-public class ReplyServiceImpl implements ReplyService{
-	@Resource(name = "replyDAO")
-	private ReplyDAO replyDAO;
+@Service("commReplyService")
+public class CommReplyServiceImpl implements CommReplyService{
+	@Resource(name = "commReplyDAO")
+	private CommReplyDAO commReplyDAO;
 
 	public List<Map<String, String>> retrieveReplyList(Map<String, String> replyParam){
-		return replyDAO.retrieveReplyList(replyParam);
+		return commReplyDAO.retrieveReplyList(replyParam);
 	}
 
 	public Map<String, String> retrieveReply(Map<String, String> replyParam){
-		return replyDAO.retrieveReply(replyParam);
+		return commReplyDAO.retrieveReply(replyParam);
 	}
 
 	public void createReply(Map<String, String> replyParam){
-		replyDAO.createReply(replyParam);
+		commReplyDAO.createReply(replyParam);
 	}
 
 	public void updateReply(Map<String, String> replyParam){
-		replyDAO.updateReply(replyParam);
+		commReplyDAO.updateReply(replyParam);
 	}
 
 	public void deleteReply(Map<String, String> replyParam){
-		replyDAO.deleteReply(replyParam);
+		commReplyDAO.deleteReply(replyParam);
 	}
 }

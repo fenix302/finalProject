@@ -33,6 +33,8 @@
     <script src="${context}/js/plugins/dataTables/datatables.js"></script>
 
     <script src="${context}/js/sb-admin-2.js"></script>
+    
+        <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function(){
 	});
@@ -112,10 +114,9 @@
 
 	function fn_remove(paramUserReplyNo){
 		var userReplyNo = paramUserReplyNo;
-		var productCode = '${dsProduct.PRODUCT_CODE}';
 
 		if(confirm("정말 삭제하시겠습니까?")){
-			location.href = "${context}/work/reply/deleteReply.do?userReplyNo=" + userReplyNo + "&productCode=" + productCode;
+			location.href = "${context}/work/reply/deleteReply.do?userReplyNo=" + userReplyNo ;
 		}
 	}
 	
@@ -201,7 +202,7 @@ li{
 		                <a class="btn btn-danger btn-lg" href="#reviews-anchor" id="open-review-box"><b>댓글입력</b></a>
 		            </div>
 
-		            <div class="row" id="post-review-box" style="display:none;">
+		            <div class="row" id="post-review-box" >
 		                <div class="col-md-12">
 		                    <form id="createReply" accept-charset="UTF-8" action="${context}/work/comm/reply/createReply.do" method="post">
 		                        <textarea class="form-control animated" cols="50" id="userReply" name="userReply" placeholder="댓글을 입력하세요..." rows="5"></textarea>
@@ -235,11 +236,11 @@ li{
 								<table class="table table-user-information">
 									<tbody>
 										<tr>
-											<td><b>${dsReplyList.USER_ID}</b>&nbsp;&nbsp;<font size="1px;" color="gray">${dsReplyList.REPLY_DATE}</font>&nbsp;&nbsp;&nbsp;
+											<td><b>${dsReplyList.USER_ID}</b>&nbsp;&nbsp;<font size="1px;" color="gray">${dsReplyList.REPLYDATE}</font>&nbsp;&nbsp;&nbsp;
 											</td>
 										</tr>
 										<tr>
-											<td>${dsReplyList.USER_REPLY}</td>
+											<td>${dsReplyList.REPLY}</td>
 										</tr>
                  				   </tbody>
                   			  </table>
@@ -249,7 +250,7 @@ li{
 				<div class="panel-footer">
 					<c:if test="${sessionScope.userCode == dsReplyList.USER_CODE}">
 	                    <span class="pull-right">
-	                        <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" onclick="javascript:fn_remove('${dsReplyList.USER_REPLY_NO}')"><i class="glyphicon glyphicon-remove"></i></a>
+	                        <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" onclick="javascript:fn_remove('${dsReplyList.RNO}')"><i class="glyphicon glyphicon-remove"></i></a>
                   	  </span>
                     </c:if>
                     <br><br>

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public interface ReplyService {
+public interface CommReplyService {
 	public List<Map<String, String>> retrieveReplyList(Map<String, String> replyParam);
 
 	public Map<String, String> retrieveReply(Map<String, String> replyParam);

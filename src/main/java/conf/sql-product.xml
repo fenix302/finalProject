@@ -81,9 +81,9 @@
 			]]>
 	</select>
 
-	<select id="retrieveProductListForBracelet" resultType="map">
+	<select id="retrieveProductListForRegular" resultType="map">
 		<![CDATA[
-			/*	retrieveProductListForBinder	*/
+			/*	retrieveProductListForRegular	*/
 			SELECT T.PRODUCT_IMAGE, T.PRODUCT_CATEGORY_CD
 			FROM
 			(
@@ -97,9 +97,9 @@
 			]]>
 	</select>
 
-	<select id="retrieveProductListForNeck" resultType="map">
+	<select id="retrieveProductListForCoffee" resultType="map">
 		<![CDATA[
-			/*	retrieveProductListForNeck	*/
+			/*	retrieveProductListForCoffee	*/
 			SELECT T.PRODUCT_IMAGE, T.PRODUCT_CATEGORY_CD
 			FROM
 			(
@@ -113,9 +113,9 @@
 			]]>
 	</select>
 
-	<select id="retrieveProductListForRing" resultType="map">
+	<select id="retrieveProductListForGoods" resultType="map">
 		<![CDATA[
-			/*	retrieveProductListForRing	*/
+			/*	retrieveProductListForGoods	*/
 			SELECT T.PRODUCT_IMAGE, T.PRODUCT_CATEGORY_CD
 			FROM
 			(
@@ -129,9 +129,9 @@
 			]]>
 	</select>
 
-	<select id="retrieveProductListForEar" resultType="map">
+	<select id="retrieveProductListForPresent" resultType="map">
 		<![CDATA[
-			/*	retrieveProductListForEar	*/
+			/*	retrieveProductListForPresent	*/
 			SELECT T.PRODUCT_IMAGE, T.PRODUCT_CATEGORY_CD
 			FROM
 			(

@@ -20,19 +20,19 @@ public class ProductServiceImpl implements ProductService{
 		return productDAO.retrieveProductListForMain();
 	}
 
-	public List<Map<String, String>> retrieveProductListForBracelet(){
+	public List<Map<String, String>> retrieveProductListForRegular(){
 		return productDAO.retrieveProductListForBracelet();
 	}
 
-	public List<Map<String, String>> retrieveProductListForNeck(){
+	public List<Map<String, String>> retrieveProductListForCoffee(){
 		return productDAO.retrieveProductListForNeck();
 	}
 
-	public List<Map<String, String>> retrieveProductListForRing(){
+	public List<Map<String, String>> retrieveProductListForGoods(){
 		return productDAO.retrieveProductListForRing();
 	}
 
-	public List<Map<String, String>> retrieveProductListForEar(){
+	public List<Map<String, String>> retrieveProductListForPresent(){
 		return productDAO.retrieveProductListForEar();
 	}
 

@@ -1,7 +1,5 @@
 package work.comm;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,12 +13,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import work.comm.reply.CommReplyService;
 import work.user.UserService;
 
 @Controller
@@ -30,6 +25,9 @@ public class CommController {
 
 	@Resource(name = "userService")
 	private UserService userService;
+	
+	@Resource(name = "commReplyService")
+	private CommReplyService commReplyService;
 
 	@RequestMapping(value="/work/comm/createBoard.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView createBoard(@ModelAttribute CommBean board, HttpServletRequest request){
@@ -68,11 +66,14 @@ public class CommController {
 		String boardNo = request.getParameter("bno");
 
 		Map<String, String> boardParam = new HashMap<String, String>();
-
-		boardParam.put("BNO", boardNo);
-
+		Map<String, String> replyParam = new HashMap<String, String>();
 		Map<String, String> dsBoard = commService.retrieveBoard(boardParam);
+		List<Map<String, String>> dsReplyList = commReplyService.retrieveReplyList(replyParam);
 
+		boardParam.put("bno", boardNo);
+
+
+		mv.addObject("dsReplyList", dsReplyList);
 
 		mv.addObject("dsBoard", dsBoard);
 

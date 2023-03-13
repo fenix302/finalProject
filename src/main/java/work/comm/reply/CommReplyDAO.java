@@ -8,29 +8,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class ReplyDAO {
+public class CommReplyDAO {
 
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
 	public List<Map<String, String>> retrieveReplyList(Map<String, String> replyParam){
-		return sqlSession.selectList("reply.retrieveReplyList", replyParam);
+		return sqlSession.selectList("commReply.retrieveReplyList", replyParam);
 	}
 
 	public Map<String, String> retrieveReply(Map<String, String> replyParam){
-		return sqlSession.selectOne("reply.retrieveReply", replyParam);
+		return sqlSession.selectOne("commReply.retrieveReply", replyParam);
 	}
 
 	public void createReply(Map<String, String> replyParam){
-		sqlSession.insert("reply.createReply", replyParam);
+		sqlSession.insert("commReply.createReply", replyParam);
 	}
 
 	public void updateReply(Map<String, String> replyParam){
-		sqlSession.update("reply.updateReply", replyParam);
+		sqlSession.update("commReply.updateReply", replyParam);
 	}
 
 	public void deleteReply(Map<String, String> replyParam){
-		sqlSession.delete("reply.deleteReply", replyParam);
+		sqlSession.delete("commReply.deleteReply", replyParam);
 	}
 
 

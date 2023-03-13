@@ -22,19 +22,19 @@ public class ProductDAO {
 	}
 
 	public List<Map<String, String>> retrieveProductListForBracelet(){
-		return sqlSession.selectList("product.retrieveProductListForBracelet");
+		return sqlSession.selectList("product.retrieveProductListForRegular");
 	}
 
 	public List<Map<String, String>> retrieveProductListForNeck(){
-		return sqlSession.selectList("product.retrieveProductListForNeck");
+		return sqlSession.selectList("product.retrieveProductListForCoffee");
 	}
 
 	public List<Map<String, String>> retrieveProductListForRing(){
-		return sqlSession.selectList("product.retrieveProductListForRing");
+		return sqlSession.selectList("product.retrieveProductListForGoods");
 	}
 
 	public List<Map<String, String>> retrieveProductListForEar(){
-		return sqlSession.selectList("product.retrieveProductListForEar");
+		return sqlSession.selectList("product.retrieveProductListForPresent");
 	}
 
 	public Map<String, String> retrieveProduct(Map<String, String> productParam){

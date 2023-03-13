@@ -7,10 +7,10 @@ public interface ProductService {
 	public List<Map<String, String>> retrieveProductList(Map<String, String> productParam);
 	public List<Map<String, String>> retrieveProductListForMain();
 
-	public List<Map<String, String>> retrieveProductListForBracelet();
-	public List<Map<String, String>> retrieveProductListForNeck();
-	public List<Map<String, String>> retrieveProductListForRing();
-	public List<Map<String, String>> retrieveProductListForEar();
+	public List<Map<String, String>> retrieveProductListForRegular();
+	public List<Map<String, String>> retrieveProductListForCoffee();
+	public List<Map<String, String>> retrieveProductListForGoods();
+	public List<Map<String, String>> retrieveProductListForPresent();
 
 	public Map<String, String> retrieveProduct(Map<String, String> productParam);
 

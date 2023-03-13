@@ -16,9 +16,9 @@ import work.mark.MarkService;
 import work.sell.SellService;
 
 @Controller
-public class ReplyController {
-	@Resource(name = "replyService")
-	private ReplyService replyService;
+public class CommReplyController {
+	@Resource(name = "commReplyService")
+	private CommReplyService commReplyService;
 
 	@Resource(name = "sellService")
 	private SellService sellService;
@@ -26,7 +26,7 @@ public class ReplyController {
 	@Resource(name = "markService")
 	private MarkService markService;
 
-	@RequestMapping(value="/work/reply/createReply.do", method=RequestMethod.POST)
+	@RequestMapping(value="/work/comm/reply/createReply.do", method=RequestMethod.POST)
 	public ModelAndView createReply
 	(HttpServletRequest request){
 		ModelAndView mv = new ModelAndView();
@@ -43,17 +43,17 @@ public class ReplyController {
 		boardParam.put("BNO", boardNo);
 
 		replyParam.put("userCode", userCode);
-		replyParam.put("userReply", rno);
+		replyParam.put("rno", rno);
 
 		//댓글 생성
-		replyService.createReply(replyParam);
+		commReplyService.createReply(replyParam);
 
 		mv.setViewName("redirect:/work/comm/retrieveBoard.do?bno=" + boardNo);
 
 		return mv;
 	}
 
-	@RequestMapping(value="/work/reply/deleteReply.do", method=RequestMethod.GET)
+	@RequestMapping(value="/work/comm/reply/deleteReply.do", method=RequestMethod.GET)
 	public ModelAndView deleteReply(HttpServletRequest request){
 		ModelAndView mv = new ModelAndView();
 
@@ -72,7 +72,7 @@ public class ReplyController {
 		replyParam.put("rno", rno);
 
 		//댓글 삭제
-		replyService.deleteReply(replyParam);
+		commReplyService.deleteReply(replyParam);
 
 		mv.setViewName("redirect:/work/comm/retrieveBoard.do?bno=" + boardNo);
 

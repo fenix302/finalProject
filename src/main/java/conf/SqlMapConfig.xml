@@ -16,6 +16,7 @@
 		<typeAlias type="work.comm.CommBean" alias="comm"/>
 		<typeAlias type="work.consulting.ConsultingBean" alias="consulting"/>
 		<typeAlias type="work.generalboard.GeneralBoardBean" alias="generalboard"/>
+		<typeAlias type="work.comm.reply.CommReplyBean" alias="commReply"/>
 	</typeAliases>
 
 	<mappers>
@@ -31,5 +32,6 @@
 		<mapper resource="conf/sql-comm.xml" />
 		<mapper resource="conf/sql-consulting.xml" />
 		<mapper resource="conf/sql-generalboard.xml"/>
+		<mapper resource="conf/sql-comm-reply.xml"/>
 	</mappers>
 </configuration>

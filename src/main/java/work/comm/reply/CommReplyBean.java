@@ -2,24 +2,24 @@ package work.comm.reply;
 
 import java.io.Serializable;
 
-public class ReplyBean implements Serializable{
+public class CommReplyBean implements Serializable{
 	private Long bno;
 	private String userCode;     //유저코드
 	private int rno;	 //댓글일련번호
-	private String userReply;    //댓글내용
+	private String reply;    //댓글내용
 	private String replyDate;    //댓글날짜
 
-	public ReplyBean() {
+	public CommReplyBean() {
 		super();
 	}
 
-	public ReplyBean(String productCode, String userCode, int userReplyNo,
+	public CommReplyBean(String productCode, String userCode, int userReplyNo,
 			String userReply, String replyDate) {
 		super();
 		this.bno = bno;
 		this.userCode = userCode;
 		this.rno = rno;
-		this.userReply = userReply;
+		this.reply = reply;
 		this.replyDate = replyDate;
 	}
 
@@ -48,11 +48,11 @@ public class ReplyBean implements Serializable{
 	}
 
 	public String getUserReply() {
-		return userReply;
+		return reply;
 	}
 
-	public void setUserReply(String userReply) {
-		this.userReply = userReply;
+	public void setUserReply(String reply) {
+		this.reply = reply;
 	}
 
 	public String getReplyDate() {
@@ -65,7 +65,7 @@ public class ReplyBean implements Serializable{
 
 	@Override
 	public String toString() {
-		return "ReplyBean [bno=" + bno + ", userCode=" + userCode + ", rno=" + rno + ", userReply=" + userReply
+		return "ReplyBean [bno=" + bno + ", userCode=" + userCode + ", rno=" + rno + ", reply=" + reply
 				+ ", replyDate=" + replyDate + "]";
 	}
 
