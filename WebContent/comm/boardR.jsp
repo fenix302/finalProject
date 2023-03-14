@@ -88,10 +88,6 @@
 		}
 	}
 	
-	function fn_back() {
-		var bno = '${dsBoard.BNO}'
-		location.href = "${context}/work/comm/retrieveBoard.do?bno=" + bno;
-	}
 	
 </script>
 <style type="text/css">
@@ -191,7 +187,7 @@ li{
                  				   </tbody>
                   			  </table>
                			  </div>
-						  <c:if test="${sessionScope.userCode == dsReplyList.USER_CODE}">
+						  <c:if test="${sessionScope.userCode == dsReplyList.USER_CODE || sessionScope.grade == 'A'}">
 	   	                      <span class="col-md-1">
 		                          <button id="buttons" class="btn btn-secondary reBtn pull-right" onclick="javascript:fn_remove('${dsReplyList.RNO}')">삭제</button>
 		                  	  </span>

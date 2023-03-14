@@ -59,19 +59,15 @@ public class CommReplyController {
 	public ModelAndView deleteReply(HttpServletRequest request){
 		ModelAndView mv = new ModelAndView();
 
-		HttpSession session = request.getSession();
-
 		Map<String, String> replyParam = new HashMap<String, String>();
 		Map<String, String> boardParam = new HashMap<String, String>();
 
-		String userCode = (String)session.getAttribute("userCode");
 		String rno = request.getParameter("RNO");
 		
 		String boardNo = request.getParameter("BNO");
 		boardParam.put("BNO", boardNo);
 
 		replyParam.put("BNO", boardNo);
-		replyParam.put("userCode", userCode);
 		replyParam.put("RNO", rno);
 
 		//댓글 삭제
