@@ -47,3 +47,10 @@
 #buttons{
     margin: 10px 5px 0px 1px;
 }
+
+/** 커뮤니티 게시판 댓글 버튼 **/
+.reBtn{
+	background: pink !important;
+	border: 1px solid pink !important;
+	margin-top: 0px !important;
+}

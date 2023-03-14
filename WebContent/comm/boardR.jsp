@@ -88,6 +88,11 @@
 		}
 	}
 	
+	function fn_back() {
+		var bno = '${dsBoard.BNO}'
+		location.href = "${context}/work/comm/retrieveBoard.do?bno=" + bno;
+	}
+	
 </script>
 <style type="text/css">
 li{
@@ -140,9 +145,9 @@ li{
 						<label>작성자</label> <input class="form-control" name="writer" value='<c:out value="${dsBoard.WRITER}" />' readonly="readonly">
 					</div>
 					<c:if test="${sessionScope.id == dsBoard.WRITER || sessionScope.grade == 'A'}">
-						<button id="buttons" data-oper='modify' class="btn btn-dark" onclick="location.href='/comm/boardRegisterU.jsp'">수정</button>
+						<button id="buttons" data-oper='modify' class="btn btn-dark pull-right" onclick="location.href='/comm/boardRegisterU.jsp'">수정</button>
 					</c:if>	
-					<button id="buttons" data-oper='list' class="btn btn-secondary" onclick="location.href='/comm/boardListR.jsp'">목록</button>
+					<button id="buttons" data-oper='list' class="btn btn-secondary pull-right" onclick="location.href='/comm/boardListR.jsp'">목록</button>
 					
 					<form id="operForm" action="/comm/boardRegisterU" method="get">
 						<input type="hidden" name="bno" value='<c:out value="${dsBoard.BNO}"/>'>
@@ -161,38 +166,6 @@ li{
     <!-- /.row -->
 </div>
 
-<!-- <div class="container" style="margin-bottom: 10%;"> -->
-<!--     <div class="row"> -->
-<!--         <div class="col-lg-12"> -->
-<!--             <div class="panel panel-default"> -->
-<!--                 <div class="panel-body"> -->
-					
-<!-- 					<div class="form-group"> -->
-<%-- 						<label>번호</label> <input class="form-control" name="bno" value='<c:out value="${dsReplyList.RNO}" />' readonly="readonly"> --%>
-<!-- 					</div> -->
-<!-- 					<div class="form-group"> -->
-<%-- 						<label>아이디</label> <input class="form-control" name="userCode" value='<c:out value="${dsReplyList.USER_CODE}" />' readonly="readonly"> --%>
-<!-- 					</div> -->
-<!-- 					<div class="form-group"> -->
-<!-- 						<label>내용</label>  -->
-<%-- 						<textarea class="form-control" rows="3" name="reply" readonly="readonly"><c:out value="${dsReplyList.REPLY}"/> --%>
-<!-- 						</textarea> -->
-<!-- 					</div> -->
-<!-- 					<div class="form-group"> -->
-<%-- 						<label>작성일자</label> <input class="form-control" name="replyDate" value='<c:out value="${dsReplyList.REPLYDATE}" />' readonly="readonly"> --%>
-<!-- 					</div> -->
-<%-- 					<c:if test="${sessionScope.id == dsReplyList.REPLYER}"> --%>
-<!-- 						<button id="buttons" data-oper='modify' class="btn btn-dark" onclick="location.href='/comm/boardRegisterU.jsp'">수정</button> -->
-<%-- 					</c:if>	 --%>
-<!-- 					<button id="buttons" data-oper='list' class="btn btn-secondary" onclick="location.href='/comm/boardListR.jsp'">목록</button> -->
-					
-<!--                 </div> -->
-<!--             </div> -->
-<!--         </div> -->
-<!--     </div> -->
-<!-- </div> -->
-
-
 <!-- 댓글 시작  -->
 
 <div class="container">
@@ -200,44 +173,41 @@ li{
 			<div class="col-md-12 toppad">
 				<div class="panel panel-info">
 					<div class="panel-heading">
-						<h1 class="panel-title">댓글  ${dsReplyList[0].REPLY_COUNT}</h1>
+						<h2 class="panel-title" style="margin-top: 5%;">댓글  ${dsReplyList[0].REPLY_COUNT}</h2>
 					</div>
 					<c:forEach items="${dsReplyList}" var="dsReplyList">
 					<div class="panel-body">
 						<div class="row">
-							<div class="col-md-9">
+							<div class="col-md-11">
 								<table class="table table-user-information">
 									<tbody>
 										<tr>
-											<td><b>${dsReplyList.USER_ID}</b>&nbsp;&nbsp;<font size="1px;" color="gray">${dsReplyList.REPLYDATE}</font>&nbsp;&nbsp;&nbsp;
+											<td><b>작성자&nbsp; |&nbsp; ${dsReplyList.USER_ID}</b>&nbsp;&nbsp;<font size="1px;" color="gray" style="float: right;">${dsReplyList.REPLYDATE}</font>&nbsp;&nbsp;&nbsp;
 											</td>
 										</tr>
 										<tr>
-											<td>${dsReplyList.REPLY}</td>
+											<td>내용 &nbsp;&nbsp;&nbsp; |&nbsp; ${dsReplyList.REPLY}</td>
 										</tr>
                  				   </tbody>
                   			  </table>
                			  </div>
+						  <c:if test="${sessionScope.userCode == dsReplyList.USER_CODE}">
+	   	                      <span class="col-md-1">
+		                          <button id="buttons" class="btn btn-secondary reBtn pull-right" onclick="javascript:fn_remove('${dsReplyList.RNO}')">삭제</button>
+		                  	  </span>
+	                      </c:if>
              		 </div>
            		 </div>
-				<div class="panel-footer">
-					<c:if test="${sessionScope.userCode == dsReplyList.USER_CODE}">
-	                    <span class="pull-right">
-	                        <button data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" onclick="javascript:fn_remove('${dsReplyList.RNO}')" ></button>
-                  	  </span>
-                    </c:if>
-                    <br><br>
-                </div>
 			</c:forEach>
           </div>
         </div>
       </div>
-      <button class="btn btn-success btn-lg" style="float: right;" onclick="fn_back()">뒤로가기</button>
+      
     </div>
-    
     
 <div class="container">
 		<div class="row" style="margin-top:40px; margin-bottom: 50px;">
+<c:if test="${sessionScope.id != null}">    
 			<div class="col-md-12">
 		    	<div class="well well-sm">
 		            <div class="row" >
@@ -246,9 +216,8 @@ li{
 		                        <textarea class="form-control animated" cols="50" id="REPLY" name="REPLY" placeholder="댓글을 입력하세요..." rows="5"></textarea>
 
 		                        <div class="text-right">
-		                            <a class="btn btn-danger btn-sm" href="#" id="close-review-box" style="display:none; margin-right: 10px;">
-		                            <span class="glyphicon glyphicon-remove"></span>Cancel</a>
-		                            <button class="btn btn-success btn-lg" onclick="return fn_save()">Save</button>
+		                            <a class="btn btn-danger btn-sm" href="#" id="close-review-box" style="display:none; margin-right: 10px;"></a>
+		                            <button id="buttons" class="btn btn-secondary pull-right" onclick="return fn_save()">등록</button>
 		                        </div>
 		                        <input type="hidden" id="BNO" name="BNO" value="${dsBoard.BNO}">
 		                    </form>
@@ -256,9 +225,9 @@ li{
 		            </div>
 		        </div>
 			</div>
+</c:if>
 		</div>
 	</div>
-	
 
 	
 
