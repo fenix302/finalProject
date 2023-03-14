@@ -1,12 +1,12 @@
--- mini_admin 계정 생성 및 권한 부여
+-- star_cafe 계정 생성 및 권한 부여
 
-CREATE USER mini_admin IDENTIFIED BY mini_admin;
-GRANT CONNECT, RESOURCE TO mini_admin;
-GRANT ALTER SESSION TO mini_admin;
+CREATE USER star_cafe IDENTIFIED BY star_cafe;
+GRANT CONNECT, RESOURCE TO star_cafe;
+GRANT ALTER SESSION TO star_cafe;
 
 show user
 
-conn mini_admin/mini_admin
+conn star_cafe/star_cafe
 
 show user
 
@@ -50,10 +50,10 @@ INSERT INTO TB_COM_CODE(COMM_TY_CD, COMM_CD, COMM_CD_NM) VALUES('CODE0100', '03'
 INSERT INTO TB_COM_CODE(COMM_TY_CD, COMM_CD, COMM_CD_NM) VALUES('CODE0100', '04', '019');
 
 --분류코드
-INSERT INTO TB_COM_CODE(COMM_TY_CD, COMM_CD, COMM_CD_NM) VALUES('CODE0101', 'B', '팔찌');
-INSERT INTO TB_COM_CODE(COMM_TY_CD, COMM_CD, COMM_CD_NM) VALUES('CODE0101', 'N', '목걸이');
-INSERT INTO TB_COM_CODE(COMM_TY_CD, COMM_CD, COMM_CD_NM) VALUES('CODE0101', 'R', '반지');
-INSERT INTO TB_COM_CODE(COMM_TY_CD, COMM_CD, COMM_CD_NM) VALUES('CODE0101', 'E', '귀걸이');
+INSERT INTO TB_COM_CODE(COMM_TY_CD, COMM_CD, COMM_CD_NM) VALUES('CODE0101', 'C', '원액');
+INSERT INTO TB_COM_CODE(COMM_TY_CD, COMM_CD, COMM_CD_NM) VALUES('CODE0101', 'G', '굿즈');
+INSERT INTO TB_COM_CODE(COMM_TY_CD, COMM_CD, COMM_CD_NM) VALUES('CODE0101', 'P', '선물용');
+INSERT INTO TB_COM_CODE(COMM_TY_CD, COMM_CD, COMM_CD_NM) VALUES('CODE0101', 'R', '정기구매');
 
 
 --회원정보
@@ -76,15 +76,15 @@ CREATE TABLE TB_COM_USER(
 );
 
 INSERT INTO TB_COM_USER(USER_CODE, ID, PW, EMAIL, USER_IMAGE, NAME, BIRTH, POST_NUM, PHONE_CD, PHONE_NUM, ADDRESS, ENT_DATE, GRADE) VALUES (
-          'USER0000' || USER_SEQ.NEXTVAL, 'admin', 'admin', 'admin@naver.com', 'admin.png', '관리자', '1980-02-12', '217-814',
+          USER_SEQ.NEXTVAL, 'admin', 'admin', 'admin@naver.com', 'admin.png', '관리자', '1980-02-12', '217-814',
           '01', '1234-5678', '서울시 송파구 방이동 현대아파트', '2020-08-21', 'A');
 
 INSERT INTO TB_COM_USER(USER_CODE, ID, PW, EMAIL, USER_IMAGE, NAME, BIRTH, POST_NUM, PHONE_CD, PHONE_NUM, ADDRESS, ENT_DATE) VALUES (
-          'USER0000' || USER_SEQ.NEXTVAL, 'ksy', 'ksy', 'ksy@naver.com', 'ksy.png', '기성용', '1989-01-12', '134-512',
+          USER_SEQ.NEXTVAL, 'ksy', 'ksy', 'ksy@naver.com', 'ksy.png', '기성용', '1989-01-12', '134-512',
           '01', '1326-2632', '서울시 중구 동대문4가 종로빌딩', '2020-09-30');
 
 INSERT INTO TB_COM_USER(USER_CODE, ID, PW, EMAIL, USER_IMAGE, NAME, BIRTH, POST_NUM, PHONE_CD, PHONE_NUM, ADDRESS, ENT_DATE) VALUES (
-          'USER0000' || USER_SEQ.NEXTVAL, 'shm', 'shm', 'shm@naver.com', 'shm.png', '손흥민', '1992-05-07', '613-844',
+          USER_SEQ.NEXTVAL, 'shm', 'shm', 'shm@naver.com', 'shm.png', '손흥민', '1992-05-07', '613-844',
           '01', '5551-3774', '서울시 노원구 상계3동 한신아파트', '2020-08-02');
 
 commit;
@@ -103,42 +103,29 @@ CREATE TABLE TB_PRODUCT(
   CONSTRAINT TB_PRODUCT_PK PRIMARY KEY(PRODUCT_CODE)
 );
 
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('R001','ring01.jpg','실버 볼 하트 반지',39120,8,'R','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('R002','ring02.jpg','델마르 실버 반지',65700,10,'R','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('R003','ring03.jpg','탄생석 하트 체인반지',59900,29,'R','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('R004','ring04.jpg','press ring',52250,20,'R','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('R005','ring05.jpg','mushroom ring',139000,35,'R','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('R006','ring06.jpg','14K 테일링 볼륨 반지',382500,15,'R','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('R007','ring07.jpg','와이어 로프 꼬임 반지',108800,20,'R','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('R008','ring08.jpg','실버 볼드 멜팅 위아몬즈 반지',49420,20,'R','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('R009','ring09.jpg','prot ring',89000,50,'R','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('R0010','ring10.jpg','round ring',59000,20,'R','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('N0011','neck01.jpg','솔리테어 프롱 위아몬즈',107030,50,'N','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('N0012','neck02.jpg','애비로드 실버 목걸이',134300,10,'N','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('N0013','neck03.jpg','Vintage heart Necklace',81600,30,'N','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('N0014','neck04.jpg','토글 목걸이 콤비(silver 925)',13900,40,'N','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('N0015','neck05.jpg','마스터 플랫 키 실버 목걸이',125800,30,'N','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('N0016','neck06.jpg','14k 라운드 콤비 목걸이',229500,19,'N','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('N0017','neck07.jpg','노드 써틴 초커 목걸이 J No 13 콤비',149400,15,'N','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('N0018','neck08.jpg','레코드 투라인 라지 코인 목걸이',104000,10,'N','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('N0019','neck09.jpg','14K 페이보릿 캐스퍼 목걸이',298400,5,'N','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('N0020','neck10.jpg','통스 다이나믹 서스펜션 목걸이',110500,5,'N','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('E0021','ear01.jpg','m.m.e _a',62040,10,'E','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('E0022','ear02.jpg','Puff E',98000,5,'E','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('E0023','ear03.jpg','blueberries',58000,13,'E','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('E0024','ear04.jpg','mini loop pearl earring',25000,4,'E','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('E0025','ear05.jpg','14k 천연석 하프 이터니티 링 귀걸이',251100,10,'E','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('E0026','ear06.jpg','3chain drop earring',33250,5,'E','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('E0027','ear07.jpg','droplet combi 2way earrings',98000,9,'E','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('E0028','ear08.jpg','애비로드 로잉 후프 언발 실버 귀걸이 - 콤비',130500,15,'E','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('B0029','bracelet01.jpg','Lucky days Bracelet',40500,20,'B','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('B0030','bracelet02.jpg','Slim ballchain Bracelet',76260,50,'B','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('B0031','bracelet03.jpg','라이크어플라워 미니 챠밍 실버 체인 팔찌',73500,4,'B','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('B0032','bracelet04.jpg','가든블랙 카렌실버',48000,70,'B','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('B0033','bracelet05.jpg','grapevine karen',48000,5,'B','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('B0034','bracelet06.jpg','Heart Pearl Bracelet - Dot Chain',73000,60,'B','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('B0035','bracelet07.jpg','Slim ballchain Bracelet (믹스체인/골드)',76260,81,'B','2023-01-19 10:23');
-Insert into MINI_ADMIN.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('B0036','bracelet08.jpg','모먼트 T바 스네이크 체인 실버 팔찌',92900,20,'B','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('C001','latte01.jpg','피치 앤 블랙티',25000,100,'C','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('C002','latte02.jpg','100% 제주산 말차',25000,100,'C','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('C003','latte03.jpg','악마 초코',25000,100,'C','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('C004','latte04.jpg','콜드브루',25000,100,'C','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('C005','latte05.jpg','페퍼민트 아이스티',25000,100,'C','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('C006','latte06.jpg','레몬 아이스티',25000,100,'C','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('C007','latte07.jpg','리얼딸기',25000,100,'C','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('C008','latte08.jpg','자몽샤워',25000,100,'C','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('C009','latte09.jpg','밀크티',25000,100,'C','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('G0010','goods01.jpg','스타트 씨드키트',5900,50,'G','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('G0011','goods02.jpg','매트 블랙 텀블러',9500,50,'G','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('G0012','goods03.jpg','Carry 와인잔',7000,30,'G','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('G0013','goods04.jpg','레더스킨 다이어리',11000,40,'G','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('G0014','goods05.jpg','슈가케인 텀블러',8000,30,'G','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('G0015','goods06.jpg','메세지 캐리어 파우치',14000,19,'G','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('G0016','goods07.jpg','고체 치약',12000,55,'G','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('P0017','present01.jpg','천성 선물세트 5종',35000,100,'P','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('P0018','present02.jpg','천성 소매넣기세트',21000,50,'P','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('P0019','present03.jpg','드립백 세트',18000,53,'P','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('R0029','reg01.jpg','정기구매1',40000,20,'R','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('R0030','reg02.jpg','정기구매2',70000,50,'R','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('R0031','reg03.jpg','정기구매3',100000,4,'R','2023-01-19 10:23');
+
 
 
 --판매내역정보
@@ -170,7 +157,7 @@ CREATE TABLE TB_CART(
   CONSTRAINT TB_CART_FK_USER FOREIGN KEY(USER_CODE) REFERENCES TB_COM_USER(USER_CODE)
 );
 
---댓글정보
+--상품 후기댓글정보
 DROP TABLE TB_REPLY CASCADE CONSTRAINT;
 CREATE TABLE TB_REPLY(
   PRODUCT_CODE VARCHAR2(30),                  -- 투표코드
@@ -194,7 +181,6 @@ CREATE TABLE TB_MARK(
   CONSTRAINT TB_MARK_FK_USER FOREIGN KEY(USER_CODE) REFERENCES TB_COM_USER(USER_CODE)
 );
 
-
 -- 카드결제 정보
 drop table pay_import cascade constraint;
 create table pay_import(
@@ -206,16 +192,16 @@ create table pay_import(
 );
 
 -- 공지사항 정보
-drop table tb_jw_notice;
+drop table tb_notice;
 
-create table tb_jw_notice(
+create table tb_notice(
 bno number,
 title varchar2(255) not null,
 content varchar2(2000) not null,
 writer varchar2(50) not null,
 regdate date default sysdate);
 
-alter table tb_jw_notice add constraint pk_notice primary key (bno);
+alter table tb_notice add constraint pk_notice primary key (bno);
 
 drop sequence seq_notice;
 
@@ -234,9 +220,9 @@ start with 0
 maxvalue 9999999
 minvalue 0;
 
-drop table tb_jw_comm;
+drop table tb_comm;
 
-create table tb_jw_comm (
+create table tb_comm (
 bno number(10, 0),
 title varchar2(200) not null,
 content varchar2(2000) not null,
@@ -244,7 +230,7 @@ writer varchar2(50) not null,
 regdate date default sysdate
 );
 
-alter table tb_jw_comm add constraint pk_comm primary key (bno);
+alter table tb_comm add constraint pk_comm primary key (bno);
 
 -- 상담 신청 게시판 정보
 
@@ -256,9 +242,9 @@ start with 0
 maxvalue 9999999
 minvalue 0;
 
-drop table tb_jw_consulting;
+drop table tb_consulting;
 
-create table tb_jw_consulting (
+create table tb_consulting (
 bno number(10, 0),
 title varchar2(200) not null,
 content varchar2(2000) not null,
@@ -267,22 +253,20 @@ counselor varchar2(50) not null,
 regdate date default sysdate
 );
 
-alter table tb_jw_consulting add constraint pk_consulting primary key (bno);
-
-COMMIT;
+alter table tb_consulting add constraint pk_consulting primary key (bno);
 
 -- 자유게시판 정보
-drop sequence seq_jw_general;
+drop sequence seq_general;
 
-create sequence seq_jw_general
+create sequence seq_general
 increment by 1
 start with 0
 maxvalue 9999999
 minvalue 0;
 
-drop table tb_jw_general;
+drop table tb_general;
 
-create table tb_jw_general (
+create table tb_general (
 bno number(10, 0),
 title varchar2(200) not null,
 content varchar2(2000) not null,
@@ -290,6 +274,71 @@ writer varchar2(50) not null,
 regdate date default sysdate
 );
 
-alter table tb_jw_general add constraint pk_general primary key (bno);
+alter table tb_general add constraint pk_general primary key (bno);
+
+-- 자유게시판 댓글 sql
+-- 시작값을 1로하고 1씩 증가하는 general_reply_seq 자유게시판 시퀀스를 생성함.
+create sequence general_reply_seq 
+start with 1
+increment by 1;
+
+-- 자유게시판 테이블 생성
+create table general_reply (
+  rno number(10,0), 
+  bno number(10,0) not null,
+  reply varchar2(1000) not null,
+  replyer varchar2(50) not null, 
+  replyDate date default sysdate 
+);
+
+alter table general_reply add constraint pk_general_reply primary key (rno);
+
+alter table general_reply add constraint fk_tb_general 
+foreign key (bno)  references  tb_general (bno); 
+
+-- 커뮤니티게시판 댓글 sql
+  -- 시작값을 1로하고 1씩 증가하는 comm_reply_seq 커뮤니티게시판 시퀀스를 생성함.
+drop sequence comm_reply_seq;
+create sequence comm_reply_seq 
+start with 1
+increment by 1;
+
+  -- 커뮤니티 게시판 테이블 생성
+drop table comm_reply;
+create table comm_reply (
+  rno number(10,0), 
+  bno number(10,0) not null,
+  user_code varchar2(20),
+  reply varchar2(1000) not null,
+  replyDate date default sysdate 
+);
+
+alter table comm_reply add constraint pk_comm_reply primary key (rno);
+
+alter table comm_reply  add constraint fk_tb_comm1  
+foreign key (bno)  references  tb_comm (bno);
+alter table comm_reply add constraint fk_tb_comm2
+foreign key (user_code) references tb_com_user(user_code); 
+
+-- 상담신청게시판 댓글 sql
+-- 시작값을 1로하고 1씩 증가하는 consult_reply_seq 상담신청게시판 시퀀스를 생성함.
+create sequence consult_reply_seq 
+start with 1
+increment by 1;
+
+-- 상담신청 게시판 테이블 생성
+create table consult_reply (
+  rno number(10,0), 
+  bno number(10,0) not null,
+  reply varchar2(1000) not null,
+  replyer varchar2(50) not null, 
+  replyDate date default sysdate 
+);
+
+alter table consult_reply add constraint pk_consult_reply primary key (rno);
+
+alter table consult_reply add constraint fk_tb_consulting
+foreign key (bno)  references  tb_consulting (bno); 
+
 
 commit;

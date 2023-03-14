@@ -81,9 +81,10 @@
 
 	function fn_remove(paramRno){
 		var rno = paramRno;
+		var bno = '${dsBoard.BNO}';
 		
 		if(confirm("정말 삭제하시겠습니까?")){
-			location.href = "${context}/work/comm/retrieveBoard.do?bno=" + bno;
+			location.href = "${context}/work/comm/reply/deleteReply.do?rno=" + rno + "&bno=" + bno;
 		}
 	}
 	
@@ -222,7 +223,7 @@ li{
 				<div class="panel-footer">
 					<c:if test="${sessionScope.userCode == dsReplyList.USER_CODE}">
 	                    <span class="pull-right">
-	                        <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" onclick="javascript:fn_remove('${dsReplyList.RNO}')"><i class="glyphicon glyphicon-remove"></i></a>
+	                        <button data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" onclick="javascript:fn_remove('${dsReplyList.RNO}')" ></button>
                   	  </span>
                     </c:if>
                     <br><br>
