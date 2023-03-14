@@ -47,15 +47,16 @@
 		<![CDATA[
 		/*	createReply	*/
 			INSERT INTO COMM_REPLY(
-			, USER_CODE
+			 USER_CODE
+			, BNO
 			, RNO
 			, REPLY
 			, REPLYDATE
 			) VALUES (
-			  #{productCode}
-			, #{userCode}
-			, (SELECT NVL(MAX(RNO), 0) + 1 FROM COMM_REPLY WHERE 1=1 AND USER_CODE = #{userCode})
-			, #{reply}
+			 #{userCode}
+			, #{BNO}
+			, (SELECT NVL(MAX(RNO), 0) + 1 FROM COMM_REPLY WHERE 1=1)
+			, #{REPLY}
 			, SYSDATE
 			)
 		]]>
