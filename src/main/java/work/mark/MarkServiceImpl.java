@@ -18,4 +18,9 @@ public class MarkServiceImpl implements MarkService{
 	public void createMark(Map<String, String> markParam){
 		markDAO.createMark(markParam);
 	}
+
+	@Override
+	public void deleteMark(Map<String, String> markParam) {
+		markDAO.deleteMark(markParam);
+	}
 }

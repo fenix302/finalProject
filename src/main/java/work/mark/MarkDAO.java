@@ -19,4 +19,8 @@ public class MarkDAO {
 		sqlSession.insert("mark.createMark", markParam);
 	}
 
+	public void deleteMark(Map<String, String> markParam) {
+		sqlSession.delete("mark.deleteMark", markParam);
+	}
+	
 }

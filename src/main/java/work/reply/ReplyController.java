@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import work.mark.MarkBean;
 import work.mark.MarkService;
 import work.sell.SellService;
 
@@ -63,12 +64,13 @@ public class ReplyController {
 	}
 
 	@RequestMapping(value="/work/reply/deleteReply.do", method=RequestMethod.GET)
-	public ModelAndView deleteReply(HttpServletRequest request){
+	public ModelAndView deleteReply(HttpServletRequest request, MarkBean markBean){
 		ModelAndView mv = new ModelAndView();
 
 		HttpSession session = request.getSession();
 
 		Map<String, String> replyParam = new HashMap<String, String>();
+		Map<String, String> markParam = new HashMap<String, String>();
 
 		String userCode = (String)session.getAttribute("userCode");
 		String productCode = request.getParameter("productCode");
@@ -78,6 +80,14 @@ public class ReplyController {
 		replyParam.put("productCode", productCode);
 		replyParam.put("userReplyNo", userReplyNo);
 
+		int flag = markBean.getMarkRating();
+		String f = Integer.toString(flag); 
+		
+		if (f != null) {
+			markParam.put("userCode", userCode);
+			markService.deleteMark(markParam);
+		}
+		
 		//댓글 삭제
 		replyService.deleteReply(replyParam);
 

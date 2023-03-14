@@ -257,53 +257,17 @@
       </div>
     </div>
 
-        <c:if test="${dsProduct.SELL_YN == 'Y'}">
-    <div class="container">
-		<div class="row" style="margin-top:40px; margin-bottom: 50px;">
-			<div class="col-md-12">
-		    	<div class="well well-sm">
-		            <div class="text-right">
-		                <a class="btn btn-danger btn-lg" href="#reviews-anchor" id="open-review-box"><b>상품평입력</b></a>
-		            </div>
-
-		            <div class="row" id="post-review-box" style="display:none;">
-		                <div class="col-md-12">
-		                    <form id="createReply" accept-charset="UTF-8" action="${context}/work/reply/createReply.do" method="post">
-		                        <input id="ratings-hidden" name="markRating" type="hidden">
-		                        <textarea class="form-control animated" cols="50" id="userReply" name="userReply" placeholder="상품평을 입력하세요..." rows="5"></textarea>
-
-		                        <div class="text-right">
-			                        <c:if test="${dsProduct.MARK_YN == 'N'}">
-			                            <div class="stars starrr" data-rating="0"></div>
-			                        </c:if>
-		                            <a class="btn btn-danger btn-sm" href="#" id="close-review-box" style="display:none; margin-right: 10px;">
-		                            <span class="glyphicon glyphicon-remove"></span>Cancel</a>
-		                            <button class="btn btn-success btn-lg" onclick="return fn_save()">Save</button>
-		                        </div>
-		                        <input type="hidden" id="productCode" name="productCode" value="${dsProduct.PRODUCT_CODE}">
-		                        <input type="hidden" id="markYn" name="markYn" value="${dsProduct.MARK_YN}">
-		                    </form>
-		                </div>
-		            </div>
-		        </div>
-			</div>
-		</div>
-	</div>
-</c:if>
 <div class="container">
 		<div class="row">
 			<div class="col-md-12 toppad">
 				<div class="panel panel-info">
 					<div class="panel-heading">
-						<h1 class="panel-title">상품평  ${dsReplyList[0].REPLY_COUNT}</h1>
+						<h2 class="panel-title">상품평  ${dsReplyList[0].REPLY_COUNT}</h2>
 					</div>
 					<c:forEach items="${dsReplyList}" var="dsReplyList">
 					<div class="panel-body">
 						<div class="row">
-							<div class="col-md-3" align="center">
-								<img alt="User Pic" id="userImage" src="${context}/userImg/${dsReplyList.USER_IMAGE}" height="200px" width="140px" class="img-circle">
-							</div>
-							<div class="col-md-9">
+							<div class="col-md-11">
 								<table class="table table-user-information">
 									<tbody>
 										<tr>
@@ -317,22 +281,60 @@
                  				   </tbody>
                   			  </table>
                			  </div>
+						<c:if test="${sessionScope.userCode == dsReplyList.USER_CODE || sessionScope.grade == 'A'}">
+		                    <span class="pull-right col-md-1">
+		                   		<button id="buttons" class="btn btn-secondary reBtn pull-right" onclick="javascript:fn_remove('${dsReplyList.USER_REPLY_NO}')">삭제</button>
+	                  	    </span>
+	                    </c:if>
              		 </div>
            		 </div>
 				<div class="panel-footer">
-					<c:if test="${sessionScope.userCode == dsReplyList.USER_CODE}">
-	                    <span class="pull-right">
-	                        <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" onclick="javascript:fn_remove('${dsReplyList.USER_REPLY_NO}')"><i class="glyphicon glyphicon-remove"></i></a>
-                  	  </span>
-                    </c:if>
                     <br><br>
                 </div>
 			</c:forEach>
+		      
           </div>
         </div>
       </div>
-      <button class="btn btn-success btn-lg" style="float: right;" onclick="fn_back()">뒤로가기</button>
     </div>
+
+
+        <c:if test="${dsProduct.SELL_YN == 'Y'}">
+    <div class="container">
+		<div class="row" style="margin-top:40px; margin-bottom: 50px;">
+			<div class="col-md-12">
+		    	<div class="well well-sm">
+		            <div class="text-right">
+		                <button class="btn btn-secondary btn-lg pull-right" onclick="fn_back()" style="margin-left: 15px;">뒤로가기</button>
+		                <a class="btn btn-secondary btn-lg pull-right" href="#reviews-anchor" id="open-review-box"><b>상품평입력</b></a>
+		            </div>
+
+		            <div class="row" id="post-review-box" style="display:none;">
+		                <div class="col-md-12">
+		                    <form id="createReply" accept-charset="UTF-8" action="${context}/work/reply/createReply.do" method="post">
+		                        <input id="ratings-hidden" name="markRating" type="hidden">
+		                        <textarea class="form-control animated" cols="50" id="userReply" name="userReply" placeholder="상품평을 입력하세요..." rows="5"></textarea>
+
+		                        <div class="text-right" style="margin-top: 15px;">
+			                        <c:if test="${dsProduct.MARK_YN == 'N'}">
+			                            <div class="stars starrr" data-rating="0"></div>
+			                        </c:if>
+		                            <a class="btn btn-danger btn-md" href="#" id="close-review-box" style="display:none; margin-right: 10px;">
+		                            <span class="glyphicon glyphicon-remove"></span>Cancel</a>
+		                            <button class="btn btn-success btn-md" onclick="return fn_save()">Save</button>
+		                        </div>
+		                        <input type="hidden" id="productCode" name="productCode" value="${dsProduct.PRODUCT_CODE}">
+		                        <input type="hidden" id="markYn" name="markYn" value="${dsProduct.MARK_YN}">
+		                    </form>
+		                    
+		                </div>
+		            </div>
+		        </div>
+			</div>
+		</div>
+	</div>
+</c:if>
+
 
 
 	<jsp:include page="../common/foot.jsp"></jsp:include>

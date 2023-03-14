@@ -113,3 +113,10 @@ margin-left: 5px
     margin: 5px !important;
     padding: 5px 10px !important
 }
+
+.reBtn{
+	background: pink !important;
+	border: 1px solid pink !important;
+	margin-top: 0px !important;
+}
+

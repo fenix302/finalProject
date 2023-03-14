@@ -31,4 +31,15 @@
 			)
 		]]>
 	</insert>
+	
+	<delete id="deleteMark" parameterType="map">
+		<![CDATA[
+			/*	deleteMark	*/
+				DELETE
+				FROM  TB_MARK
+				WHERE 1=1
+				AND USER_CODE = #{userCode}
+			]]>
+	</delete>
+	
 </mapper>
