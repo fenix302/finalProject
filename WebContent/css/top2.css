@@ -55,7 +55,7 @@ a:-webkit-any-link {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: #ff8080;
   height: 80px;
 }
 
@@ -96,22 +96,25 @@ a:-webkit-any-link {
 
 .navbar__toggleBtn {
   position: absolute;
-  right: 32px;
+  right: 16px;
+  top : 15px;
   font-size: 24px;
   color: #d49466;
   display: none;
 }
 
-.fas{
-	padding-top: 10px; 	
-}
+
 
 @media screen and (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 8px 24px;
   }
+  
+  .navbar__logo>a>img{
+	padding-top: 20px !important;
+	padding-left: 16px !important; 
+}
 
   .navbar__menu {
     display: none;
@@ -139,4 +142,8 @@ a:-webkit-any-link {
   .navbar__icons.active {
     display: flex;
   }
+  
+  .fas{
+	padding-top: 15px; 	
+}
 }
