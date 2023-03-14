@@ -10,7 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 천성 </title>
     <link href="${context}/css/top2.css" rel="stylesheet">
-
+    
+    <!-- 폰트어썸  -->
+	<script src="https://kit.fontawesome.com/3442ebfa65.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    
+    <!-- js -->
     <script src="${context}/js/common2.js"></script>
  	
  	
@@ -29,26 +34,25 @@
 
 <body>
     <div id="top">
-
-	    <nav class="navbar">
-	      <div class="navbar__logo">
-	        <i class="fab fa-accusoft"></i>
-	        <a href="">DreamCoding</a>
-	      </div>
-	      
-	      <ul class="navbar__menu">
-	        <li><a href="">Home</a></li>
-	        <li><a href="">Gallery</a></li>
-	        <li><a href="">Weddings</a></li>
-	        <li><a href="">FAQ</a></li>
-	        <li><a href="">Bookings</a></li>
-	      </ul>
-	
-	      <a href="#" class="navbar__toggleBtn">
-	          <i class="fas fa-bars"></i>
-	      </a>
-	    </nav>
-        
+		<div class="nav_nav">
+		    <nav class="navbar">
+		      <div class="navbar__logo">
+		        <a href="#"><img alt="logo" src="/css/images/logo.png"> </a>
+		      </div>
+		      
+		      <ul class="navbar__menu">
+		        <li><a href="">Home</a></li>
+		        <li><a href="">Gallery</a></li>
+		        <li><a href="">Weddings</a></li>
+		        <li><a href="">FAQ</a></li>
+		        <li><a href="">Bookings</a></li>
+		      </ul>
+		
+		      <a href="#" class="navbar__toggleBtn">
+		          <i class="fas fa-bars"></i>
+		      </a>
+		    </nav>
+		</div>        
     </div>
     
 
