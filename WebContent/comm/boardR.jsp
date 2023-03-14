@@ -84,7 +84,7 @@
 		var bno = '${dsBoard.BNO}';
 		
 		if(confirm("정말 삭제하시겠습니까?")){
-			location.href = "${context}/work/comm/reply/deleteReply.do?rno=" + rno + "&bno=" + bno;
+			location.href = "${context}/work/comm/reply/deleteReply.do?RNO=" + rno + "&BNO=" + bno;
 		}
 	}
 	
