@@ -31,4 +31,8 @@ public class CommReplyServiceImpl implements CommReplyService{
 	public void deleteReply(Map<String, String> replyParam){
 		commReplyDAO.deleteReply(replyParam);
 	}
+
+	public void deleteReply2(Map<String, String> replyParam) {
+		commReplyDAO.deleteReply2(replyParam);
+	}
 }

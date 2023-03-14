@@ -1,5 +1,7 @@
 package work.comm;
 
+import static org.hamcrest.CoreMatchers.containsString;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import work.comm.reply.CommReplyBean;
 import work.comm.reply.CommReplyService;
 import work.user.UserService;
 
@@ -98,17 +101,25 @@ public class CommController {
 	}
 
 	@RequestMapping(value="/work/comm/deleteBoard.do", method= {RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView deleteBoard(HttpServletRequest request){
+	public ModelAndView deleteBoard(HttpServletRequest request, CommReplyBean replyBean){
 		ModelAndView mv = new ModelAndView();
 
 		Map<String, String> boardParam = new HashMap<String, String>();
-
+		Map<String, String> replyParam = new HashMap<String, String>();
+		
 		HttpSession session = request.getSession();
 
 		String boardNo = request.getParameter("bno");
-
+		int flag = replyBean.getRno();
+		String f = Integer.toString(flag);
+		
 		boardParam.put("BNO", boardNo);
-
+		
+		if (f != null) {
+			replyParam.put("BNO", boardNo);
+			commReplyService.deleteReply2(replyParam);
+		}
+		
 		commService.deleteBoard(boardParam);
 
 		mv.setViewName("redirect:/work/comm/retrieveBoardList.do");

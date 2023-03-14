@@ -33,5 +33,8 @@ public class CommReplyDAO {
 		sqlSession.delete("commReply.deleteReply", replyParam);
 	}
 
+	public void deleteReply2(Map<String, String> replyParam){
+		sqlSession.delete("commReply.deleteReply2", replyParam);
+	}
 
 }

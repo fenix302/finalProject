@@ -72,4 +72,15 @@
 			AND RNO = #{RNO}
 		]]>
 	</delete>
+
+	<delete id="deleteReply2" parameterType="map">
+		<![CDATA[
+		/*	deleteReply2	*/
+			DELETE
+			FROM  COMM_REPLY
+			WHERE 1=1
+			AND BNO = #{BNO}
+		]]>
+	</delete>	
+	
 </mapper>

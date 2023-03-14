@@ -13,4 +13,5 @@ public interface CommReplyService {
 
 	public void updateReply(Map<String, String> replyParam);
 	public void deleteReply(Map<String, String> replyParam);
+	public void deleteReply2(Map<String, String> replyParam);
 }

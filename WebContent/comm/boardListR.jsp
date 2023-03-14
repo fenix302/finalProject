@@ -62,9 +62,11 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
+				<c:if test="${sessionScope.id != null}">    
 					<div class="panel-heading">
 						<button id="regBtn" type="button" class="btn btn-dark pull-right">새 글쓰기</button>
 					</div>
+				</c:if>
 					<!-- /.panel-heading -->
 					<div class="panel-body">
 						<table width="100%"
