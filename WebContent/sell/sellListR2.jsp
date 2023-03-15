@@ -217,7 +217,7 @@
 												$("img[name='image']").eq('${sellIdx.index}').attr("src", path.replace(existFolder, imageFolder));
 											</script>
 			                            </td>
-			                            <td style="text-align: center; vertical-align: middle;">${dsSellList.PRODUCT_NAME}</td>
+			                            <td style="text-align: center; vertical-align: middle;" class="pdName">${dsSellList.PRODUCT_NAME}</td>
 			                            <td style="text-align: center; vertical-align: middle;" class="responseC">${dsSellList.PRODUCT_UNIT_PRICE}원</td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsSellList.SELL_COUNT}</td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsSellList.SELL_PRICE}원</td>
