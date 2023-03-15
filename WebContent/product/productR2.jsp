@@ -300,7 +300,7 @@
 
 		            <div class="row" id="post-review-box" style="display:none;">
 		                <div class="col-md-12">
-		                    <form id="createReply" accept-charset="UTF-8" action="${context}/work/reply/createReply.do" method="post">
+		                    <form id="createReply" accept-charset="UTF-8" action="${context}/work/reply/createReply2.do" method="post">
 		                        <input id="ratings-hidden" name="markRating" type="hidden">
 		                        <textarea class="form-control animated" cols="50" id="userReply" name="userReply" placeholder="상품평을 입력하세요..." rows="5"></textarea>
 

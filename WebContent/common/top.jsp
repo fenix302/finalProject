@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- css -->
-    <link href="${context}/css/top2.css" rel="stylesheet">
+    <link href="${context}/css/top.css" rel="stylesheet">
     
     <!-- google font api -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +23,9 @@
     
     <script src="${context}/js/jquery-1.9.1.js"></script>
     <script src="${context}/js/common.js"></script>
+    <!-- owl.carousel -->
+	<link rel="stylesheet" href="${context}/css/owl.carousel.min.css">
+	<script src="${context}/js/owl.carousel.min.js"></script>
     
     
     <title>New Bar</title>

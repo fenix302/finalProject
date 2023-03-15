@@ -64,16 +64,16 @@
 			<div class="banner_main">
 				<div class="owl-carousel">
 					<div class="banner_img">
-						<img src="/css/images/banner_01.jpg" alt="#">
+						<img src="${context}/css/images/banner_01.jpg" alt="#">
 					</div>
 					<div class="banner_img">
-						<img src="/css/images/banner_02.jpg" alt="#">
+						<img src="${context}/css/images/banner_02.jpg" alt="#">
 					</div>
 					<div class="banner_img">
-						<img src="/css/images/banner_03.jpg" alt="#">
+						<img src="${context}/css/images/banner_03.jpg" alt="#">
 					</div>
 					<div class="banner_img">
-						<img src="/css/images/banner_04.jpg" alt="#">
+						<img src="${context}/css/images/banner_04.jpg" alt="#">
 					</div>
 				</div>
 
