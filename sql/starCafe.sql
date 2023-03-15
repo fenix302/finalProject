@@ -340,5 +340,22 @@ alter table consult_reply add constraint pk_consult_reply primary key (rno);
 alter table consult_reply add constraint fk_tb_consulting
 foreign key (bno)  references  tb_consulting (bno); 
 
+-- 문의게시판 테이블 정보
+create table tb_inquiry (
+bno number(10, 0),
+title varchar2(200) not null,
+content varchar2(2000) not null,
+writer varchar2(50) not null,
+regdate date default sysdate
+);
+
+alter table tb_inquiry add constraint pk_inquiry primary key (bno);
+
+create sequence seq_inquiry
+increment by 1
+start with 0
+maxvalue 9999999
+minvalue 0;
+
 
 commit;
