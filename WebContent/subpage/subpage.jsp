@@ -46,7 +46,7 @@
 	<div class="page_header">
 	 <div class="faq_header">
 	       <div class="name">
-	             <p class="comeText">원액</p>
+	             <p class="comeText">${dsProductList[0].PRODUCT_CATEGORY_CD_NM}</p>
 	        </div>
 	  </div>
 </div>
