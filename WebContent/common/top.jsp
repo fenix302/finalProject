@@ -96,7 +96,7 @@ a {
 								<li><a class="dropdown-item"
 									href="${context}/work/notice/retrieveBoardList.do">공지사항</a></li>
 								<li><a class="dropdown-item"
-									href="${context}/work/generalboard/retrieveBoardList.do">자유게시판</a></li>
+									href="${context}/work/free/retrieveBoardList.do">자유게시판</a></li>
 								<li><a class="dropdown-item"
 									href="${context}/work/comm/retrieveBoardList.do">커뮤니티</a></li>
 								<li><a class="dropdown-item"

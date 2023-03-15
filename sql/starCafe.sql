@@ -282,24 +282,27 @@ create sequence general_reply_seq
 start with 1
 increment by 1;
 
--- 자유게시판 테이블 생성
-create table general_reply (
+-- 자유 게시판 댓글 테이블 생성
+drop table free_reply;
+create table free_reply (
   rno number(10,0), 
   bno number(10,0) not null,
+  user_code varchar2(20),
   reply varchar2(1000) not null,
-  replyer varchar2(50) not null, 
   replyDate date default sysdate 
 );
 
-alter table general_reply add constraint pk_general_reply primary key (rno);
+alter table free_reply add constraint pk_free_reply primary key (rno);
 
-alter table general_reply add constraint fk_tb_general 
-foreign key (bno)  references  tb_general (bno); 
+alter table free_reply  add constraint fk_tb_jw_free  
+foreign key (bno)  references  tb_jw_free (bno);
+alter table free_reply add constraint fk_tb_jw_free2
+foreign key (user_code) references tb_com_user(user_code); 
 
--- 커뮤니티게시판 댓글 sql
-  -- 시작값을 1로하고 1씩 증가하는 comm_reply_seq 커뮤니티게시판 시퀀스를 생성함.
-drop sequence comm_reply_seq;
-create sequence comm_reply_seq 
+-- 자유게시판 댓글 sql
+-- 시작값을 1로하고 1씩 증가하는 general_reply_seq 자유게시판 시퀀스를 생성함.
+drop sequence free_reply_seq;
+create sequence free_reply_seq 
 start with 1
 increment by 1;
 

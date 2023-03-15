@@ -8,7 +8,7 @@
 <head>
 	<meta name="description" content="boardRegisterC.jsp">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>자유 글 쓰기</title>
+	<title>자유 게시판 글 쓰기</title>
 	<link href="${context}/css/bootstrap.css" rel="stylesheet">
 <%-- 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet"> --%>
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
@@ -75,7 +75,7 @@
 	<div class="page-header">
 		<h1></h1>
 	</div>
-	<form id="createBoard" method="post" action="/work/generalboard/createBoard.do" role="form">
+	<form id="createBoard" method="post" action="/work/free/createBoard.do" role="form">
 		<div class="form-horizontal">
 			<div class="form-group">
 				<label for="boardTitle" class="control-label col-md-1"><b>제목</b></label>
@@ -87,7 +87,7 @@
 			<div class="form-group">
 				<label for="boardWriter" class="control-label col-md-1"><b>작성자</b></label>
 				<div class="col-md-11">
-					<input class="form-control" type="text" name="writer" id="writer" required="required" maxlength="50"/>
+					<input class="form-control" type="text" name="writer" id="writer" required="required" maxlength="50" value="${sessionScope.id}" readonly="readonly"/>
 				</div>
 			</div>
 

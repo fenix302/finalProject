@@ -46,7 +46,7 @@
 <div class="page_header">
 	 <div class="faq_header">
 	       <div class="name">
-	             <p class="comeText">자유게시판</p>
+	             <p class="comeText">자유 게시판</p>
 	        </div>
 	  </div>
 </div>
@@ -62,9 +62,11 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
+				<c:if test="${sessionScope.id != null}">    
 					<div class="panel-heading">
 						<button id="regBtn" type="button" class="btn btn-dark pull-right">새 글쓰기</button>
 					</div>
+				</c:if>
 					<!-- /.panel-heading -->
 					<div class="panel-body">
 						<table width="100%"
@@ -80,8 +82,8 @@
 							<tbody>
 		                    	<c:forEach items="${dsBoardList}" var="dsBoardList" varStatus="courseIdx">
 		                         <tr>
-		  							<td><a class="nt" href ="${context}/work/generalboard/retrieveBoard.do?bno=${dsBoardList.bno}" >${dsBoardList.bno}</a></td>
-									<td><a class="nt" href="${context}/work/generalboard/retrieveBoard.do?bno=${dsBoardList.bno}" >${dsBoardList.title}</a></td>
+		  							<td><a class="nt" href ="${context}/work/free/retrieveBoard.do?bno=${dsBoardList.bno}" >${dsBoardList.bno}</a></td>
+									<td><a class="nt" href="${context}/work/free/retrieveBoard.do?bno=${dsBoardList.bno}" >${dsBoardList.title}</a></td>
 									<td><c:out value="${dsBoardList.writer}" /></td>
 									<td><fmt:formatDate pattern="yyyy-MM-dd" value="${dsBoardList.regdate}" /></td>
 	
@@ -95,11 +97,10 @@
 		
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="searchForm" action="/work/generalboard/retrieveBoardList.do" method="get">
+								<form id="searchForm" action="/work/free/retrieveBoardList.do" method="get">
 		<!-- 						select 태그의 내부는 삼항 연산자를 이용해서 해당 조건으로 검색되었다면  			-->
 		<!-- 						'selected'라는 문자열을 출력하게 해서 화면에서 선택된 항목으로 보이도록 처리합니다.  	-->
 									<select name="type">
-										<option value="" <c:out value="${pageMaker.cri.type == null ? 'selected': ''}"/>>--</option>					
 											<option value="T" <c:out value="${pageMaker.cri.type eq 'T' ? 'selected': ''}"/>>제목</option>
 											<option value="C" <c:out value="${pageMaker.cri.type eq 'C' ? 'selected': ''}"/>>내용</option>
 											<option value="W" <c:out value="${pageMaker.cri.type eq 'W' ? 'selected': ''}"/>>작성자</option>
@@ -123,7 +124,7 @@
 									<li class="page-item previous"><a href="${pageMaker.startPage-1}">Prev</a></li>
 								</c:if>
 								<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-									<li class="page-item ${pageMaker.cri.pageNum == num ? "active":""} "><a href="${num}">${num}</a></li>
+									<li class="page-item ${pageMaker.cri.pageNum == num ? " active":""} "><a href="${num}">${num}</a></li>
 								</c:forEach>
 								<c:if test="${pageMaker.next}">
 									<li class="page-item next"><a href="${pageMaker.endPage +1}">Next</a></li>
@@ -165,7 +166,7 @@
 		</div>
 		<!-- /.row -->
 </div>
-		<form id="actionForm" action="/work/generalboard/retrieveBoardList.do" method="get">
+		<form id="actionForm" action="/work/free/retrieveBoardList.do" method="get">
 <%-- 			<input type="hidden" name="bno" value='<c:out value="${dsBoardList.BNO}"/>'> --%>
 			<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 			<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
@@ -195,7 +196,7 @@
 						}
 		
 						$("#regBtn").on("click", function() {
-							self.location = "/work/generalboard/createBoard.do";
+							self.location = "/work/free/createBoard.do";
 						});
 		
 						var actionForm = $("#actionForm");
@@ -212,7 +213,7 @@
 						$(".move").on("click", function (e) {
 							e.preventDefault();
 							actionForm.append("<input type='hidden' name='bno' value='"+ $(this).attr("href")+"'>");
-							actionForm.attr("action","/work/generalboard/retrieveBoard.do");
+							actionForm.attr("action","/work/free/retrieveBoard.do");
 							actionForm.submit();
 						});
 						
@@ -234,9 +235,6 @@
 							
 							searchForm.submit();
 						});
-						
-						
-						
 						
 					});
 		</script>

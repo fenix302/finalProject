@@ -15,9 +15,10 @@
 		<typeAlias type="work.notice.NoticeBean" alias="notice"/>
 		<typeAlias type="work.comm.CommBean" alias="comm"/>
 		<typeAlias type="work.consulting.ConsultingBean" alias="consulting"/>
-		<typeAlias type="work.generalboard.GeneralBoardBean" alias="generalboard"/>
 		<typeAlias type="work.comm.reply.CommReplyBean" alias="commReply"/>
 		<typeAlias type="work.inquiry.inquiryBean" alias="inquiry"/>
+		<typeAlias type="work.free.FreeBean" alias="free"/>
+		<typeAlias type="work.free.reply.FreeReplyBean" alias="freeReply"/>
 	</typeAliases>
 
 	<mappers>
@@ -33,7 +34,8 @@
 		<mapper resource="conf/sql-inquiry.xml"/>
 		<mapper resource="conf/sql-comm.xml" />
 		<mapper resource="conf/sql-consulting.xml" />
-		<mapper resource="conf/sql-generalboard.xml"/>
 		<mapper resource="conf/sql-comm-reply.xml"/>
+		<mapper resource="conf/sql-free.xml"/>
+		<mapper resource="conf/sql-free-reply.xml"/>
 	</mappers>
 </configuration>

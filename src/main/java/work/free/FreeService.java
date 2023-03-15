@@ -1,21 +1,21 @@
-package work.generalboard;
+package work.free;
 
 import java.util.List;
 import java.util.Map;
 
 
-public interface GeneralBoardService {
-	public List<GeneralBoardBean> retrieveBoardList(Criteria cri);
+public interface FreeService {
+	public List<FreeBean> retrieveBoardList(Criteria cri);
 
-	public List<GeneralBoardBean> getListWithPaging(Criteria cri);
+	public List<FreeBean> getListWithPaging(Criteria cri);
 	
 	public Map<String, String> retrieveBoard(Map<String, String> boardParam);
 
 	public String retrieveMaxBoardNo();
 
-	public void createBoard(GeneralBoardBean board);
+	public void createBoard(FreeBean board);
 
-	public void updateBoard(GeneralBoardBean board);
+	public void updateBoard(FreeBean board);
 
 	public void updateBoardHits(Map<String, String> boardParam);
 

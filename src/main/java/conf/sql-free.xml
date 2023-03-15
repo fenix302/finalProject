@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				  "dtd/mybatis-3-mapper.dtd">
-<mapper namespace="generalboard">
-	<resultMap id="generalboardResult" type="generalboard">
+<mapper namespace="free">
+	<resultMap id="freeResult" type="free">
 		<result property="bno" column="BNO" />
 		<result property="title" column="TITLE" />
 		<result property="content" column="CONTENT" />
@@ -40,7 +40,7 @@
 				, BOARD.CONTENT
 				, BOARD.WRITER
 				, BOARD.REGDATE 
-			FROM tb_general BOARD 
+			FROM tb_jw_free BOARD 
 			WHERE  1=1
 			ORDER BY BOARD.BNO DESC
 		]]>
@@ -54,7 +54,7 @@
 				 , BOARD.CONTENT
 				 , BOARD.WRITER
 				 , BOARD.REGDATE
-			FROM   TB_GENERAL BOARD
+			FROM   TB_JW_FREE BOARD
 			WHERE  1=1
 			AND    BNO = #{BNO}
 		]]>
@@ -63,12 +63,12 @@
 		<![CDATA[
 		/*	retrieveMaxBoardNo	*/
 			SELECT MAX(BOARD.BNO)
-			FROM   tb_general BOARD
+			FROM   tb_jw_free BOARD
 		]]>
 	</select>
-	<insert id="createBoard" parameterType="generalboard">
+	<insert id="createBoard" parameterType="free">
 		<![CDATA[
-			INSERT INTO TB_GENERAL(
+			INSERT INTO TB_JW_FREE(
 				BNO
 				, TITLE
 				, CONTENT
@@ -80,23 +80,23 @@
 				, #{writer}
 			)
 		]]>
-<!-- 		insert into tb_jw_general (bno, title, content, writer) -->
+<!-- 		insert into tb_jw_free (bno, title, content, writer) -->
 <!-- 		values (seq_board.nextval, #{title}, #{content}, #{writer}) -->
 	</insert>
 
-	<update id="updateBoard" parameterType="generalboard">
+	<update id="updateBoard" parameterType="free">
 		<![CDATA[
 		/*	updateBoard	*/
-			UPDATE tb_general
+			UPDATE tb_jw_free
 			SET TITLE = #{title}
 			, CONTENT = #{content}
 			WHERE BNO = #{bno}
 		]]>
 	</update>
-	<update id="updateBoardHits" parameterType="generalboard">
+	<update id="updateBoardHits" parameterType="free">
 		<![CDATA[
 		/*	updateBoardHits	*/
-			UPDATE tb_general
+			UPDATE tb_jw_free
 			SET BOARD_HITS          =  BOARD_HITS + 1
 			WHERE BNO = #{BNO}
 		]]>
@@ -107,7 +107,7 @@
 		<![CDATA[
 		/*	deleteBoard	*/
 			DELETE
-			FROM  tb_general
+			FROM  tb_jw_free
 			WHERE 1=1
 			AND BNO = #{BNO}
 		]]>
@@ -117,7 +117,7 @@
 		<![CDATA[
 		/*	deleteBoard2	*/
 			DELETE
-			FROM  tb_general
+			FROM  tb_jw_free
 			WHERE 1=1
 			AND USER_CODE = (SELECT USER_CODE FROM TB_COM_USER WHERE ID = #{ID})
 		]]>
@@ -129,15 +129,15 @@
 	
 	
 	
-	<select id="getListWithPaging" resultType="generalboard">
+	<select id="getListWithPaging" resultType="free">
 		<![CDATA[
 		
 		SELECT
 		    BNO, TITLE, CONTENT, WRITER, REGDATE
 	    from(
-		    SELECT /*+INDEX_DESC(tb_general pk_general) */
+		    SELECT /*+INDEX_DESC(tb_jw_free pk_free) */
 		        ROWNUM rn, bno, title, content, writer, regdate
-		    FROM tb_general
+		    FROM tb_jw_free
 		    WHERE 
 		]]>	
 			<trim prefix="(" suffix=") AND " prefixOverrides="OR">
@@ -167,7 +167,7 @@
 	
 	<select id="getTotalCount" resultType="int">
 		<![CDATA[
-			select count(*) from tb_general 
+			select count(*) from tb_jw_free 
 			
 			where 
 		]]>
@@ -176,6 +176,12 @@
 			bno > 0
 		]]>
 	</select>
+	
+	
+	
+	
+	
+	
 	
 	
 	

@@ -1,4 +1,4 @@
-package work.generalboard;
+package work.free;
 
 import lombok.Getter;
 import lombok.Setter;
