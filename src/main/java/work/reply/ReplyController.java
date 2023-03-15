@@ -63,6 +63,41 @@ public class ReplyController {
 		return mv;
 	}
 
+	@RequestMapping(value="/work/reply/createReply2.do", method=RequestMethod.POST)
+	public ModelAndView createReply2(HttpServletRequest request){
+		ModelAndView mv = new ModelAndView();
+
+		HttpSession session = request.getSession();
+
+		Map<String, String> replyParam = new HashMap<String, String>();
+		Map<String, String> markParam = new HashMap<String, String>();
+
+		String userCode = (String)session.getAttribute("userCode");
+		String productCode = request.getParameter("productCode");
+		String userReply = request.getParameter("userReply");
+		String markYn = request.getParameter("markYn");
+		String markRating = request.getParameter("markRating");
+
+		replyParam.put("userCode", userCode);
+		replyParam.put("productCode", productCode);
+		replyParam.put("userReply", userReply);
+
+		if("N".equals(markYn)){
+			markParam.put("productCode", productCode);
+			markParam.put("userCode", userCode);
+			markParam.put("markRating", markRating);
+
+			markService.createMark(markParam);
+		}
+
+		//댓글 생성
+		replyService.createReply(replyParam);
+
+		mv.setViewName("redirect:/work/product/retrieveProduct2.do?productCode=" + productCode);
+
+		return mv;
+	}
+	
 	@RequestMapping(value="/work/reply/deleteReply.do", method=RequestMethod.GET)
 	public ModelAndView deleteReply(HttpServletRequest request, MarkBean markBean){
 		ModelAndView mv = new ModelAndView();
