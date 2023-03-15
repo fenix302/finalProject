@@ -70,7 +70,12 @@ a {
 									href="${context}/company/introduce.jsp">회사소개</a></li>
 								<li><a class="dropdown-item"
 									href="${context}/company/location.jsp">오시는 길</a></li>
-								<li><a class="dropdown-item" href="${context}/faq/faq.jsp">FAQ</a></li>
+								<li>
+									<a class="dropdown-item" href="#">홍보영상</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="${context}/faq/faq.jsp">FAQ</a>
+								</li>
 							</ul></li>
 
 						<li class="nav-item dropdown"><a
