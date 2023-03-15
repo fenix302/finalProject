@@ -17,6 +17,7 @@
 		<typeAlias type="work.consulting.ConsultingBean" alias="consulting"/>
 		<typeAlias type="work.generalboard.GeneralBoardBean" alias="generalboard"/>
 		<typeAlias type="work.comm.reply.CommReplyBean" alias="commReply"/>
+		<typeAlias type="work.inquiry.inquiryBean" alias="inquiry"/>
 	</typeAliases>
 
 	<mappers>
@@ -29,6 +30,7 @@
 		<mapper resource="conf/sql-code.xml" />
 		<mapper resource="conf/sql-payment.xml" />
 		<mapper resource="conf/sql-notice.xml" />
+		<mapper resource="conf/sql-inquiry.xml"/>
 		<mapper resource="conf/sql-comm.xml" />
 		<mapper resource="conf/sql-consulting.xml" />
 		<mapper resource="conf/sql-generalboard.xml"/>

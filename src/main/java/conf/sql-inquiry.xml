@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+				  "dtd/mybatis-3-mapper.dtd">
+<mapper namespace="inquiry">
+	<resultMap id="inquiryResult" type="inquiry">
+		<result property="bno" column="BNO" />
+		<result property="title" column="TITLE" />
+		<result property="content" column="CONTENT" />
+		<result property="writer" column="WRITER" />
+		<result property="regdate" column="REGDATE" />
+	</resultMap>
+
+	<sql id="criteria">  <!-- MyBatis는 sql태그를 이용해서 SQL의 일부를 별도로 보관하고, 필요한 경우에 include 시키는 형식으로 사용할 수 있다.-->	
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+<!-- 				String[] getTypeArr 에서 나온 typeArr 쓰는것임 -->
+			<if test="type != null and keyword != null">
+				<foreach item="type" collection="typeArr">
+					<trim prefix="OR">
+						<choose>
+							<when test="type == 'T'.toString()">
+								title like '%'||#{keyword}||'%'
+							</when>
+							<when test="type == 'C'.toString()">
+								content like '%'||#{keyword}||'%'
+							</when>
+							<when test="type == 'W'.toString()">
+								writer like '%'||#{keyword}||'%'
+							</when>
+						</choose>
+					</trim>
+				</foreach>
+			</if>
+		</trim>		    
+	</sql>
+
+	<select id="retrieveBoardList" parameterType="map" resultType="map">
+		<![CDATA[
+			SELECT BOARD.BNO
+				, BOARD.TITLE
+				, BOARD.CONTENT
+				, BOARD.WRITER
+				, BOARD.REGDATE 
+			FROM tb_inquiry BOARD 
+			WHERE  1=1
+			ORDER BY BOARD.BNO DESC
+		]]>
+	</select>
+
+	<select id="retrieveBoard" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	retrieveBoard	*/
+			SELECT BOARD.BNO
+				 , BOARD.TITLE
+				 , BOARD.CONTENT
+				 , BOARD.WRITER
+				 , BOARD.REGDATE
+			FROM   TB_INQUIRY BOARD
+			WHERE  1=1
+			AND    BNO = #{BNO}
+		]]>
+	</select>
+	<select id="retrieveMaxBoardNo" resultType="string">
+		<![CDATA[
+		/*	retrieveMaxBoardNo	*/
+			SELECT MAX(BOARD.BNO)
+			FROM   TB_INQUIRY BOARD
+		]]>
+	</select>
+	<insert id="createBoard" parameterType="inquiry">
+		<![CDATA[
+			INSERT INTO TB_INQUIRY(
+				BNO
+				, TITLE
+				, CONTENT
+				, WRITER
+			) VALUES (
+				SEQ_COMM.NEXTVAL
+				, #{title}
+				, #{content}
+				, #{writer}
+			)
+		]]>
+<!-- 		insert into tb_inquiry (bno, title, content, writer) -->
+<!-- 		values (seq_board.nextval, #{title}, #{content}, #{writer}) -->
+	</insert>
+
+	<update id="updateBoard" parameterType="inquiry">
+		<![CDATA[
+		/*	updateBoard	*/
+			UPDATE tb_inquiry
+			SET TITLE = #{title}
+			, CONTENT = #{content}
+			WHERE BNO = #{bno}
+		]]>
+	</update>
+	<update id="updateBoardHits" parameterType="inquiry">
+		<![CDATA[
+		/*	updateBoardHits	*/
+			UPDATE tb_inquiry
+			SET BOARD_HITS          =  BOARD_HITS + 1
+			WHERE BNO = #{BNO}
+		]]>
+	</update>
+
+
+	<delete id="deleteBoard" parameterType="map">
+		<![CDATA[
+		/*	deleteBoard	*/
+			DELETE
+			FROM  tb_inquiry
+			WHERE 1=1
+			AND BNO = #{BNO}
+		]]>
+	</delete>
+
+	<delete id="deleteBoard2" parameterType="map">
+		<![CDATA[
+		/*	deleteBoard2	*/
+			DELETE
+			FROM  tb_inquiry
+			WHERE 1=1
+			AND USER_CODE = (SELECT USER_CODE FROM TB_COM_USER WHERE ID = #{ID})
+		]]>
+	</delete>
+	
+	
+	
+	
+	
+	
+	
+	<select id="getListWithPaging" resultType="inquiry">
+		<![CDATA[
+		
+		SELECT
+		    BNO, TITLE, CONTENT, WRITER, REGDATE
+	    from(
+		    SELECT /*+INDEX_DESC(tb_inquiry pk_inquiry) */
+		        ROWNUM rn, bno, title, content, writer, regdate
+		    FROM tb_inquiry
+		    WHERE 
+		]]>	
+			<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+				<foreach item="type" collection="typeArr">
+					<trim prefix="OR">
+						<choose>
+							<when test="type == 'T'.toString()">
+								title like '%'||#{keyword}||'%'
+							</when>
+							<when test="type == 'C'.toString()">
+								content like '%'||#{keyword}||'%'
+							</when>
+							<when test="type == 'W'.toString()">
+								writer like '%'||#{keyword}||'%'
+							</when>
+						</choose>
+					</trim>
+				</foreach>
+			</trim>		    
+		<![CDATA[
+			ROWNUM <= #{pageNum} * #{amount}
+			)
+		where RN > (#{pageNum} -1) * #{amount}
+		]]>	
+		    
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
+		<![CDATA[
+			select count(*) from tb_inquiry 
+			
+			where 
+		]]>
+		<include refid="criteria"></include>
+		<![CDATA[
+			bno > 0
+		]]>
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</mapper>
