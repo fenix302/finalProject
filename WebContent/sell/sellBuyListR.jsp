@@ -86,10 +86,10 @@
 			                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
 			                    <thead>
 			                        <tr>
-			                        	<th style="text-align: center; vertical-align: middle; width: 10px;">No</th>
-			                            <th style="text-align: center; vertical-align: middle; width: 20px;">상품이미지</th>
+			                        	<th style="text-align: center; vertical-align: middle; width: 10px;" class="responseC">No</th>
+			                            <th style="text-align: center; vertical-align: middle; width: 20px;" class="responseC">상품이미지</th>
 			                            <th style="text-align: center; vertical-align: middle; width: 50px;">상품이름</th>
-			                            <th style="text-align: center; vertical-align: middle; width: 20px;">상품단가</th>
+			                            <th style="text-align: center; vertical-align: middle; width: 20px;" class="responseC">상품단가</th>
 			                            <th style="text-align: center; vertical-align: middle; width: 40px;">상품수량</th>
 			                            <th style="text-align: center; vertical-align: middle; width: 30px;">결제금액</th>
 			                            <th style="text-align: center; vertical-align: middle; width: 10px;">상품평</th>
@@ -98,8 +98,8 @@
 			                    <tbody>
 			                    	<c:forEach items="${dsBuyList}" var="dsBuyList" varStatus="buyIdx">
 			                         <tr>
-			                         	<td style="text-align: center; vertical-align: middle;">${buyIdx.count}</td>
-			                            <td style="text-align: center; vertical-align: middle;">
+			                         	<td style="text-align: center; vertical-align: middle;" class="responseC">${buyIdx.count}</td>
+			                            <td style="text-align: center; vertical-align: middle;" class="responseC">
 										<img name="image" width="110px" height="110px" src="${context}/coffeeImg/${dsBuyList.PRODUCT_IMAGE}" class="img-thumbnail">
 											<script type="text/javascript">
 											 	var productCategoryCd = '${dsBuyList.PRODUCT_CATEGORY_CD}';
@@ -120,7 +120,7 @@
 											</script>
 			                            </td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsBuyList.PRODUCT_NAME}</td>
-			                            <td style="text-align: center; vertical-align: middle;">${dsBuyList.PRODUCT_UNIT_PRICE}원</td>
+			                            <td style="text-align: center; vertical-align: middle;" class="responseC">${dsBuyList.PRODUCT_UNIT_PRICE}원</td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsBuyList.SELL_COUNT}</td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsBuyList.SELL_PRICE}원</td>
 			                            <td style="text-align: center; vertical-align: middle;">
