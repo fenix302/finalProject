@@ -101,7 +101,7 @@
     	          pg: "html5_inicis",
     	          pay_method: "card",
     	          merchant_uid: 'merchant_' + new Date().getTime(),
-    	          name: "goods",
+    	          name: $(".pdName").text(),
     	          amount: 10,
     	          buyer_email: "${sessionScope.email}",
     	          buyer_name: "${sessionScope.name}",

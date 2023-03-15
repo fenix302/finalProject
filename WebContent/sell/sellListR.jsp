@@ -37,7 +37,7 @@
 	var existFolder = '';
 	var imageFolder = '';
 	var path = '';
-
+	
     $(document).ready(function() {
 //         $('#dataTables-example').dataTable();
 
@@ -93,15 +93,17 @@
     }
     
     function fn_cd_buy(paramSellCode, paramSellCount, paramProductCode) {
+    		
         if(confirm("결제하시겠습니까?")){
     		var IMP = window.IMP;
+//     		var name = $(".pdName");
     		IMP.init('imp28503804'); //iamport 대신 자신의 "가맹점 식별코드"를 사용하시면 됩니다
     		// IMP.request_pay(param, callback) 결제창 호출
     	      IMP.request_pay({ // param
     	          pg: "html5_inicis",
     	          pay_method: "card",
     	          merchant_uid: 'merchant_' + new Date().getTime(),
-    	          name: "goods",
+    	          name: $(".pdName").text(),
     	          amount: 10,
     	          buyer_email: "${sessionScope.email}",
     	          buyer_name: "${sessionScope.name}",
@@ -172,7 +174,7 @@
 	
 		<div class="buy-main">
 <!-- 			<h1><font color="black"><strong>장바구니</strong>&nbsp;<span class="glyphicon glyphicon-shopping-cart"></span></font></h1> -->
-			<h4><font color="black"><strong>${sessionScope.id}님의 주문정보입니다.</strong></font></h4>
+			<h4><font color="black"><strong>${sessionScope.name}님의 주문정보입니다.</strong></font></h4>
 		</div>	
 
 		<div class="row">
@@ -217,7 +219,7 @@
 												$("img[name='image']").eq('${sellIdx.index}').attr("src", path.replace(existFolder, imageFolder));
 											</script>
 			                            </td>
-			                            <td style="text-align: center; vertical-align: middle;">${dsSellList.PRODUCT_NAME}</td>
+			                            <td style="text-align: center; vertical-align: middle;" class="pdName">${dsSellList.PRODUCT_NAME}</td>
 			                            <td style="text-align: center; vertical-align: middle;" class="responseC">${dsSellList.PRODUCT_UNIT_PRICE}원</td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsSellList.SELL_COUNT}</td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsSellList.SELL_PRICE}원</td>
