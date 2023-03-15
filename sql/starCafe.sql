@@ -302,7 +302,7 @@ create sequence free_reply_seq
 start with 1
 increment by 1;
 
-  -- 커뮤니티 게시판 테이블 생성
+  -- 커뮤니티 게시판 댓글 테이블 생성
 drop table comm_reply;
 create table comm_reply (
   rno number(10,0), 
