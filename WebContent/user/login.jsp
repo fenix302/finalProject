@@ -121,16 +121,6 @@
 	                            
 	                            <button type="button" class="btn btn-lg user-join-btn btn-block" onclick="location.href = '${context}/user/userC.jsp'"><strong>회원가입</strong></button>
 	                            
-	                            
-	                            
-<!-- 	                            <ul class="btn btn-lg btn-block user-kakao-btn"> -->
-<!-- 						           <li onclick="kakaoLogin();"> -->
-<!-- 						               <a href="javascript:void(0)"> -->
-<!-- 						               		<button type="button" class="btn btn-lg btn-block kakao-btn" ><strong>카카오로그인</strong></button> -->
-<!-- 								           <img alt="카카오로그인" src="/userImg/kakao_login.png" style="width: 100%;"> -->
-<!-- 								       </a> -->
-<!-- 								    </li> -->
-<!-- 						        </ul> -->
 							</div>
 							
 	                        <div class="form-group user-find">

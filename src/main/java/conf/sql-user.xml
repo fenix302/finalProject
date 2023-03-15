@@ -39,6 +39,12 @@
 			SELECT USER_CODE
 				 , ID
 				 , GRADE
+				 , NAME
+				 , POST_NUM
+				 , PHONE_CD
+				 , PHONE_NUM
+				 , ADDRESS
+				 , EMAIL
 			FROM   TB_COM_USER WHERE ID = #{id}
 		]]>
 	</select>

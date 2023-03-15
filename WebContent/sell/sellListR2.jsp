@@ -103,11 +103,11 @@
     	          merchant_uid: 'merchant_' + new Date().getTime(),
     	          name: "goods",
     	          amount: 10,
-    	          buyer_email: "star@nate.com",
-    	          buyer_name: "장나라",
-    	          buyer_tel: "010-1234-5678",
-    	          buyer_addr: "서울특별시 강남구 신사동",
-    	          buyer_postcode: "01111",
+    	          buyer_email: "${sessionScope.email}",
+    	          buyer_name: "${sessionScope.name}",
+    	          buyer_tel: "${sessionScope.phoneNum}",
+    	          buyer_addr: "${sessionScope.address}",
+    	          buyer_postcode: "${sessionScope.postNum}",
     	          m_redirect_url : "/paymentDone.do"
     	      }, function (rsp) { // callback
     	          if (rsp.success) {
@@ -138,7 +138,7 @@
     					console.log(e);
     				}        	  
     	          });
-    	          location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode;
+    	          location.href = "${context}/work/sell/updateFinalBuy2.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode;
     	          } else {
     	              alert("결제 실패 : " + rsp.error_msg);	        	  
     	          }
@@ -172,7 +172,7 @@
 	
 		<div class="buy-main">
 <!-- 			<h1><font color="black"><strong>장바구니</strong>&nbsp;<span class="glyphicon glyphicon-shopping-cart"></span></font></h1> -->
-			<h4><font color="black"><strong>${sessionScope.id}님의 주문정보입니다.</strong></font></h4>
+			<h4><font color="black"><strong>${sessionScope.name}님의 주문정보입니다.</strong></font></h4>
 		</div>	
 
 		<div class="row">
