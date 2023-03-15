@@ -111,13 +111,19 @@
     	          m_redirect_url : "/paymentDone.do"
     	      }, function (rsp) { // callback
     	          if (rsp.success) {
-    	             var paymentInfo = {
-    	            		 imp_uid : rsp.imp_uid,
-    	            		 merchant_uid : rsp.merchant_uid,
-    	            		 paid_amount : rsp.paid_amount,
-    	            		 apply_num : rsp.apply_num,
-    	            		 paid_at : new Date()
-    	             };
+    	        	  var paymentInfo = {
+     	            		 imp_uid : rsp.imp_uid,
+     	            		 merchant_uid : rsp.merchant_uid,
+     	            		 paid_amount : rsp.paid_amount,
+     	            		 apply_num : rsp.apply_num,
+     	            		 paid_at : new Date(),
+     	             		 name : rsp.name,
+     	             		 buyer_name : rsp.buyer_name,
+     	             		 buyer_email : rsp.buyer_email,
+     	             		 buyer_tel : rsp.buyer_tel,
+     	             		 buyer_addr : rsp.buyer_addr,
+     	             		 buyer_postcode : rsp.buyer_postcode
+     	             };
     	           
     	          $.ajax({
     	        	 url : "/paymentProcess.do",

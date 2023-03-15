@@ -46,6 +46,9 @@
     function fn_review(paramProductCode){
     	location.href = "${context}/work/product/retrieveProduct.do?productCode=" + paramProductCode;
     }
+    function fn_review2(paramProductCode){
+    	location.href = "${context}/work/product/retrieveProduct2.do?productCode=" + paramProductCode;
+    }
 
     </script>
 </head>
@@ -124,7 +127,12 @@
 			                            <td style="text-align: center; vertical-align: middle;">${dsBuyList.SELL_COUNT}</td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsBuyList.SELL_PRICE}원</td>
 			                            <td style="text-align: center; vertical-align: middle;">
+			                            <c:if test="${dsBuyList.PRODUCT_CATEGORY_CD == 'C' || dsBuyList.PRODUCT_CATEGORY_CD == 'G' || dsBuyList.PRODUCT_CATEGORY_CD == 'P'}">
 			                            	<button type="button" class="btn btn-warning" onclick="fn_review('${dsBuyList.PRODUCT_CODE}')">상품평 쓰러가기</button>
+			                            </c:if>
+			                            <c:if test="${dsBuyList.PRODUCT_CATEGORY_CD == 'R'}">
+			                            	<button type="button" class="btn btn-warning" onclick="fn_review2('${dsBuyList.PRODUCT_CODE}')">상품평 쓰러가기</button>
+			                            </c:if>
 			                            </td>
 			                         </tr>
 			                        </c:forEach>

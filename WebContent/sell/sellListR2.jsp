@@ -88,7 +88,7 @@
 
     function fn_finalBuy(paramSellCode, paramSellCount, paramProductCode){
 		if(confirm("결제하시겠습니까?")){
-			location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode;
+			location.href = "${context}/work/sell/updateFinalBuy2.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode;
 		}
     }
     
@@ -116,7 +116,13 @@
     	            		 merchant_uid : rsp.merchant_uid,
     	            		 paid_amount : rsp.paid_amount,
     	            		 apply_num : rsp.apply_num,
-    	            		 paid_at : new Date()
+    	            		 paid_at : new Date(),
+    	             		 name : rsp.name,
+    	             		 buyer_name : rsp.buyer_name,
+    	             		 buyer_email : rsp.buyer_email,
+    	             		 buyer_tel : rsp.buyer_tel,
+    	             		 buyer_addr : rsp.buyer_addr,
+    	             		 buyer_postcode : rsp.buyer_postcode
     	             };
     	           
     	          $.ajax({

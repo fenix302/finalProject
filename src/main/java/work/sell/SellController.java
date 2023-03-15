@@ -153,6 +153,31 @@ public class SellController {
 		return mv;
 	}
 
+	@RequestMapping(value="/work/sell/updateFinalBuy2.do", method=RequestMethod.GET)
+	public ModelAndView updateFinalBuy2(HttpServletRequest request){
+		ModelAndView mv = new ModelAndView();
+
+		Map<String, String> productParam = new HashMap<String, String>();
+		Map<String, String> sellParam = new HashMap<String, String>();
+
+		String productCode = request.getParameter("productCode");
+		String sellCode = request.getParameter("sellCode");
+		String sellCount = request.getParameter("sellCount");
+
+		sellParam.put("sellCode", sellCode);
+
+		productParam.put("productCode", productCode);
+		productParam.put("productCount", sellCount);
+
+		productService.updateProductCountMinus(productParam);
+
+		sellService.updateSellYn(sellParam);
+
+		mv.setViewName("redirect:/work/sell/retrieveSellConfirm2.do?productCode=" + productCode);
+
+		return mv;
+	}
+	
 	@RequestMapping(value="/work/sell/retrieveSellConfirm.do", method=RequestMethod.GET)
 	public ModelAndView retrieveSellConfirm(HttpServletRequest request){
 		ModelAndView mv = new ModelAndView();
@@ -174,7 +199,7 @@ public class SellController {
 
 		mv.addObject("productCode", productCode);
 
-		mv.setViewName("/sell/sellConfirmR");
+		mv.setViewName("/sell/sellConfirmR2");
 
 		return mv;
 	}

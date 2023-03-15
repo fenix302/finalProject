@@ -7,6 +7,12 @@
 		<result property="paid_amount" column="PAY_AMOUNT" />
 		<result property="apply_num" column="PER_NUM" />
 		<result property="paid_at" column="PER_TIME" />
+		<result property="name" column="NAME" />
+		<result property="buyer_name" column="BUYER_NAME" />
+		<result property="buyer_email" column="BUYER_EMAIL" />
+		<result property="buyer_tel" column="BUYER_TEL" />
+		<result property="buyer_addr" column="BUYER_ADDR" />
+		<result property="buyer_postcode" column="BUYER_POSTCODE" />
 	</resultMap>
 
 	<insert id="insertPaymentSuccess">
@@ -17,12 +23,24 @@
 				, PAY_AMOUNT
 				, PER_NUM
 				, PER_TIME
+				, NAME
+				, BUYER_NAME
+				, BUYER_EMAIL
+				, BUYER_TEL
+				, BUYER_ADDR
+				, BUYER_POSTCODE
 			) VALUES (
 				#{imp_uid}
 				, #{merchant_uid}
 				, #{paid_amount}
 				, #{apply_num}
 				, #{paid_at}
+				, #{name}
+				, #{buyer_name}
+				, #{buyer_email}
+				, #{buyer_tel}
+				, #{buyer_addr}
+				, #{buyer_postcode}
 			)
 		]]>
 <!-- 		insert into pay_import values(#{imp_uid}, #{merchant_uid}, #{paid_amount}, #{apply_num}, #{paid_at}) -->

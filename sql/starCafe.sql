@@ -190,7 +190,13 @@ create table pay_import(
 	import_id varchar2(50),
 	pay_amount int,
 	per_num varchar2(50),
-	per_time date
+	per_time date,
+	name varchar2(50),
+	buyer_name varchar2(50),
+	buyer_email varchar2(50),
+	buyer_tel varchar2(50),
+	buyer_addr varchar2(255),
+	buyer_postcode varchar2(50)
 );
 
 -- 공지사항 정보
