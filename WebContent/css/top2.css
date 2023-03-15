@@ -103,8 +103,13 @@ a:-webkit-any-link {
   display: none;
 }
 
+/*  */
+.menu > .hide{
+	display:none;
+	}
 
 
+/*  */
 @media screen and (max-width: 768px) {
   .navbar {
     flex-direction: column;
