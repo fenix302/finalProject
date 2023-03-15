@@ -357,5 +357,22 @@ start with 0
 maxvalue 9999999
 minvalue 0;
 
+-- 음료 주문요청 게시판 테이블
+create table tb_cafe_request(
+bno number(10, 0),
+title varchar2(200) not null,
+content varchar2(2000) not null,
+writer varchar2(50) not null,
+regdate date default sysdate
+);
+
+alter table tb_cafe_request add constraint pk_cafe_request primary key (bno);
+
+-- 음료 주문요청 시퀸스
+create sequence seq_cafe_request
+increment by 1
+start with 0
+maxvalue 9999999
+minvalue 0;
 
 commit;
