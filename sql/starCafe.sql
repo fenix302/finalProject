@@ -256,17 +256,17 @@ regdate date default sysdate
 alter table tb_consulting add constraint pk_consulting primary key (bno);
 
 -- 자유게시판 정보
-drop sequence seq_general;
+drop sequence seq_free;
 
-create sequence seq_general
+create sequence seq_free
 increment by 1
 start with 0
 maxvalue 9999999
 minvalue 0;
 
-drop table tb_general;
+drop table tb_free;
 
-create table tb_general (
+create table tb_free (
 bno number(10, 0),
 title varchar2(200) not null,
 content varchar2(2000) not null,
@@ -274,7 +274,7 @@ writer varchar2(50) not null,
 regdate date default sysdate
 );
 
-alter table tb_general add constraint pk_general primary key (bno);
+alter table tb_free add constraint pk_free primary key (bno);
 
 -- 자유 게시판 댓글 테이블 생성
 drop table free_reply;
@@ -288,9 +288,9 @@ create table free_reply (
 
 alter table free_reply add constraint pk_free_reply primary key (rno);
 
-alter table free_reply  add constraint fk_tb_jw_free  
-foreign key (bno)  references  tb_jw_free (bno);
-alter table free_reply add constraint fk_tb_jw_free2
+alter table free_reply  add constraint fk_tb_free  
+foreign key (bno)  references  tb_free (bno);
+alter table free_reply add constraint fk_tb_free2
 foreign key (user_code) references tb_com_user(user_code); 
 
 -- 자유게시판 댓글 sql
