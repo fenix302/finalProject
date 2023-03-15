@@ -1,3 +1,5 @@
+-- star_cafe 계정 삭제
+DROP user star_cafe cascade;
 -- star_cafe 계정 생성 및 권한 부여
 
 CREATE USER star_cafe IDENTIFIED BY star_cafe;
