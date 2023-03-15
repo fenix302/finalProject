@@ -81,6 +81,53 @@ public class SellController {
 		return mv;
 	}
 
+	@RequestMapping(value="/work/sell/createSell2.do", method=RequestMethod.GET)
+	public ModelAndView createSell2(HttpServletRequest request){
+		ModelAndView mv = new ModelAndView();
+
+		HttpSession session = request.getSession();
+
+		String productCode = request.getParameter("productCode");
+		String sellPrice = request.getParameter("sellPrice");
+		String sellCount = request.getParameter("sellCount");
+
+		String fromCart = request.getParameter("fromCart");
+
+		String userCode = (String)session.getAttribute("userCode");
+
+		Map<String, String> sellParam = new HashMap<String, String>();
+
+		sellParam.put("productCode", productCode);
+		sellParam.put("userCode", userCode);
+		sellParam.put("sellPrice", sellPrice);
+		sellParam.put("sellCount", sellCount);
+
+		//판매테이블에 저장
+		sellService.createSell(sellParam);
+
+		if(fromCart != null){
+			Map<String, String> cartParam = new HashMap<String, String>();
+			Map<String, String> productParam = new HashMap<String, String>();
+			sellParam = new HashMap<String, String>();
+
+			String cartCode = request.getParameter("cartCode");
+			String sellCode = sellService.retrieveMaxSellCode();
+
+			cartParam.put("cartCode", cartCode);
+			sellParam.put("sellCode", sellCode);
+
+			cartService.deleteCart(cartParam);
+			sellService.updateSellYn(sellParam);
+
+			mv.setViewName("redirect:/work/sell/retrieveSellConfirm2.do?productCode=" + productCode);
+
+		}else{
+			mv.setViewName("redirect:/work/sell/retrieveSellList2.do");
+		}
+
+		return mv;
+	}
+	
 	@RequestMapping(value="/work/sell/updateFinalBuy.do", method=RequestMethod.GET)
 	public ModelAndView updateFinalBuy(HttpServletRequest request){
 		ModelAndView mv = new ModelAndView();
@@ -118,6 +165,19 @@ public class SellController {
 
 		return mv;
 	}
+	
+	@RequestMapping(value="/work/sell/retrieveSellConfirm2.do", method=RequestMethod.GET)
+	public ModelAndView retrieveSellConfirm2(HttpServletRequest request){
+		ModelAndView mv = new ModelAndView();
+
+		String productCode = request.getParameter("productCode");
+
+		mv.addObject("productCode", productCode);
+
+		mv.setViewName("/sell/sellConfirmR");
+
+		return mv;
+	}
 
 
 	@RequestMapping(value="/work/sell/retrieveSellList.do", method=RequestMethod.GET)
@@ -141,6 +201,28 @@ public class SellController {
 		return mv;
 	}
 
+	@RequestMapping(value="/work/sell/retrieveSellList2.do", method=RequestMethod.GET)
+	public ModelAndView retrieveSellList2(HttpServletRequest request){
+		ModelAndView mv = new ModelAndView();
+
+		HttpSession session = request.getSession();
+
+		String userCode = (String)session.getAttribute("userCode");
+
+		Map<String, String> sellParam = new HashMap<String, String>();
+
+		sellParam.put("userCode", userCode);
+
+		List<Map<String, String>> dsSellList = sellService.retrieveSellList(sellParam);
+
+		mv.addObject("dsSellList", dsSellList);
+
+		mv.setViewName("/sell/sellListR2");
+
+		return mv;
+	}
+	
+	
 	@RequestMapping(value="/work/sell/retrieveBuyList.do", method=RequestMethod.GET)
 	public ModelAndView retrieveBuyList(HttpServletRequest request){
 		ModelAndView mv = new ModelAndView();

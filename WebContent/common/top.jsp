@@ -36,7 +36,7 @@ a {
 <c:set var="coffeeUrl">${context}/work/product/retrieveProductList.do?category=C</c:set>
 <c:set var="goodsUrl">${context}/work/product/retrieveProductList.do?category=G</c:set>
 <c:set var="presentUrl">${context}/work/product/retrieveProductList.do?category=P</c:set>
-<c:set var="regularUrl">${context}/work/product/retrieveProductList.do?category=R</c:set>
+<c:set var="regularUrl">${context}/work/product/retrieveProductList2.do?category=R</c:set>
 
 
 
