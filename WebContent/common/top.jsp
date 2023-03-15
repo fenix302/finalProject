@@ -2,126 +2,109 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="context"><%=request.getContextPath()%></c:set>
+
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>카페 천성</title>
-<link href="${context}/css/bootstrap.css" rel="stylesheet">
-<link href="${context}/css/top.css" rel="stylesheet">
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200&display=swap"
-	rel="stylesheet" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- css -->
+    <link href="${context}/css/top2.css" rel="stylesheet">
+    
+    <!-- google font api -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <!-- 폰트어썸 -->
+    <script src="https://kit.fontawesome.com/88016ce1ce.js"  crossorigin="anonymous"></script>
 
-<script src="${context}/js/common.js"></script>
-<script src="${context}/js/bootstrap.bundle.js"></script>
-
-
-<style type="text/css">
-li {
-	cursor: pointer;
-}
-
-a {
-	text-decoration: none !important;
-}
-</style>
-</head>
-
-<c:set var="homeUrl">${context}/work/product/goMain.do</c:set>
-<c:set var="loginUrl">${context}/user/login.jsp</c:set>
-
-<c:set var="coffeeUrl">${context}/work/product/retrieveProductList.do?category=C</c:set>
-<c:set var="goodsUrl">${context}/work/product/retrieveProductList.do?category=G</c:set>
-<c:set var="presentUrl">${context}/work/product/retrieveProductList.do?category=P</c:set>
-<c:set var="regularUrl">${context}/work/product/retrieveProductList2.do?category=R</c:set>
-
-
-
-
-<body>
-	<div id="top">
-
-		<div class="mybox sticky-top">
-			<nav
-				class="navbar navbar-expand-lg navbar-light container justify-content-between"
-				id="navbar-example2">
-				<!-- 로고 -->
-				<ul class="navbar-brand">
-					<li><a href="${homeUrl}"><img
-							src="${context}/css/images/logo.png" alt="JEWELL"></a></li>
-				</ul>
-				<!-- 네비게이션 바 -->
-				<button class="navbar-toggler" type="button"
-					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav">
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false">About</a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item"
-									href="${context}/company/introduce.jsp">회사소개</a></li>
-								<li><a class="dropdown-item"
-									href="${context}/company/location.jsp">오시는 길</a></li>
-								<li>
-									<a class="dropdown-item" href="#">홍보영상</a>
-								</li>
-								<li>
-									<a class="dropdown-item" href="${context}/faq/faq.jsp">FAQ</a>
-								</li>
-							</ul></li>
-
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item"
-									onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${coffeeUrl}')">원액</a></li>
-								<li><a class="dropdown-item"
-									onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${goodsUrl}')">굿즈</a></li>
-								<li><a class="dropdown-item"
-									onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${presentUrl}')">선물용</a></li>
-								<li><a class="dropdown-item"
-									onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${regularUrl}')">정기구매</a></li>
-							</ul></li>
-
-
-
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false">Community</a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item"
-									href="${context}/work/notice/retrieveBoardList.do">공지사항</a></li>
-								<li><a class="dropdown-item"
-									href="${context}/work/free/retrieveBoardList.do">자유게시판</a></li>
-								<li><a class="dropdown-item"
-									href="${context}/work/comm/retrieveBoardList.do">커뮤니티</a></li>
-								<li><a class="dropdown-item"
-									href="${context}/work/consulting/retrieveBoardList.do">상담신청게시판</a></li>
-							</ul></li>
-
-						<li class="nav-item dropdown" style="margin-right: 70px;"><c:if
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+    <script src="${context}/js/jquery-1.9.1.js"></script>
+    <script src="${context}/js/common.js"></script>
+    
+    
+    <title>New Bar</title>
+    
+ <!-- ------------------------------------------------------------------ -->
+ 
+ 
+  </head>
+  
+  	<c:set var="homeUrl">${context}/work/product/goMain.do</c:set>
+	<c:set var="loginUrl">${context}/user/login.jsp</c:set>
+	
+	<c:set var="coffeeUrl">${context}/work/product/retrieveProductList.do?category=C</c:set>
+	<c:set var="goodsUrl">${context}/work/product/retrieveProductList.do?category=G</c:set>
+	<c:set var="presentUrl">${context}/work/product/retrieveProductList.do?category=P</c:set>
+	<c:set var="regularUrl">${context}/work/product/retrieveProductList2.do?category=R</c:set>
+	
+	
+   <!-- ------------------------------------------------------------------ -->
+   
+   
+  <body>
+     <div id="top">
+		<div class="nav_nav">
+		    <nav class="navbar">
+		      <!-- 로고 -->
+		      <div class="navbar__logo">
+		        <a href="${homeUrl}">
+		        	<img alt="logo" src="${context}/css/images/logo.png"> 
+		        </a>
+		      </div>
+		      
+		      
+		      <!-- 메뉴 -->
+		      <div class="navbar_nav">
+			      <ul class="navbar__menu">
+			        <li class="mainmenu_nav"> <p> About </p>
+			        	<ul class="submenu_nav">
+			        		<li class="sublist"><a href="${context}/company/introduce.jsp">회사소개</a></li>
+			        		<li class="sublist"><a href="${context}/company/location.jsp">오시는 길</a></li>
+			        		<li class="sublist"><a>홍보영상</a></li>
+			        		<li class="sublist"><a href="${context}/faq/faq.jsp">FAQ</a></li>
+			        	</ul>
+			        </li>
+			        
+			        <li class="mainmenu_nav"> <p> Shop </p>
+			        	<ul class="submenu_nav">
+			        		<li class="sublist"><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${coffeeUrl}')">원액</a></li>
+			        		<li class="sublist"><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${goodsUrl}')">굿즈</a></li>
+			        		<li class="sublist"><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${presentUrl}')">선물용</a></li>
+			        		<li class="sublist"><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${regularUrl}')">정기구매</a></li>
+			        	</ul>
+			        </li>
+			        
+			        <li class="mainmenu_nav"> <p> Community </p>
+			        	<ul class="submenu_nav">
+			        		<li class="sublist"><a href="${context}/work/notice/retrieveBoardList.do">공지사항</a></li>
+			        		<li class="sublist"><a href="${context}/work/free/retrieveBoardList.do">자유게시판</a></li>
+			        		<li class="sublist"><a href="${context}/work/comm/retrieveBoardList.do">커뮤니티</a></li>
+			        		<li class="sublist"><a href="${context}/work/consulting/retrieveBoardList.do">상담신청게시판</a></li>
+			        	</ul>
+			        </li>
+			        
+			    <!-- ------------------------------------------------------------------ -->
+			    
+			    
+						<li class="mainmenu_nav"><c:if
 								test="${sessionScope.id == null}">
 								<p style="display: none;"></p>
 							</c:if> <c:if
 								test="${sessionScope.id != null && sessionScope.grade != 'A'}">
-								<a href="#" class="nav-link dropdown-toggle" role="button"
-									data-bs-toggle="dropdown" aria-expanded="false">My Page</a>
+								<a href="#" role="button"
+									 aria-expanded="false">My Page</a>
 							</c:if> <c:if
 								test="${sessionScope.id != null && sessionScope.grade == 'A'}">
 								<a href="#" class="nav-link dropdown-toggle" role="button"
 									data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
 							</c:if>
-							<ul class="dropdown-menu">
-								<li><c:if
+							
+							
+							<ul class="submenu_nav">
+								<li  class="sublist"><c:if
 										test="${sessionScope.id != null && sessionScope.grade != 'A'}">
 										<a class="dropdown-item"
 											href="${context}/work/cart/retrieveCartList.do">장바구니</a>
@@ -129,8 +112,10 @@ a {
 										test="${sessionScope.id != null && sessionScope.grade == 'A'}">
 										<a class="dropdown-item"
 											href="${context}/work/product/retrieveProductListForManage.do">재고관리</a>
-									</c:if></li>
-								<li><c:if
+									</c:if>
+								</li>
+								
+								<li  class="sublist"><c:if
 										test="${sessionScope.id != null && sessionScope.grade != 'A'}">
 										<a class="dropdown-item"
 											href="${context}/work/sell/retrieveBuyList.do">구매내역</a>
@@ -138,8 +123,10 @@ a {
 										test="${sessionScope.id != null && sessionScope.grade == 'A'}">
 										<a class="dropdown-item"
 											href="${context}/work/sell/retrieveStatisticsForProduct.do">매출통계</a>
-									</c:if></li>
-								<li><c:if
+									</c:if>
+								</li>
+								
+								<li  class="sublist"><c:if
 										test="${sessionScope.id != null && sessionScope.grade != 'A'}">
 										<a class="dropdown-item"
 											href="${context}/work/user/updateUser.do">정보수정</a>
@@ -147,32 +134,66 @@ a {
 										test="${sessionScope.id != null && sessionScope.grade == 'A'}">
 										<a class="dropdown-item"
 											href="${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=P">재고현황</a>
-									</c:if></li>
-							</ul></li>
-
-
-						<li class="nav-item myitem"><c:if
-								test="${sessionScope.id == null}">
-								<a href="${context}/work/user/createUser.do" class="nav-link">회원가입</a>
-							</c:if></li>
-
-						<li class="nav-item myitem"><c:if
-								test="${sessionScope.id == null}">
-								<a href="${loginUrl}" class="nav-link">LOGIN</a>
-							</c:if> <c:if test="${sessionScope.id != null}">
-								<a href="${context}/work/user/logout.do" class="nav-link">LOGOUT</a>
-							</c:if></li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-
-	</div>
-
-
-
-
-
-
-</body>
-</html>
+									</c:if>
+								</li>
+							</ul></li>			        
+							
+			        
+			    <!-- ------------------------------------------------------------------ -->
+			    
+			    			        
+			        <!-- 회원가입 -->
+			     	<li class="mainmenu_nav"> 
+			     		<p><c:if test="${sessionScope.id == null}">
+								<a href="${context}/work/user/createUser.do">회원가입</a>
+							</c:if>
+						</p>
+					</li>
+					
+			        <!-- 로그인 -->					
+			     	<li class="mainmenu_nav"> 
+			     		<p>
+			     			<c:if test="${sessionScope.id == null}">
+			     				<a href="${loginUrl}">LOGIN</a>
+			     			</c:if>
+			     			<c:if test="${sessionScope.id != null}">
+			     				<a href="${context}/work/user/logout.do">LOGOUT</a>
+							</c:if>
+			     		</p>
+			     	</li>
+			      </ul>
+		      </div>
+		
+		
+		      <a href="#" class="navbar__toggleBtn">
+		          <i class="fas fa-bars"></i>
+		      </a>
+   		 	</nav>
+   		 </div>
+    </div>
+    
+    <script type="text/javascript">
+    
+    	/* 반응형바 토글 */
+	    const toggleBtn = document.querySelector(".navbar__toggleBtn");
+	    const menu = document.querySelector(".navbar__menu");
+	    const icons = document.querySelector(".navbar__icons");
+	
+	    toggleBtn.addEventListener("click", () => {
+	      menu.classList.toggle("active");
+	      icons.classList.toggle("active");
+	    });
+	    
+	    /* 네비게이션 토글 */
+	    $('.navbar_nav>.navbar__menu>.mainmenu_nav, p').hover(function() {
+	        if ( $(this).hasClass('active') ) {
+	            $(this).find(' > .submenu_nav').stop().slideUp(300);
+	            $(this).removeClass('active');
+	        }
+	        else {
+	            $(this).find(' > .submenu_nav').stop().slideDown(300);
+	            $(this).addClass('active');
+	        }
+	    });
+    </script>
+ </html>

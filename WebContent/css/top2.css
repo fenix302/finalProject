@@ -1,145 +1,81 @@
-/* 초기화 */
-@charset "utf=8";
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@charset "utf-8";
 
 * {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	text-decoration: none !important;
-	word-break: keep-all;
-	font-family: 'Noto Sans KR', sans-serif;
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   text-decoration: none;
+   word-break: keep-all;
+   font-family: 'Noto Sans KR', sans-serif;
 }
 
-
-li{
-	cursor: pointer;
+*{
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
-/* --------------------------------------------- */
-
-/* 로고 */
-.navbar__logo>a>img{
-	width: 120px;
-	padding-top: 10px; 
-}
-
-.nav_nav{
-	max-width: 1440px;
-	margin: 0 auto;
-	height: 80px;
-	padding: 0 !important;
-}
-
-/* --------------------------------------------- */
 
 /* 네비게이션바 */
-#top{
-	width: 100%;
-	height: 80px;
-	background-color: #c0c0c0;
+.navbar-brand {
+    color: #fff !important;
+}
+.navbar-brand img{
+    max-height: 25px;
+    margin-top: 15px;
+    vertical-align: top !important;
+}
+.navbar-brand p{
+    display: inline-block;
+    font-size: 30px;
+    margin-top: 10px;
+    height: 33px;
+}
+.mybox{
+    background-color: #fff;
 }
 
-.body {
-  margin: 0;
-  font-family: "Source Sans Pro", sans-serif;
+.navbar-collapse{
+    flex-grow: unset;
+}
+.myitem{
+    margin-left: 70px;
+}
+.navbar-nav li a{
+    margin-top: 2px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000 !important;
+}
+.nav-link:hover{
+    color: #999999 !important;
+}
+.nav-link:focus{
+    color: #999999 !important;
 }
 
-a:-webkit-any-link {
-  color: #000;
-  text-decoration: none;
+/* 드랍다운 메뉴 설정 변경 */
+.dropdown{
+    margin-left: 70px;
 }
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ff8080;
-  height: 80px;
+.dropdown-menu{
+    background-color: #fff !important;
+    border: 1px solid black;
+    margin-top: 14px !important;
 }
-
-
-.navbar__menu {
-  display: flex;
-  list-style: none;
-  padding-left: 0;
+.dropdown-menu li{
+    padding-top: 6px;
 }
-
-.navbar__menu li {
-  padding: 8px 12px;
-}
-
-.navbar__menu li:hover {
-  background-color: #d49466;
-  border-radius: 4px;
-}
-
-
-.navbar__toggleBtn {
-  position: absolute;
-  right: 16px;
-  top : 15px;
-  font-size: 24px;
-  display: none;
-}
-
-
-/* --------------------------------------------- */
-/* 네비게이션  메뉴 */
-.sublist{
-	padding: 8px 0px !important;
-}
-
-
-
-/* --------------------------------------------- */
-
-
-/* 변경 */
-.mainmenu_nav>.submenu_nav{
-    display:none;
-}
-
-
-
-/* --------------------------------------------- */
-
-/* 반응형 */
-@media screen and (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .navbar__logo>a>img{
-	padding-top: 20px !important;
-	padding-left: 16px !important; 
-}
-
-  .navbar__menu {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .navbar__menu li {
-    width: 100%;
+.dropdown-menu li a {
+    font-size: 16px;
     text-align: center;
-  }
-
-
-  .navbar__toggleBtn {
-    display: block;
-  }
-
-  .navbar__menu.active,
-  .navbar__icons.active {
-    display: flex;
-  }
-  
-  .fas{
-	padding-top: 15px; 	
+    font-weight: 400;
 }
+
+
+.navbar-toggler{
+    background-color: #fff;
+}
+.dropdown-item:hover{
+    /* 변경사항적용 */
+    background: #000 !important;
+    color: #fff !important;
 }
