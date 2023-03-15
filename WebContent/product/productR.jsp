@@ -257,7 +257,7 @@
       </div>
     </div>
 
-<div class="container">
+<div class="container" style="margin-bottom: 50px;">
 		<div class="row">
 			<div class="col-md-12 toppad">
 				<div class="panel panel-info">
@@ -296,12 +296,10 @@
           </div>
         </div>
       </div>
-    </div>
 
 
-        <c:if test="${dsProduct.SELL_YN == 'Y'}">
-    <div class="container">
-		<div class="row" style="margin-top:40px; margin-bottom: 50px;">
+  	<c:if test="${dsProduct.SELL_YN == 'Y'}">
+		<div class="row" style="margin-top:40px;">
 			<div class="col-md-12">
 		    	<div class="well well-sm">
 		            <div class="text-right">
@@ -332,8 +330,8 @@
 		        </div>
 			</div>
 		</div>
+		</c:if>
 	</div>
-</c:if>
 
 
 

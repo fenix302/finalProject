@@ -32,7 +32,7 @@
 <!-- ---------------------------------------------------------------------------------------------- -->
 
 
-<%-- <c:set var="loginUrl">${context}/user/login.jsp</c:set>
+<c:set var="loginUrl">${context}/user/login.jsp</c:set>
 
 <c:set var="earUrl1">${context}/work/product/retrieveProduct.do?productCode=E0026</c:set>
 <c:set var="neckUrl1">${context}/work/product/retrieveProduct.do?productCode=N0016</c:set>
@@ -45,7 +45,7 @@
 
 <c:set var="productManageUrl">${context}/work/product/retrieveProductListForManage.do</c:set>
 <c:set var="statisticsForProductUrl">${context}/work/sell/retrieveStatisticsForProduct.do</c:set>
-<c:set var="statisticsForStockUrl">${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=R</c:set> --%>
+<c:set var="statisticsForStockUrl">${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=R</c:set>
 
 
 

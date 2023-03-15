@@ -87,10 +87,10 @@
 			                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
 			                    <thead>
 			                        <tr>
-			                        	<th style="text-align: center; vertical-align: middle; width: 10px;">No</th>
-			                            <th style="text-align: center; vertical-align: middle; width: 20px;">상품이미지</th>
+			                        	<th style="text-align: center; vertical-align: middle; width: 10px;" class="responseC">No</th>
+			                            <th style="text-align: center; vertical-align: middle; width: 20px;" class="responseC">상품이미지</th>
 			                            <th style="text-align: center; vertical-align: middle; width: 50px;">상품이름</th>
-			                            <th style="text-align: center; vertical-align: middle; width: 20px;">상품단가</th>
+			                            <th style="text-align: center; vertical-align: middle; width: 20px;" class="responseC">상품단가</th>
 			                            <th style="text-align: center; vertical-align: middle; width: 40px;">상품수량</th>
 			                            <th style="text-align: center; vertical-align: middle; width: 30px;">결제금액</th>
 			                            <th style="text-align: center; vertical-align: middle; width: 30px;">구매 / 삭제</th>
@@ -99,8 +99,8 @@
 			                    <tbody>
 			                    	<c:forEach items="${dsCartList}" var="dsCartList" varStatus="cartIdx">
 			                         <tr>
-			                         	<td style="text-align: center; vertical-align: middle;">${cartIdx.count}</td>
-			                            <td style="text-align: center; vertical-align: middle;">
+			                         	<td style="text-align: center; vertical-align: middle;" class="responseC">${cartIdx.count}</td>
+			                            <td style="text-align: center; vertical-align: middle;" class="responseC">
 										<a href="${context}/work/product/retrieveProduct.do?productCode=${dsCartList.PRODUCT_CODE}">
 											<img name="image" width="110px" height="110px" src="${context}/coffeeImg/${dsCartList.PRODUCT_IMAGE}" class="img-thumbnail">
 										</a>
@@ -123,7 +123,7 @@
 											</script>
 			                            </td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsCartList.PRODUCT_NAME}</td>
-			                            <td style="text-align: center; vertical-align: middle;">${dsCartList.PRODUCT_UNIT_PRICE}원</td>
+			                            <td style="text-align: center; vertical-align: middle;" class="responseC">${dsCartList.PRODUCT_UNIT_PRICE}원</td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsCartList.CART_COUNT}</td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsCartList.CART_PRICE}원</td>
 			                            <td style="text-align: center; vertical-align: middle;">

@@ -167,6 +167,10 @@ h5{
 }
 
 
-
-
+/* 미디어쿼리 테이블 적용 */
+@media (max-width: 515px){
+	.responseC{
+		display: none !important;
+	} 
+}
 
