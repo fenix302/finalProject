@@ -1,3 +1,5 @@
+-- star_cafe 계정 삭제
+DROP user star_cafe cascade;
 -- star_cafe 계정 생성 및 권한 부여
 
 CREATE USER star_cafe IDENTIFIED BY star_cafe;
@@ -256,17 +258,17 @@ regdate date default sysdate
 alter table tb_consulting add constraint pk_consulting primary key (bno);
 
 -- 자유게시판 정보
-drop sequence seq_general;
+drop sequence seq_free;
 
-create sequence seq_general
+create sequence seq_free
 increment by 1
 start with 0
 maxvalue 9999999
 minvalue 0;
 
-drop table tb_general;
+drop table tb_free;
 
-create table tb_general (
+create table tb_free (
 bno number(10, 0),
 title varchar2(200) not null,
 content varchar2(2000) not null,
@@ -274,36 +276,33 @@ writer varchar2(50) not null,
 regdate date default sysdate
 );
 
-alter table tb_general add constraint pk_general primary key (bno);
+alter table tb_free add constraint pk_free primary key (bno);
 
--- 자유게시판 댓글 sql
--- 시작값을 1로하고 1씩 증가하는 general_reply_seq 자유게시판 시퀀스를 생성함.
-create sequence general_reply_seq 
-start with 1
-increment by 1;
-
--- 자유게시판 테이블 생성
-create table general_reply (
+-- 자유 게시판 댓글 테이블 생성
+drop table free_reply;
+create table free_reply (
   rno number(10,0), 
   bno number(10,0) not null,
+  user_code varchar2(20),
   reply varchar2(1000) not null,
-  replyer varchar2(50) not null, 
   replyDate date default sysdate 
 );
 
-alter table general_reply add constraint pk_general_reply primary key (rno);
+alter table free_reply add constraint pk_free_reply primary key (rno);
 
-alter table general_reply add constraint fk_tb_general 
-foreign key (bno)  references  tb_general (bno); 
+alter table free_reply  add constraint fk_tb_free  
+foreign key (bno)  references  tb_free (bno);
+alter table free_reply add constraint fk_tb_free2
+foreign key (user_code) references tb_com_user(user_code); 
 
--- 커뮤니티게시판 댓글 sql
-  -- 시작값을 1로하고 1씩 증가하는 comm_reply_seq 커뮤니티게시판 시퀀스를 생성함.
-drop sequence comm_reply_seq;
-create sequence comm_reply_seq 
+-- 자유게시판 댓글 sql
+-- 시작값을 1로하고 1씩 증가하는 general_reply_seq 자유게시판 시퀀스를 생성함.
+drop sequence free_reply_seq;
+create sequence free_reply_seq 
 start with 1
 increment by 1;
 
-  -- 커뮤니티 게시판 테이블 생성
+  -- 커뮤니티 게시판 댓글 테이블 생성
 drop table comm_reply;
 create table comm_reply (
   rno number(10,0), 

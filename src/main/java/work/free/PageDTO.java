@@ -1,8 +1,4 @@
-package work.generalboard;
-
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+package work.free;
 
 public class PageDTO {
 

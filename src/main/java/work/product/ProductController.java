@@ -144,6 +144,23 @@ public class ProductController {
 		mv.setViewName("/subpage/subpage");
 		return mv;
 	}
+	
+	@RequestMapping(value="/work/product/retrieveProductList2.do", method=RequestMethod.GET)
+	public ModelAndView retrieveProductList2(HttpServletRequest request){
+		ModelAndView mv = new ModelAndView();
+
+		String category = request.getParameter("category");
+
+		Map<String, String> productParam = new HashMap<String, String>();
+
+		productParam.put("category", category);
+
+		List<Map<String, String>> dsProductList = productService.retrieveProductList(productParam);
+
+		mv.addObject("dsProductList", dsProductList);
+		mv.setViewName("/subpage/subpage2");
+		return mv;
+	}
 
 	@RequestMapping(value="/work/product/saveFile.do", method=RequestMethod.POST)
 	@ResponseBody
@@ -189,6 +206,34 @@ public class ProductController {
 		return mv;
 	}
 
+	@RequestMapping(value="/work/product/retrieveProduct2.do", method=RequestMethod.GET)
+	public ModelAndView retrieveProduct2(HttpServletRequest request){
+		ModelAndView mv = new ModelAndView();
+
+		HttpSession session = request.getSession();
+
+		String userCode = (String)session.getAttribute("userCode");
+		String productCode = request.getParameter("productCode");
+
+		Map<String, String> productParam = new HashMap<String, String>();
+		Map<String, String> replyParam = new HashMap<String, String>();
+
+		productParam.put("productCode", productCode);
+		productParam.put("userCode", userCode);
+
+		replyParam.put("productCode", productCode);
+
+		Map<String, String> dsProduct = productService.retrieveProduct(productParam);
+
+		List<Map<String, String>> dsReplyList = replyService.retrieveReplyList(replyParam);
+
+		mv.addObject("dsProduct", dsProduct);
+		mv.addObject("dsReplyList", dsReplyList);
+
+		mv.setViewName("/product/productR2");
+		return mv;
+	}
+	
 	@RequestMapping(value="/work/product/retrieveProductListForManage.do", method=RequestMethod.GET)
 	public ModelAndView retrieveProductListForManage(HttpServletRequest request){
 		ModelAndView mv = new ModelAndView();

@@ -36,7 +36,7 @@ a {
 <c:set var="coffeeUrl">${context}/work/product/retrieveProductList.do?category=C</c:set>
 <c:set var="goodsUrl">${context}/work/product/retrieveProductList.do?category=G</c:set>
 <c:set var="presentUrl">${context}/work/product/retrieveProductList.do?category=P</c:set>
-<c:set var="regularUrl">${context}/work/product/retrieveProductList.do?category=R</c:set>
+<c:set var="regularUrl">${context}/work/product/retrieveProductList2.do?category=R</c:set>
 
 
 
@@ -70,7 +70,12 @@ a {
 									href="${context}/company/introduce.jsp">회사소개</a></li>
 								<li><a class="dropdown-item"
 									href="${context}/company/location.jsp">오시는 길</a></li>
-								<li><a class="dropdown-item" href="${context}/faq/faq.jsp">FAQ</a></li>
+								<li>
+									<a class="dropdown-item" href="#">홍보영상</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="${context}/faq/faq.jsp">FAQ</a>
+								</li>
 							</ul></li>
 
 						<li class="nav-item dropdown"><a
@@ -96,7 +101,7 @@ a {
 								<li><a class="dropdown-item"
 									href="${context}/work/notice/retrieveBoardList.do">공지사항</a></li>
 								<li><a class="dropdown-item"
-									href="${context}/work/generalboard/retrieveBoardList.do">자유게시판</a></li>
+									href="${context}/work/free/retrieveBoardList.do">자유게시판</a></li>
 								<li><a class="dropdown-item"
 									href="${context}/work/comm/retrieveBoardList.do">커뮤니티</a></li>
 								<li><a class="dropdown-item"

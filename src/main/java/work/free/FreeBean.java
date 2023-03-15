@@ -1,13 +1,9 @@
-package work.generalboard;
+package work.free;
 
 import java.io.Serializable;
 import java.util.Date;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-public class GeneralBoardBean implements Serializable{
+public class FreeBean implements Serializable{
 	private Long bno;
 	private String title;
 	private String content;
@@ -15,11 +11,11 @@ public class GeneralBoardBean implements Serializable{
 	private Date regdate;
 
 
-	public GeneralBoardBean() {
+	public FreeBean() {
 		super();
 	}
 
-	public GeneralBoardBean(Long bno, String title, String content,
+	public FreeBean(Long bno, String title, String content,
 			String writer, Date regdate) {
 		super();
 		this.bno = bno;

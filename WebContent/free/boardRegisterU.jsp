@@ -8,7 +8,7 @@
 <head>
 		<meta name="description" content="boardRegisterU.jsp">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>자유 글 수정</title>
+	<title>자유게시판 수정</title>
 	<link href="${context}/css/bootstrap.css" rel="stylesheet">
 <%-- 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet"> --%>
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
@@ -79,7 +79,7 @@
 <div class="page_header">
 	 <div class="faq_header">
 	       <div class="name">
-	             <p class="comeText">자유게시판 수정/삭제</p>
+	             <p class="comeText">자유 게시판 수정/삭제</p>
 	        </div>
 	  </div>
 </div>
@@ -100,7 +100,7 @@
                 <!-- /.panel-heading -->
                 <div class="panel-body">
 						
-					<form role="form" action="/work/generalboard/updateBoard.do" method="post">	
+					<form role="form" action="/work/free/updateBoard.do" method="post">	
 					
 <!-- 						Page 319 Criteria cri 처리 추가해줍니다. -->
 <%-- 						<input type="hidden" id="pageNum" name="pageNum" value='<c:out value="${cri.pageNum}"/>'> --%>
@@ -126,9 +126,9 @@
 							<label>등록일자</label> <input class="form-control" name="regdate" value='<fmt:formatDate pattern="yyyy/MM/dd" value="${dsBoard.REGDATE}" />' readonly="readonly">
 						</div>
 
-						<button id="buttons" type="submit" data-oper='modify' class="btn btn-dark" onclick="location.href=${context}/work/generalboard/updateBoard.do?bno=${dsBoard.BNO}">수정</button>	
+						<button id="buttons" type="submit" data-oper='modify' class="btn btn-dark" onclick="location.href=${context}/work/free/updateBoard.do?bno=${dsBoard.BNO}">수정</button>	
 						<button id="buttons" type="submit" data-oper='remove' class="btn btn-danger">삭제</button>
-						<button id="buttons" type="submit" data-oper='list' class="btn btn-secondary" onclick="location.href='/generalboard/boardListR.jsp'">목록</button>
+						<button id="buttons" type="submit" data-oper='list' class="btn btn-secondary" onclick="location.href='/free/boardListR.jsp'">목록</button>
 						
 					</form>	
                 </div>
@@ -149,16 +149,16 @@
 			console.log(operation);
 			
 			if (operation === 'remove') {
-				formObj.attr("action", "/work/generalboard/deleteBoard.do");
+				formObj.attr("action", "/work/free/deleteBoard.do");
 				
 				// 만약 사용자가 'list' 버튼을 클릭한다면
 			} else if (operation === 'list') {
 // 				move to list : 아래 두 줄 코딩
-				self.location = "${context}/work/generalboard/retrieveBoardList.do";
+				self.location = "${context}/work/free/retrieveBoardList.do";
 				return;
 				
 				// Page266 11.5.4 수정 페이지에서 링크 처리 소스 코딩 : 아래 두 줄
-// 				formObj.attr("action", "/generalboard/boardListR").attr("method", "get");
+// 				formObj.attr("action", "/comm/boardListR").attr("method", "get");
 				
 				// <form> 태그에서 필요한 부분만 잠시 복사(clone)해서 보관해 두고,
 // 				var pageNumTag = $("input[name='pageNum']").clone();
