@@ -240,7 +240,7 @@ sup {
 }
 
 a {
-  color: var(--bs-link-color);
+  color: black;
   text-decoration: underline;
 }
 a:hover {
@@ -603,10 +603,10 @@ progress {
 }
 
 .img-thumbnail {
-  padding: 0.25rem;
+  /* padding: 0.25rem; */
   background-color: #fff;
   border: 1px solid var(--bs-border-color);
-  border-radius: 0.375rem;
+/*   border-radius: 0.375rem; */
   max-width: 100%;
   height: auto;
 }

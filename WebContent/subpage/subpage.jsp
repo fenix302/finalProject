@@ -43,9 +43,13 @@
 <jsp:include page="../common/top.jsp"></jsp:include>
 
 <main class="container">
-	<div>
-    	<h3 style="font-size: 26px; font-weight: 900; text-align: center;">${dsProductList[0].PRODUCT_CATEGORY_CD_NM}</h3>
- 	</div>
+	<div class="page_header">
+	 <div class="faq_header">
+	       <div class="name">
+	             <p class="comeText">원액</p>
+	        </div>
+	  </div>
+</div>
     <div class="group">
 	    <div class="li_1">
 		<div class="box-wrap row  justify-content-start align-items-end">
@@ -76,7 +80,7 @@
 						<h4><b>${dsProductList.PRODUCT_NAME}</b></font></h4>
 			        </div>
 			        <div class="col-md-12">
-			       <p><a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}">"${dsProductList.PRODUCT_UNIT_PRICE}원"</a></p>
+			       <p><a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}">${dsProductList.PRODUCT_UNIT_PRICE}원</a></p>
 <%-- 			        	<h4 style="font-family: inherit;"><b>${dsProductList.PRODUCT_UNIT_PRICE}원</b></h4> --%>
 			        </div>
 <!-- 			        <div class="col-md-12"> -->
@@ -120,7 +124,7 @@
 						<h4><b>${dsProductList.PRODUCT_NAME}</b></font></h4>
 			        </div>
 			        <div class="col-md-12">
-			       <p><a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}">"${dsProductList.PRODUCT_UNIT_PRICE}원"</a></p>
+			       <p><a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}">${dsProductList.PRODUCT_UNIT_PRICE}원</a></p>
 <%-- 			        	<h4 style="font-family: inherit;"><b>${dsProductList.PRODUCT_UNIT_PRICE}원</b></h4> --%>
 			        </div>
 <!-- 			        <div class="col-md-12"> -->
