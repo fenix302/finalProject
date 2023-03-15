@@ -44,18 +44,20 @@
 		      
 		      
 		      <!-- 메뉴 -->
-		      <ul class="navbar__menu">
-		        <li class="mainmenu_nav">Home
-		        	<ul class="submenu_nav">
-		        		<li class="sublist"><a>회사소개</a></li>
-		        		<li class="sublist"><a>회사소개</a></li>
-		        	</ul>
-		        </li>
-		        <li><a href="">Gallery</a></li>
-		        <li><a href="">Weddings</a></li>
-		        <li><a href="">FAQ</a></li>
-		        <li><a href="">Bookings</a></li>
-		      </ul>
+		      <div class="navbar_nav">
+			      <ul class="navbar__menu">
+			        <li class="mainmenu_nav">Home
+			        	<ul class="submenu_nav">
+			        		<li class="sublist"><a>회사소개</a></li>
+			        		<li class="sublist"><a>회사소개</a></li>
+			        	</ul>
+			        </li>
+			        <li><a href="">Gallery</a></li>
+			        <li><a href="">Weddings</a></li>
+			        <li><a href="">FAQ</a></li>
+			        <li><a href="">Bookings</a></li>
+			      </ul>
+		      </div>
 		
 		
 		      <a href="#" class="navbar__toggleBtn">
@@ -67,7 +69,7 @@
     
     <script type="text/javascript">
     
-    	/* 바 토글 */
+    	/* 반응형 바 토글 */
 	    const toggleBtn = document.querySelector(".navbar__toggleBtn");
 	    const menu = document.querySelector(".navbar__menu");
 	    const icons = document.querySelector(".navbar__icons");
@@ -77,9 +79,8 @@
 	      icons.classList.toggle("active");
 	    });
 	    
-	    
 	    /* 네비게이션 토글 */
-	    $('nav>.navbar__menu>.mainmenu_nav').click(function() {
+	    $('.navbar_nav>.navbar__menu>.mainmenu_nav').click(function() {
 	        if ( $(this).hasClass('active') ) {
 	            $(this).find(' > .submenu_nav').stop().slideUp(300);
 	            $(this).removeClass('active');
