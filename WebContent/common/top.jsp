@@ -23,6 +23,9 @@
     
     <script src="${context}/js/jquery-1.9.1.js"></script>
     <script src="${context}/js/common.js"></script>
+    <!-- owl.carousel -->
+	<link rel="stylesheet" href="${context}/css/owl.carousel.min.css">
+	<script src="${context}/js/owl.carousel.min.js"></script>
     
     
     <title>New Bar</title>
