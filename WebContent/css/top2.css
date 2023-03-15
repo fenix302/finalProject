@@ -59,14 +59,6 @@ a:-webkit-any-link {
   height: 80px;
 }
 
-.navbar__logo {
-  font-size: 24px;
-  color: white;
-}
-
-.navbar__logo i {
-  color: #d49466;
-}
 
 .navbar__menu {
   display: flex;
@@ -83,33 +75,37 @@ a:-webkit-any-link {
   border-radius: 4px;
 }
 
-.navbar__icons {
-  list-style: none;
-  color: white;
-  display: flex;
-  padding-left: 0;
-}
-
-.navbar__icons li {
-  padding: 8px 12px;
-}
 
 .navbar__toggleBtn {
   position: absolute;
   right: 16px;
   top : 15px;
   font-size: 24px;
-  color: #d49466;
   display: none;
 }
 
-/*  */
-.menu > .hide{
-	display:none;
-	}
+
+/* --------------------------------------------- */
+/* 네비게이션  메뉴 */
+.sublist{
+	padding: 8px 0px !important;
+}
 
 
-/*  */
+
+/* --------------------------------------------- */
+
+
+/* 변경 */
+.mainmenu_nav>.submenu_nav{
+    display:none;
+}
+
+
+
+/* --------------------------------------------- */
+
+/* 반응형 */
 @media screen and (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -133,11 +129,6 @@ a:-webkit-any-link {
     text-align: center;
   }
 
-  .navbar__icons {
-    display: none;
-    justify-content: center;
-    width: 100%;
-  }
 
   .navbar__toggleBtn {
     display: block;

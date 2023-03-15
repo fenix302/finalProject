@@ -127,3 +127,14 @@ toggleBtn.addEventListener("click", () => {
   icons.classList.toggle("active");
 });
 
+$('nav>.navbar__menu>.mainmenu_nav').click(function() {
+    if ( $(this).hasClass('active') ) {
+        $(this).find(' > .submenu_nav').stop().slideUp(300);
+        $(this).removeClass('active');
+    }
+    else {
+        $(this).find(' > ul').stop().slideDown(300);
+        $(this).addClass('active');
+    }
+});
+
