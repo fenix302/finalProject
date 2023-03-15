@@ -276,12 +276,6 @@ regdate date default sysdate
 
 alter table tb_general add constraint pk_general primary key (bno);
 
--- 자유게시판 댓글 sql
--- 시작값을 1로하고 1씩 증가하는 general_reply_seq 자유게시판 시퀀스를 생성함.
-create sequence general_reply_seq 
-start with 1
-increment by 1;
-
 -- 자유 게시판 댓글 테이블 생성
 drop table free_reply;
 create table free_reply (
