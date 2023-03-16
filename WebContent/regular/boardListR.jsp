@@ -64,14 +64,14 @@
 							<thead>
 								<tr>
 									<th>주문 일자</th>
-									<th>주문자</th>
+									<th>상품 이름</th>
 								</tr>
 							</thead>
 		
 								<tbody>
 			                    	<c:forEach items="${dsPaymentList}" var="dsPaymentList" varStatus="courseIdx">
 			                         <tr>
-										<td><a class="move" href="#">${dsPaymentList.paid_at}</a></td>
+			                         	<td><a class="move" href="#"><fmt:formatDate pattern="yyyy-MM-dd" value="${dsPaymentList.per_time}" /></a></td>
 			  							<td><a class="move" href="#">${dsPaymentList.name}</a></td>
 			                         </tr>
 				                    </c:forEach>
@@ -85,12 +85,7 @@
 		<!-- 						select 태그의 내부는 삼항 연산자를 이용해서 해당 조건으로 검색되었다면  			-->
 		<!-- 						'selected'라는 문자열을 출력하게 해서 화면에서 선택된 항목으로 보이도록 처리합니다.  	-->
 									<select name="type">
-											<option value="T" <c:out value="${pageMaker.cri.type eq 'T' ? 'selected': ''}"/>>제목</option>
-											<option value="C" <c:out value="${pageMaker.cri.type eq 'C' ? 'selected': ''}"/>>내용</option>
-											<option value="W" <c:out value="${pageMaker.cri.type eq 'W' ? 'selected': ''}"/>>작성자</option>
-											<option value="TC" <c:out value="${pageMaker.cri.type eq 'TC' ? 'selected': ''}"/>>제목 or 내용</option>
-											<option value="TW" <c:out value="${pageMaker.cri.type eq 'TW' ? 'selected': ''}"/>>제목 or 작성자</option>
-											<option value="TWC" <c:out value="${pageMaker.cri.type eq 'TWC' ? 'selected': ''}"/>>제목 or 내용 or 작성자</option>
+											<option value="T" <c:out value="${pageMaker.cri.type eq 'T' ? 'selected': ''}"/>>상품 이름</option>
 									</select>
 									<input type="text" name="keyword" value='<c:out value="${pageMaker.cri.keyword}"/>'/>
 									<input type="hidden" name="pageNum" value='<c:out value="${pageMaker.cri.pageNum}"/>'/>

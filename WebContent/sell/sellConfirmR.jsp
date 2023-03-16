@@ -101,17 +101,11 @@
     	location.href = "${context}/work/sell/retrieveBuyList.do";
     }
 
-    function fn_buyList2(){
-    	location.href = "${context}/work/sell/retrieveBuyList2.do";
-    }
 
     function fn_review(paramProductCode){
     	location.href = "${context}/work/product/retrieveProduct.do?productCode=" + paramProductCode;
     }
 
-    function fn_review2(paramProductCode){
-    	location.href = "${context}/work/product/retrieveProduct2.do?productCode=" + paramProductCode;
-    }
 
     </script>
 </head>
@@ -157,8 +151,8 @@
 	                <div class="q1">
 	                	<label class="col-md-2"></label>           
 	                	<div class="btn_box">
-							<button type="button" class="btn user-back-btn" onclick="fn_buyList2()"> <p class="btn_text"> 구매내역 </p> </button>
-			                <button class="btn user-submit-btn " type="button" name="btnSubmit" id="btnSubmit" onclick="fn_review2('${productCode}')"> <p class="btn_text"> 후기 작성 </p> </button>
+							<button type="button" class="btn user-back-btn" onclick="fn_buyList()"> <p class="btn_text"> 구매내역 </p> </button>
+			                <button class="btn user-submit-btn " type="button" name="btnSubmit" id="btnSubmit" onclick="fn_review('${productCode}')"> <p class="btn_text"> 후기 작성 </p> </button>
 	                	</div>       
 	                </div>	
 	                					

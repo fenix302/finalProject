@@ -1,20 +1,13 @@
 package work.iamport.dao;
 
-import java.io.Reader;
 import java.util.List;
 
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import work.iamport.PaymentBean;
-import work.iamport.model.PaymentVO;
 import work.regular.Criteria;
-import work.regular.RegularBean;
 
 @Repository
 public class PaymentDAO {

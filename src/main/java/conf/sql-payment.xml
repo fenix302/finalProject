@@ -6,13 +6,14 @@
 		<result property="merchant_uid" column="IMPORT_ID" />
 		<result property="paid_amount" column="PAY_AMOUNT" />
 		<result property="apply_num" column="PER_NUM" />
-		<result property="paid_at" column="PER_TIME" />
+		<result property="per_time" column="PER_TIME" />
 		<result property="name" column="NAME" />
 		<result property="buyer_name" column="BUYER_NAME" />
 		<result property="buyer_email" column="BUYER_EMAIL" />
 		<result property="buyer_tel" column="BUYER_TEL" />
 		<result property="buyer_addr" column="BUYER_ADDR" />
 		<result property="buyer_postcode" column="BUYER_POSTCODE" />
+		<result property="product_category_cd" column="PRODUCT_CATEGORY_CD" />
 	</resultMap>
 	
 	<sql id="criteria">  <!-- MyBatis는 sql태그를 이용해서 SQL의 일부를 별도로 보관하고, 필요한 경우에 include 시키는 형식으로 사용할 수 있다.-->	
@@ -23,13 +24,7 @@
 					<trim prefix="OR">
 						<choose>
 							<when test="type == 'T'.toString()">
-								title like '%'||#{keyword}||'%'
-							</when>
-							<when test="type == 'C'.toString()">
-								content like '%'||#{keyword}||'%'
-							</when>
-							<when test="type == 'W'.toString()">
-								writer like '%'||#{keyword}||'%'
+								name like '%'||#{keyword}||'%'
 							</when>
 						</choose>
 					</trim>
@@ -53,18 +48,20 @@
 				, BUYER_TEL
 				, BUYER_ADDR
 				, BUYER_POSTCODE
+				, PRODUCT_CATEGORY_CD
 			) VALUES (
 				#{imp_uid}
 				, #{merchant_uid}
 				, #{paid_amount}
 				, #{apply_num}
-				, #{paid_at}
+				, #{per_time}
 				, #{name}
 				, #{buyer_name}
 				, #{buyer_email}
 				, #{buyer_tel}
 				, #{buyer_addr}
 				, #{buyer_postcode}
+				, #{product_category_cd}
 			)
 		]]>
 <!-- 		insert into pay_import values(#{imp_uid}, #{merchant_uid}, #{paid_amount}, #{apply_num}, #{paid_at}) -->
@@ -82,13 +79,12 @@
 	
 	<select id="getListWithPaging" resultType="payment">
 		<![CDATA[
-		
 		SELECT
 		    NAME, PER_TIME
 	    from(
-		    SELECT /*+INDEX_DESC(pay_import pk_pay_import) */
-		        ROWNUM rn, name, per_time
-		    FROM pay_import
+		    SELECT
+		        ROWNUM rn, PAYMENT.NAME, PAYMENT.PER_TIME
+		    FROM PAY_IMPORT PAYMENT
 		    WHERE 
 		]]>	
 			<trim prefix="(" suffix=") AND " prefixOverrides="OR">
@@ -96,13 +92,7 @@
 					<trim prefix="OR">
 						<choose>
 							<when test="type == 'T'.toString()">
-								title like '%'||#{keyword}||'%'
-							</when>
-							<when test="type == 'C'.toString()">
-								content like '%'||#{keyword}||'%'
-							</when>
-							<when test="type == 'W'.toString()">
-								writer like '%'||#{keyword}||'%'
+								name like '%'||#{keyword}||'%'
 							</when>
 						</choose>
 					</trim>
@@ -110,6 +100,7 @@
 			</trim>		    
 		<![CDATA[
 			ROWNUM <= #{pageNum} * #{amount}
+			ORDER BY PAYMENT.PER_TIME DESC
 			)
 		where RN > (#{pageNum} -1) * #{amount}
 		]]>	

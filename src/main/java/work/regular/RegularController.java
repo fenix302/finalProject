@@ -1,9 +1,6 @@
 package work.regular;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -15,11 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import work.iamport.service.PaymentService;
 import work.user.UserService;
@@ -36,37 +29,6 @@ public class RegularController {
 	private PaymentService paymentService;
 	
 	
-
-	@RequestMapping(value="/work/regular/createBoard.do", method = {RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView createBoard(@ModelAttribute RegularBean board, HttpServletRequest request){
-		
-		HttpSession session = request.getSession();
-
-		ModelAndView mv = new ModelAndView();
-
-		String flag = board.getTitle(); //BoardBean 존재여부
-
-		if(flag == null){
-			mv.setViewName("/regular/boardRegisterC");
-		}else if(flag != null){
-			//게시글 생성
-			regularService.createBoard(board);
-
-			String maxBoardNo = regularService.retrieveMaxBoardNo();
-
-			mv.setViewName("redirect:/work/regular/retrieveBoardList.do?maxBoardNo=" + maxBoardNo);
-		}
-
-		return mv;
-		
-	}
-	
-	@RequestMapping(value="/work/regular/goMain.do", method = {RequestMethod.GET, RequestMethod.POST})
-	public String goMain(){
-
-		return "redirect:/intro/index.jsp";
-	}
-
 	@RequestMapping(value="/work/regular/retrieveBoard.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView retrieveBoard(HttpServletRequest request){
 		ModelAndView mv = new ModelAndView();

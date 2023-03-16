@@ -96,7 +96,6 @@
     		
         if(confirm("결제하시겠습니까?")){
     		var IMP = window.IMP;
-//     		var name = $(".pdName");
     		IMP.init('imp28503804'); //iamport 대신 자신의 "가맹점 식별코드"를 사용하시면 됩니다
     		// IMP.request_pay(param, callback) 결제창 호출
     	      IMP.request_pay({ // param
@@ -118,13 +117,14 @@
     	            		 merchant_uid : rsp.merchant_uid,
     	            		 paid_amount : rsp.paid_amount,
     	            		 apply_num : rsp.apply_num,
-    	            		 paid_at : new Date(),
+    	            		 per_time : new Date(),
     	             		 name : rsp.name,
     	             		 buyer_name : rsp.buyer_name,
     	             		 buyer_email : rsp.buyer_email,
     	             		 buyer_tel : rsp.buyer_tel,
     	             		 buyer_addr : rsp.buyer_addr,
-    	             		 buyer_postcode : rsp.buyer_postcode
+    	             		 buyer_postcode : rsp.buyer_postcode,
+    	             		 product_category_cd : $(".pdCd").val()
     	             };
     	           
     	          $.ajax({
@@ -224,6 +224,7 @@
 			                            <td style="text-align: center; vertical-align: middle;">${dsSellList.SELL_COUNT}</td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsSellList.SELL_PRICE}원</td>
 			                            <td style="text-align: center; vertical-align: middle;">
+			                            <input type="hidden" class="pdCd" value="${dsSellList.PRODUCT_CATEGORY_CD}">
 <%-- 			                            	<button type="button" class="btn btn-primary" onclick="fn_finalBuy('${dsSellList.SELL_CODE}', '${dsSellList.SELL_COUNT}', '${dsSellList.PRODUCT_CODE}')">결제하기</button> --%>
 			                            	<button type="button" class="btn btn-primary" onclick="fn_cd_buy('${dsSellList.SELL_CODE}', '${dsSellList.SELL_COUNT}', '${dsSellList.PRODUCT_CODE}')">결제하기</button>
 			                            </td>
