@@ -10,7 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
-<title>JEWELL SHOP ${dsProductList[0].PRODUCT_CATEGORY_CD_NM}</title>
+<title>${dsProductList[0].PRODUCT_CATEGORY_CD_NM}</title>
 <link href="${context}/css/subpage.css" rel="stylesheet">
 
 <link href="${context}/css/bootstrap.css" rel="stylesheet">
@@ -57,7 +57,7 @@
 <!--        <h4 style="font-size: 14px; font-weight: 100; text-align: right;">see more</h4> -->
 			<c:forEach items="${dsProductList}" var="dsProductList" varStatus="dsProductIdx" begin="0" end="3">
 			<div class="col-md-3" style="margin-bottom: 100px;">
-				<img name="image1" src="${context}/goodsImg/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail mb-3">
+				<a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}"><img name="image1" src="${context}/goodsImg/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail mb-3"></a>
 				<script type="text/javascript">
 			 	var productCategoryCd = '${dsProductList.PRODUCT_CATEGORY_CD}';
 				
@@ -77,7 +77,7 @@
 				</script>
 				<div class="row">
 					<div class="col-md-12">
-						<h4><b>${dsProductList.PRODUCT_NAME}</b></font></h4>
+						<h4><b>${dsProductList.PRODUCT_NAME}</b></h4>
 			        </div>
 			        <div class="col-md-12">
 			       <p><a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}">${dsProductList.PRODUCT_UNIT_PRICE}원</a></p>

@@ -10,7 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
-<title>JEWELL SHOP ${dsProductList[0].PRODUCT_CATEGORY_CD_NM}</title>
+<title>${dsProductList[0].PRODUCT_CATEGORY_CD_NM}</title>
 <link href="${context}/css/subpage.css" rel="stylesheet">
 
 <link href="${context}/css/bootstrap.css" rel="stylesheet">
@@ -54,7 +54,7 @@
 			<c:forEach items="${dsProductList}" var="dsProductList" varStatus="dsProductIdx" >
 			<div class="col-md-3" style="margin-bottom: 100px;">
 <!-- 			클래스 img-thumbnail로 사진 스타일 변경 가능 -->
-				<img name="image" src="${context}/coffeeImg/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail mb-3">
+				<a href="${context}/work/product/retrieveProduct2.do?productCode=${dsProductList.PRODUCT_CODE}"><img name="image" src="${context}/coffeeImg/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail mb-3"></a>
 				<script type="text/javascript">
 				 	var productCategoryCd = '${dsProductList.PRODUCT_CATEGORY_CD}';
 					
