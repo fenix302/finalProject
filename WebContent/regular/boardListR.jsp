@@ -103,7 +103,7 @@
 									<li class="page-item previous"><a href="${pageMaker.startPage-1}">Prev</a></li>
 								</c:if>
 								<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-									<li class="page-item ${pageMaker.cri.pageNum == num ? active:"""}><a href="${num}">${num}</a></li>
+									<li class="page-item ${pageMaker.cri.pageNum == num ? "active":""} "><a href="${num}">${num}</a></li>
 								</c:forEach>
 								<c:if test="${pageMaker.next}">
 									<li class="page-item next"><a href="${pageMaker.endPage +1}">Next</a></li>
@@ -112,29 +112,6 @@
 						</div>
 		<!-- 			end Pagination -->
 						
-						<!-- Modal 추가-->
-						<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-							aria-labelledby="myModalLabel" aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal"
-											aria-hidden="true">&times;</button>
-										<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-									</div>
-									<div class="modal-body">처리가 완료 되었습니다.</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-default"
-											data-dismiss="modal">Close</button>
-										<button type="button" class="btn btn-primary">Save
-											changes</button>
-									</div>
-								</div>
-								<!-- end /.modal-content -->
-							</div>
-							<!-- end /.modal-dialog -->
-						</div>
-						<!-- end /.modal -->
 		
 					</div>
 					<!-- end /.panel-body -->
@@ -162,22 +139,6 @@
 		
 						history.replaceState({}, null, null);
 		
-						function checkModal(result) {
-							if (result === '' || history.state) {
-								return;
-							}
-							if (parseInt(result) > 0) {
-								$(".modal-body").html(
-										"게시글" + parseInt(result) + "번이 등록되었습니다.");
-							}
-		
-							$("#myModal").modal("show");
-						}
-		
-						$("#regBtn").on("click", function() {
-							self.location = "/work/regular/createBoard.do";
-						});
-		
 						var actionForm = $("#actionForm");
 						$(".page-item a").on("click", function (e) {
 							e.preventDefault();
@@ -199,14 +160,6 @@
 						var searchForm = $("#searchForm");
 						
 						$("#searchForm button").on("click", function (e) {
-							if (!searchForm.find("option:selected").val()) {
-								alert("검색 종류를 선택해 주세요.")
-								return false;
-							}
-							if (!searchForm.find("input[name='keyword']").val()) {
-								alert("키워드를 입력해 주세요.")
-								return false;
-							}
 							// 브라우저에서 검색 버튼을 클릭하면 form 태그의 전송은 막고,
 							// 페이지 번호는 1이 되도록 처리합니다.
 							searchForm.find("input[name='pageNum']").val("1");
@@ -214,8 +167,6 @@
 							
 							searchForm.submit();
 						});
-						
-						
 						
 						
 					});
