@@ -1,6 +1,7 @@
 package work.iamport.dao;
 
 import java.io.Reader;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -12,6 +13,8 @@ import org.springframework.stereotype.Repository;
 
 import work.iamport.PaymentBean;
 import work.iamport.model.PaymentVO;
+import work.regular.Criteria;
+import work.regular.RegularBean;
 
 @Repository
 public class PaymentDAO {
@@ -23,8 +26,17 @@ public class PaymentDAO {
 		sqlSession.insert("payment.insertPaymentSuccess", bean);
 	}
 	
+	public List<PaymentBean> retrieveBoardList(Criteria cri){
+		return sqlSession.selectList("payment.retrieveBoardList", cri);
+	}
 	
+	public List<PaymentBean> getListWithPaging(Criteria cri){
+		return sqlSession.selectList("payment.getListWithPaging", cri);
+	}
 	
+	public int getTotalCount() {
+		return sqlSession.selectOne("payment.getTotalCount");
+	}
 	
 	
 //	private static SqlSessionFactory sqlMapper;

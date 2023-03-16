@@ -14,6 +14,30 @@
 		<result property="buyer_addr" column="BUYER_ADDR" />
 		<result property="buyer_postcode" column="BUYER_POSTCODE" />
 	</resultMap>
+	
+	<sql id="criteria">  <!-- MyBatis는 sql태그를 이용해서 SQL의 일부를 별도로 보관하고, 필요한 경우에 include 시키는 형식으로 사용할 수 있다.-->	
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+<!-- 				String[] getTypeArr 에서 나온 typeArr 쓰는것임 -->
+			<if test="type != null and keyword != null">
+				<foreach item="type" collection="typeArr">
+					<trim prefix="OR">
+						<choose>
+							<when test="type == 'T'.toString()">
+								title like '%'||#{keyword}||'%'
+							</when>
+							<when test="type == 'C'.toString()">
+								content like '%'||#{keyword}||'%'
+							</when>
+							<when test="type == 'W'.toString()">
+								writer like '%'||#{keyword}||'%'
+							</when>
+						</choose>
+					</trim>
+				</foreach>
+			</if>
+		</trim>		    
+	</sql>
+
 
 	<insert id="insertPaymentSuccess">
 		<![CDATA[
@@ -45,5 +69,65 @@
 		]]>
 <!-- 		insert into pay_import values(#{imp_uid}, #{merchant_uid}, #{paid_amount}, #{apply_num}, #{paid_at}) -->
 	</insert>	
+	
+	<select id="retrieveBoardList" parameterType="map" resultType="map">
+		<![CDATA[
+			SELECT PAYMENT.NAME
+				, PAYMENT.PER_TIME 
+			FROM PAY_IMPORT PAYMENT 
+			WHERE  1=1
+			ORDER BY PAYMENT.PER_TIME DESC
+		]]>
+	</select>
+	
+	<select id="getListWithPaging" resultType="payment">
+		<![CDATA[
+		
+		SELECT
+		    NAME, PER_TIME
+	    from(
+		    SELECT /*+INDEX_DESC(pay_import pk_pay_import) */
+		        ROWNUM rn, name, per_time
+		    FROM pay_import
+		    WHERE 
+		]]>	
+			<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+				<foreach item="type" collection="typeArr">
+					<trim prefix="OR">
+						<choose>
+							<when test="type == 'T'.toString()">
+								title like '%'||#{keyword}||'%'
+							</when>
+							<when test="type == 'C'.toString()">
+								content like '%'||#{keyword}||'%'
+							</when>
+							<when test="type == 'W'.toString()">
+								writer like '%'||#{keyword}||'%'
+							</when>
+						</choose>
+					</trim>
+				</foreach>
+			</trim>		    
+		<![CDATA[
+			ROWNUM <= #{pageNum} * #{amount}
+			)
+		where RN > (#{pageNum} -1) * #{amount}
+		]]>	
+		    
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
+		<![CDATA[
+			select count(*) from pay_import 
+			
+			where 
+		]]>
+		<include refid="criteria"></include>
+		<![CDATA[
+			name = '정기구매1'
+		]]>
+	</select>
+	
+	
 	
 </mapper>

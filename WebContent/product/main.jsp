@@ -220,12 +220,12 @@
 		<div class="container" style="margin-top: 10%; margin-bottom: 10%">
 			<div class="row">
 				<div class="col-md-3">
-					<a href="${context}/work/notice/retrieveBoardList.do"
+					<a href="${context}/work/regular/retrieveBoardList.do"
 						class="btn btn-success" style="width: 100%; height: 250px;"
 						role="button">
 						<h1>
 							<span class="glyphicon glyphicon-list-alt"
-								style="font-size: 80px; margin-top: 5%;"></span> <br />공지사항
+								style="font-size: 80px; margin-top: 5%;"></span> <br />정기 구매 고객 관리
 						</h1>
 					</a>
 				</div>
