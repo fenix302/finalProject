@@ -15,6 +15,6 @@ public interface PaymentService {
 	
 	public List<PaymentBean> getListWithPaging(Criteria cri);
 	
-	public int getTotalCount();
+	public int getTotalCount(Criteria cri);
 	
 }

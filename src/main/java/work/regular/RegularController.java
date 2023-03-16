@@ -55,7 +55,7 @@ public class RegularController {
 		
 		model.addAttribute("dsPaymentList", paymentService.getListWithPaging(cri));
 		
-		int total = paymentService.getTotalCount();
+		int total = paymentService.getTotalCount(cri);
 		
 		PageDTO pageMaker = new PageDTO(cri, total);
 		

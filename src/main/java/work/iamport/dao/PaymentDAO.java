@@ -27,7 +27,7 @@ public class PaymentDAO {
 		return sqlSession.selectList("payment.getListWithPaging", cri);
 	}
 	
-	public int getTotalCount() {
+	public int getTotalCount(Criteria cri) {
 		return sqlSession.selectOne("payment.getTotalCount");
 	}
 	

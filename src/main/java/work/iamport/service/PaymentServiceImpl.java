@@ -37,8 +37,8 @@ public class PaymentServiceImpl implements PaymentService {
 	}
 	
 	@Override
-	public int getTotalCount() {
-		return paymentDAO.getTotalCount();
+	public int getTotalCount(Criteria cri) {
+		return paymentDAO.getTotalCount(cri);
 	}
 	
 }
