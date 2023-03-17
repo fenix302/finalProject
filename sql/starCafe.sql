@@ -342,6 +342,11 @@ regdate date default sysdate
 
 alter table tb_comm add constraint pk_comm primary key (bno);
 
+-- 커뮤니티 게시판 데이터
+INSERT INTO TB_COMM(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (1, '커뮤니티 게시판입니다.', '안녕하세요 카페 천성입니다. 이 곳은 커뮤니티 게시판입니다.', '관리자', SYSDATE);
+INSERT INTO TB_COMM(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (2, '안녕하세요 기성용입니다.', '회원가입 했습니다 잘 부탁드립니다.', '기성용', SYSDATE);
+INSERT INTO TB_COMM(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (3, '반갑습니다 손흥민입니다.', '회원가입 했습니다 잘 부탁드립니다.', '손흥민', SYSDATE);
+
 -- 상담 신청 게시판 정보
 
 drop sequence seq_consulting;
