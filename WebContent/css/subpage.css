@@ -18,7 +18,7 @@
 
 }
 .page_header{
-	width: 100%;
+	width: 100% !important;
 }
 
 .faq_header{
@@ -29,7 +29,7 @@
    margin-bottom: 80px!important;
    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
       url('/css/images/cocktail.jpg')!important;
-}
+	width: 100% !important;}
 .comeText {
    font-size: 30px;
    color: #fff!important;
@@ -96,14 +96,14 @@ h3{
      font-weight: 900;
 
     margin: 0;
-        padding-top: 90px;
+    padding-top: 90px;
     padding-bottom: 10px;
     text-align: left;
 
  }
  h4{
- 	height: 70px ;
- 	font-size: 18px !important;
+ 	height: 50px ;
+ 	font-size: 20px !important;
  	margin-left: 10px !important;
  }
  
@@ -117,10 +117,12 @@ h3{
 
  
  p{
-color: #000 !important;
-	 display: table;
+/* color: #151D5D !important; */
+/* 	display: table;
    margin-left: auto;
-   margin-right: auto;
+   margin-right: auto; */
+   text-align: right;
+   margin-right: 10px;
    
    }
  
@@ -135,6 +137,10 @@ color: #000 !important;
    
 }
 
+
+a{
+	font-size: 18px;
+}
 img{
 	width: 100%;
 }
