@@ -115,7 +115,7 @@
     	            		 imp_uid : rsp.imp_uid,
     	            		 merchant_uid : rsp.merchant_uid,
     	            		 paid_amount : rsp.paid_amount,
-    	            		 apply_num : rsp.apply_num,
+    	            		 per_num : rsp.apply_num,
     	            		 per_time : new Date(),
     	             		 name : rsp.name,
     	             		 buyer_name : rsp.buyer_name,

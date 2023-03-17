@@ -2,7 +2,6 @@ package work.iamport.command;
 
 import javax.annotation.Resource;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import work.iamport.PaymentBean;
-import work.iamport.model.PaymentVO;
 import work.iamport.service.PaymentService;
 
 @Controller

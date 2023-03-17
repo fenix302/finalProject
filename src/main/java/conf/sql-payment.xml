@@ -5,7 +5,7 @@
 		<result property="imp_uid" column="PAY_ID" />
 		<result property="merchant_uid" column="IMPORT_ID" />
 		<result property="paid_amount" column="PAY_AMOUNT" />
-		<result property="apply_num" column="PER_NUM" />
+		<result property="per_num" column="PER_NUM" />
 		<result property="per_time" column="PER_TIME" />
 		<result property="name" column="NAME" />
 		<result property="buyer_name" column="BUYER_NAME" />
@@ -51,7 +51,7 @@
 				#{imp_uid}
 				, #{merchant_uid}
 				, #{paid_amount}
-				, #{apply_num}
+				, #{per_num}
 				, #{per_time}
 				, #{name}
 				, #{buyer_name}
@@ -78,10 +78,10 @@
 	<select id="getListWithPaging" resultType="payment">
 		<![CDATA[
 		SELECT
-		    NAME, PER_TIME
+		    NAME, PER_TIME, PER_NUM
 	    from(
 		    SELECT
-		        ROWNUM rn, PAYMENT.NAME, PAYMENT.PER_TIME
+		        ROWNUM rn, PAYMENT.NAME, PAYMENT.PER_TIME, PAYMENT.PER_NUM
 		    FROM PAY_IMPORT PAYMENT
 		    WHERE 
 		]]>	
@@ -104,6 +104,24 @@
 		where RN > (#{pageNum} -1) * #{amount}
 		]]>	
 		    
+	</select>
+
+	<select id="retrieveBoard" parameterType="map" resultType="map">
+		<![CDATA[
+		/*	retrieveBoard	*/
+			SELECT PAYMENT.PER_NUM
+				 , PAYMENT.NAME
+				 , PAYMENT.PER_TIME
+				 , PAYMENT.BUYER_NAME
+				 , PAYMENT.BUYER_TEL
+				 , PAYMENT.BUYER_EMAIL
+				 , PAYMENT.BUYER_POSTCODE
+				 , PAYMENT.BUYER_ADDR
+			FROM   PAY_IMPORT PAYMENT
+			WHERE  1=1
+			AND    PER_NUM = #{per_num}
+			
+		]]>
 	</select>
 	
 	<select id="getTotalCount" resultType="int">

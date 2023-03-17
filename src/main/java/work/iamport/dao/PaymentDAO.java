@@ -1,6 +1,7 @@
 package work.iamport.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,10 @@ public class PaymentDAO {
 	
 	public int getTotalCount(Criteria cri) {
 		return sqlSession.selectOne("payment.getTotalCount", cri);
+	}
+	
+	public Map<String, String> retrieveBoard(Map<String, String> boardParam){
+		return sqlSession.selectOne("payment.retrieveBoard", boardParam);
 	}
 	
 	

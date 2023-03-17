@@ -33,16 +33,16 @@ public class RegularController {
 	public ModelAndView retrieveBoard(HttpServletRequest request){
 		ModelAndView mv = new ModelAndView();
 
-		String boardNo = request.getParameter("bno");
+		String boardNo = request.getParameter("per_num");
 
 		Map<String, String> boardParam = new HashMap<String, String>();
 
-		boardParam.put("BNO", boardNo);
+		boardParam.put("per_num", boardNo);
 
-		Map<String, String> dsBoard = regularService.retrieveBoard(boardParam);
+		Map<String, String> dsPaymentList = paymentService.retrieveBoard(boardParam);
 
 
-		mv.addObject("dsBoard", dsBoard);
+		mv.addObject("dsPaymentList", dsPaymentList);
 
 		mv.setViewName("/regular/boardR");
 

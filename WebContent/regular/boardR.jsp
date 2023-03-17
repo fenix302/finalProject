@@ -74,7 +74,7 @@ li{
 <div class="container" style="margin-top: 2%; margin-bottom: 10%;">
     <div class="row">
         <div class="page_header">
-            <h1 class="comeText">공지사항</h1>
+            <h1 class="comeText">주문 고객 정보</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -85,25 +85,29 @@ li{
                 <div class="panel-body">
 					
 					<div class="form-group">
-						<label>글 번호</label> <input class="form-control" name="bno" value='<c:out value="${dsBoard.BNO}" />' readonly="readonly">
+						<label>주문 번호</label> <input class="form-control" name="per_num" value='<c:out value="${dsPaymentList.PER_NUM}" />' readonly="readonly">
 					</div>
 					<div class="form-group">
-						<label>제목</label> <input class="form-control" name="title" value='<c:out value="${dsBoard.TITLE}" />' readonly="readonly">
+						<label>상품 이름</label> <input class="form-control" name="name" value='<c:out value="${dsPaymentList.NAME}" />' readonly="readonly">
 					</div>
 					<div class="form-group">
-						<label>내용</label> 
-						<textarea class="form-control" rows="3" name="content" readonly="readonly"><c:out value="${dsBoard.CONTENT}"/>
-						</textarea>
+						<label>주문 일자</label> <input class="form-control" name="per_time" value='<c:out value="${dsPaymentList.PER_TIME}" />' readonly="readonly">
 					</div>
 					<div class="form-group">
-						<label>작성자</label> <input class="form-control" name="writer" value='<c:out value="${dsBoard.WRITER}" />' readonly="readonly">
+						<label>고객명</label> <input class="form-control" name="per_time" value='<c:out value="${dsPaymentList.BUYER_NAME}" />' readonly="readonly">
 					</div>
-						<c:if test="${sessionScope.id != null && sessionScope.grade == 'A'}">
-							<button data-oper='modify' class="btn modifyBtn" onclick="location.href='/notice/boardRegisterU.jsp'">수정</button>	
-						</c:if>
-							<button data-oper='list' class="btn listBtn" onclick="location.href='/notice/boardListR.jsp'">목록</button>
-					<form id="operForm" action="/notice/boardRegisterU" method="get">
-						<input type="hidden" name="bno" value='<c:out value="${dsBoard.BNO}"/>'>
+					<div class="form-group">
+						<label>연락처</label> <input class="form-control" name="writer" value='<c:out value="${dsPaymentList.BUYER_TEL}" />' readonly="readonly">
+					</div>
+					<div class="form-group">
+						<label>이메일</label> <input class="form-control" name="writer" value='<c:out value="${dsPaymentList.BUYER_EMAIL}" />' readonly="readonly">
+					</div>
+					<div class="form-group">
+						<label>주소</label> <input class="form-control" name="writer" value='<c:out value="${dsPaymentList.BUYER_POSTCODE} ${dsPaymentList.BUYER_ADDR}" />' readonly="readonly">
+					</div>
+							<button data-oper='list' class="btn listBtn" onclick="location.href='/regular/boardListR.jsp'">목록</button>
+					<form id="operForm" action="/regular/boardRegisterU" method="get">
+						<input type="hidden" name="bno" value='<c:out value="${dsPaymentList.per_num}"/>'>
 <%-- 						<input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}"/>'> --%>
 <%-- 						<input type="hidden" name="amount" value='<c:out value="${cri.amount}"/>'> --%>
 <%-- 						<input type="hidden" name="keyword" value='<c:out value="${cri.keyword}"/>'> --%>
@@ -123,7 +127,7 @@ li{
 		var operForm = $("#operForm");
 		
 		$("button[data-oper='modify']").on("click", function (e) {
-			operForm.attr("action", "${context}/work/notice/updateBoard.do?bno=${dsBoard.BNO}").submit();
+			operForm.attr("action", "${context}/work/regular/updateBoard.do?bno=${dsBoard.BNO}").submit();
 		});
 		
 		
@@ -134,8 +138,8 @@ li{
 			// 만일 사용자가 list로 이동하는 경우에는 아직 아무런 데이터도 필요하지 않으므로
 			// <form> 태그 내의 bno 태그를 지우고 submit() 메서드를 통해서
 			// 리스트 페이지로 이동합니다.
-			operForm.find("#bno").remove();
-			operForm.attr("action", "${context}/work/notice/retrieveBoardList.do")
+			operForm.find("#per_num").remove();
+			operForm.attr("action", "${context}/work/regular/retrieveBoardList.do")
 			operForm.submit();
 		});
 	});	

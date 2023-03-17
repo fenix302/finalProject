@@ -3,17 +3,15 @@ package work.iamport.service;
 
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import work.iamport.PaymentBean;
 import work.iamport.dao.PaymentDAO;
-import work.iamport.model.PaymentVO;
 import work.regular.Criteria;
-import work.regular.RegularBean;
 
 @Service("paymentService")
 public class PaymentServiceImpl implements PaymentService {
@@ -39,6 +37,10 @@ public class PaymentServiceImpl implements PaymentService {
 	@Override
 	public int getTotalCount(Criteria cri) {
 		return paymentDAO.getTotalCount(cri);
+	}
+
+	public Map<String, String> retrieveBoard(Map<String, String> boardParam){
+		return paymentDAO.retrieveBoard(boardParam);
 	}
 	
 }

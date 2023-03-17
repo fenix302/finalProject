@@ -71,8 +71,8 @@
 								<tbody>
 			                    	<c:forEach items="${dsPaymentList}" var="dsPaymentList" varStatus="courseIdx">
 			                         <tr>
-			                         	<td><a class="move" href="#"><fmt:formatDate pattern="yyyy-MM-dd" value="${dsPaymentList.per_time}" /></a></td>
-			  							<td><a class="move" href="#">${dsPaymentList.name}</a></td>
+			                         	<td><a class="move" href="${dsPaymentList.per_num}"><fmt:formatDate pattern="yyyy-MM-dd" value="${dsPaymentList.per_time}" /></a></td>
+			  							<td><a class="move" href="${dsPaymentList.per_num}">${dsPaymentList.name}</a></td>
 			                         </tr>
 				                    </c:forEach>
 			                    </tbody>
@@ -133,12 +133,7 @@
 		<script type="text/javascript">
 			$(document).ready(
 					function() {
-						var result = '<c:out value = "${result}" />';
-		
-						checkModal(result);
-		
-						history.replaceState({}, null, null);
-		
+						
 						var actionForm = $("#actionForm");
 						$(".page-item a").on("click", function (e) {
 							e.preventDefault();
@@ -152,7 +147,7 @@
 						// <form> 태그의 action은 '/board/get'으로 변경한다. 
 						$(".move").on("click", function (e) {
 							e.preventDefault();
-							actionForm.append("<input type='hidden' name='bno' value='"+ $(this).attr("href")+"'>");
+							actionForm.append("<input type='hidden' name='per_num' value='"+ $(this).attr("href")+"'>");
 							actionForm.attr("action","/work/regular/retrieveBoard.do");
 							actionForm.submit();
 						});
