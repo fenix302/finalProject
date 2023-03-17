@@ -250,13 +250,51 @@
                     
                   </div>
                 </div>
-
+               
               </div>
             </div>
           </div>
       </div>
     </div>
-z
+
+
+
+
+
+
+			<div class="container">
+				<div class="row listImg">
+                <div class="col-md-6" align="center">
+        			<img src="/ringImg/${dsProduct.PRODUCT_IMAGE}" id="image1"class="img-rounded-img-responsive"> 
+                	<script type="text/javascript">
+					 	var productCategoryCd = '${dsProduct.PRODUCT_CATEGORY_CD}';
+
+					 	if(productCategoryCd == 'C'){
+							imageFolder = "coffeeImg_d";
+						}else if(productCategoryCd == 'G'){
+							imageFolder = "goodsImg_d";
+						}else if(productCategoryCd == 'P'){
+							imageFolder = "presentImg_d";
+						}else if(productCategoryCd == 'R'){
+							imageFolder = "regularImg_d";
+						}
+						path = $("#image1").attr("src");
+
+						existFolder = path.split("/")[1];
+						$("#image1").attr("src", path.replace(existFolder, imageFolder));
+					</script>
+                 </div>
+                 </div>
+			</div>
+
+
+
+
+
+
+
+
+
 <div class="container" style="margin-bottom: 50px;">
 		<div class="row">
 			<div class="col-md-12 toppad">
@@ -306,6 +344,7 @@ z
 		                <button class="btn btn-secondary btn-lg pull-right" onclick="fn_back()" style="margin-left: 15px;">뒤로가기</button>
 		                <a class="btn btn-secondary btn-lg pull-right" href="#reviews-anchor" id="open-review-box"><b>상품평입력</b></a>
 		            </div>
+		            
 
 		            <div class="row" id="post-review-box" style="display:none;">
 		                <div class="col-md-12">
