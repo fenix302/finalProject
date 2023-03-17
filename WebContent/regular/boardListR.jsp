@@ -65,6 +65,7 @@
 								<tr>
 									<th>주문 일자</th>
 									<th>상품 이름</th>
+									<th>주문 고객</th>
 								</tr>
 							</thead>
 		
@@ -73,6 +74,7 @@
 			                         <tr>
 			                         	<td><a class="move" href="${dsPaymentList.per_num}"><fmt:formatDate pattern="yyyy-MM-dd" value="${dsPaymentList.per_time}" /></a></td>
 			  							<td><a class="move" href="${dsPaymentList.per_num}">${dsPaymentList.name}</a></td>
+			  							<td><a class="move" href="${dsPaymentList.per_num}">${dsPaymentList.buyer_name}</a></td>
 			                         </tr>
 				                    </c:forEach>
 			                    </tbody>

@@ -68,7 +68,8 @@
 	<select id="retrieveBoardList" parameterType="map" resultType="map">
 		<![CDATA[
 			SELECT PAYMENT.NAME
-				, PAYMENT.PER_TIME 
+				, PAYMENT.PER_TIME
+				, PAYMENT.BUYER_NAME 
 			FROM PAY_IMPORT PAYMENT 
 			WHERE  1=1
 			ORDER BY PAYMENT.PER_TIME DESC
@@ -78,10 +79,10 @@
 	<select id="getListWithPaging" resultType="payment">
 		<![CDATA[
 		SELECT
-		    NAME, PER_TIME, PER_NUM
+		    NAME, PER_TIME, PER_NUM, BUYER_NAME
 	    from(
 		    SELECT
-		        ROWNUM rn, PAYMENT.NAME, PAYMENT.PER_TIME, PAYMENT.PER_NUM
+		        ROWNUM rn, PAYMENT.NAME, PAYMENT.BUYER_NAME, PAYMENT.PER_TIME, PAYMENT.PER_NUM
 		    FROM PAY_IMPORT PAYMENT
 		    WHERE 
 		]]>	

@@ -75,7 +75,7 @@
 	<div class="container">
 		<div class="buy-main">
 <!-- 			<h1><font color="black"><strong>장바구니</strong>&nbsp;<span class="glyphicon glyphicon-shopping-cart"></span></font></h1> -->
-			<h4><font color="black"><strong>${sessionScope.id}님의 장바구니입니다.</strong></font></h4>
+			<h4><font color="black"><strong>${sessionScope.name}님의 장바구니입니다.</strong></font></h4>
 		</div>
 
 		<div class="row" style="margin-bottom: 10%;">
