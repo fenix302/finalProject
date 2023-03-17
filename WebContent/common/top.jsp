@@ -160,7 +160,7 @@ a {
 							</li>
 						</c:if> 
 						<c:if test="${sessionScope.id != null}">
-							<p style="text-align: center; margin-top: 12px; margin-left: 70px;">
+							<p style="text-align: center; margin-top: 9px; margin-left: 70px;">
 								<span style="color: blue; font-size: 20px;">${sessionScope.name}</span>님 환영합니다.
 							</p>
 							<li class="nav-item myitem" style="text-align: center; margin-top: 5px; margin-left: 10px;">
