@@ -41,8 +41,6 @@
 </head>
 <body>
 <jsp:include page="../common/top.jsp"></jsp:include>
-
-<main class="container">
 	<div class="page_header">
 	 <div class="faq_header">
 	       <div class="name">
@@ -50,10 +48,12 @@
 	        </div>
 	  </div>
 </div>
+<main class="container">
+
     <div class="group">
 	    <div class="li_1">
 		<div class="box-wrap row  justify-content-start align-items-end">
-		<h3 style="font-size: 23px; font-weight: 900;">HOT</h3>
+		<h3 style="font-size: 23px;  font-weight: 900;">HOT</h3>
 <!--        <h4 style="font-size: 14px; font-weight: 100; text-align: right;">see more</h4> -->
 			<c:forEach items="${dsProductList}" var="dsProductList" varStatus="dsProductIdx" begin="0" end="3">
 			<div class="col-md-3" style="margin-bottom: 100px;">
@@ -136,6 +136,8 @@
 		</div>
 		</div> 
 	</div>
+	
+	
 </main>
 
 <jsp:include page="../common/foot.jsp"></jsp:include>
