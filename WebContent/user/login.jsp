@@ -119,7 +119,7 @@
 	                        <div class="form-group d-grid gap-2 mt-4">
 	                            <button type="button" class="btn btn-lg user-login-btn btn-block" onclick="ajaxLoginCheck();"><strong>Login</strong></button>
 	                            
-	                            <button type="button" class="btn btn-lg user-join-btn btn-block" onclick="location.href = '${context}/user/userC.jsp'"><strong>회원가입</strong></button>
+	                            <button type="button" class="btn btn-lg user-join-btn btn-block" onclick="location.href = '${context}/work/user/createUser.do'"><strong>회원가입</strong></button>
 	                            
 							</div>
 							
