@@ -28,7 +28,7 @@ public class PaymentDAO {
 	}
 	
 	public int getTotalCount(Criteria cri) {
-		return sqlSession.selectOne("payment.getTotalCount");
+		return sqlSession.selectOne("payment.getTotalCount", cri);
 	}
 	
 	

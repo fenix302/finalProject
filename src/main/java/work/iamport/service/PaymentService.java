@@ -3,9 +3,7 @@ package work.iamport.service;
 import java.util.List;
 
 import work.iamport.PaymentBean;
-import work.iamport.model.PaymentVO;
 import work.regular.Criteria;
-import work.regular.RegularBean;
 
 public interface PaymentService {
 
