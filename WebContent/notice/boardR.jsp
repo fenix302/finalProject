@@ -92,7 +92,7 @@ li{
 					</div>
 					<div class="form-group">
 						<label>내용</label> 
-						<textarea class="form-control" rows="3" name="content" readonly="readonly"><c:out value="${dsBoard.CONTENT}"/>
+						<textarea class="form-control" rows="15 name="content" readonly="readonly"><c:out value="${dsBoard.CONTENT}"/>
 						</textarea>
 					</div>
 					<div class="form-group">

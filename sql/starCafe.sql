@@ -243,6 +243,84 @@ start with 0
 maxvalue 9999999
 minvalue 0;
 
+-- 공지사항 데이터
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (1, '시스템 개선 및 서비스 점검 안내', '안녕하세요. 카페 천성입니다.
+
+
+보다 나은 서비스를 제공해 드리고자 시스템 점검 작업을 진행합니다.
+
+
+- 일자 및 시간 : 2023년 2월 22일(수) 23:00 ~ 2월 23일(목) 05:00 (6시간)
+
+
+작업 시간 중 해당 서비스 이용 시 불편사항이 발생할 수 있는 점 양해 부탁드립니다. 
+
+감사합니다.', '관리자', sysdate);
+
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (2, '설 연휴 매장 영업시간 변경 안내', '안녕하세요. 카페 천성입니다.
+
+
+설 연휴 기간 동안 스타벅스 일부 매장의 영업시간이 변경됩니다.
+
+
+감사합니다.', '관리자', sysdate);
+
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (3, '개인정보처리방침 개정 안내', '안녕하세요. 카페 천성 개인정보처리방침이 개정되어 변경내용을 안내드립니다.
+
+감사합니다.', '관리자', sysdate);
+
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (4, '개인정보처리방침 개정 안내', '안녕하세요. 카페 천성 홈페이지 이용약관이 개정되어 변경내용을 안내 드립니다.
+
+감사합니다.', '관리자', sysdate);
+
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (5, '홈페이지 이용약관 / 스타벅스 카드 이용약관 개정 안내[정정 안내]', '안녕하세요. 카페 천성 홈페이지 이용약관과 스타벅스 카드 이용약관이 개정되어 변경내용을 안내 드립니다.
+
+감사합니다.', '관리자', sysdate);
+
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (6, '시스템 개선 및 서비스 점검 안내', '안녕하세요. 카페 천성입니다.
+
+
+보다 나은 서비스를 제공해 드리고자 시스템 점검 작업을 진행합니다.
+
+
+- 일자 및 시간 : 2023년 2월 22일(수) 23:00 ~ 2월 23일(목) 05:00 (6시간)
+
+
+작업 시간 중 해당 서비스 이용 시 불편사항이 발생할 수 있는 점 양해 부탁드립니다. 
+
+감사합니다.', '관리자', sysdate);
+
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (7, '시스템 개선 및 서비스 점검 안내', '안녕하세요. 카페 천성입니다.
+
+
+보다 나은 서비스를 제공해 드리고자 시스템 점검 작업을 진행합니다.
+
+
+- 일자 및 시간 : 2023년 2월 22일(수) 23:00 ~ 2월 23일(목) 05:00 (6시간)
+
+
+작업 시간 중 해당 서비스 이용 시 불편사항이 발생할 수 있는 점 양해 부탁드립니다. 
+
+감사합니다.', '관리자', sysdate);
+
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (8, '추석 연휴 매장 영업시간 변경 안내', '안녕하세요. 카페 천성입니다.
+
+
+추석 연휴 기간 동안 스타벅스 일부 매장의 영업시간이 변경됩니다.
+
+
+감사합니다.', '관리자', sysdate);
+
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (9, '개인정보처리방침 개정 안내', '안녕하세요. 카페 천성 개인정보처리방침이 개정되어 변경내용을 안내드립니다.
+
+감사합니다.', '관리자', sysdate);
+
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (10, '개인정보처리방침 개정 안내', '안녕하세요. 카페 천성 홈페이지 이용약관이 개정되어 변경내용을 안내 드립니다.
+
+감사합니다.', '관리자', sysdate);
+
+
+
 -- 커뮤니티 게시판 정보
 drop sequence seq_comm;
 

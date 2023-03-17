@@ -88,6 +88,7 @@
 		<!-- 						'selected'라는 문자열을 출력하게 해서 화면에서 선택된 항목으로 보이도록 처리합니다.  	-->
 									<select name="type">
 											<option value="T" <c:out value="${pageMaker.cri.type eq 'T' ? 'selected': ''}"/>>상품 이름</option>
+											<option value="C" <c:out value="${pageMaker.cri.type eq 'C' ? 'selected': ''}"/>>주문 고객</option>
 									</select>
 									<input type="text" name="keyword" value='<c:out value="${pageMaker.cri.keyword}"/>'/>
 									<input type="hidden" name="pageNum" value='<c:out value="${pageMaker.cri.pageNum}"/>'/>

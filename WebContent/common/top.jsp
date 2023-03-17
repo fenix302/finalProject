@@ -67,10 +67,13 @@ a {
 							data-bs-toggle="dropdown" aria-expanded="false">About</a>
 							<ul class="dropdown-menu">
 								<li><a class="dropdown-item"
-									href="${context}/company/introduce.jsp">회사소개</a></li>
+									href="http://localhost:3000/AboutUs">회사소개</a></li>
 								<li><a class="dropdown-item"
-									href="${context}/company/location.jsp">오시는 길</a></li>
-								<li><a class="dropdown-item" href="${context}/faq/faq.jsp">FAQ</a></li>
+									href="http://localhost:3000/location">오시는 길</a></li>
+								<li><a class="dropdown-item"
+									href="http://localhost:3000/Promote">홍보영상</a></li>
+								<li><a class="dropdown-item" 
+									href="http://localhost:3000/faq">FAQ</a></li>
 							</ul></li>
 
 						<li class="nav-item dropdown"><a
