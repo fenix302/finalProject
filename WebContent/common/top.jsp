@@ -149,17 +149,22 @@ a {
 							</ul></li>
 
 
-						<li class="nav-item myitem"><c:if
-								test="${sessionScope.id == null}">
+						<c:if test="${sessionScope.id == null}">
+							<li class="nav-item myitem">
 								<a href="${context}/work/user/createUser.do" class="nav-link">회원가입</a>
-							</c:if></li>
-
-						<li class="nav-item myitem"><c:if
-								test="${sessionScope.id == null}">
+							</li>
+						</c:if>
+						<c:if test="${sessionScope.id == null}">
+							<li class="nav-item myitem">
 								<a href="${loginUrl}" class="nav-link">LOGIN</a>
-							</c:if> <c:if test="${sessionScope.id != null}">
-								<a href="${context}/work/user/logout.do" class="nav-link">LOGOUT</a>
-							</c:if></li>
+							</li>
+						</c:if> 
+						<c:if test="${sessionScope.id != null}">
+							<li class="nav-item myitem" style="text-align: center;">
+								<label for="logOut">${sessionScope.name}님 환영합니다.</label>
+								<a href="${context}/work/user/logout.do" class="nav-link" id="logOut">LOGOUT</a>
+							</li>
+						</c:if>
 					</ul>
 				</div>
 			</nav>
