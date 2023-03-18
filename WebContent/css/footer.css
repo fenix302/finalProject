@@ -46,7 +46,7 @@ footer {
 
 /* 폰트 */
 .company_foot, .Center_ann_foot {
-	color: #d0d4e0;
+	color: #d0d4e0 !important;
 	 font-size: 14px;
 	 text-align: center;
 }
@@ -60,7 +60,7 @@ footer {
 	font-size: 16px;
 	margin: 20px 0px 0px 0px !important;
 	text-align: center;
-	color: #fff;
+	color: #fff !important;
 }
 
 thin{
