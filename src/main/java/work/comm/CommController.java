@@ -107,8 +107,6 @@ public class CommController {
 		Map<String, String> boardParam = new HashMap<String, String>();
 		Map<String, String> replyParam = new HashMap<String, String>();
 		
-		HttpSession session = request.getSession();
-
 		String boardNo = request.getParameter("bno");
 		int flag = replyBean.getRno();
 		String f = Integer.toString(flag);

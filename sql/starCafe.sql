@@ -124,9 +124,30 @@ Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUC
 Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('P0017','present01.jpg','천성 선물세트 5종',35000,100,'P','2023-01-19 10:23');
 Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('P0018','present02.jpg','천성 소매넣기세트',21000,50,'P','2023-01-19 10:23');
 Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('P0019','present03.jpg','드립백 세트',18000,53,'P','2023-01-19 10:23');
-Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('R0029','reg01.jpg','2회 더치커피 정기구매 서비스',44640,99,'R','2023-01-19 10:23');
-Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('R0030','reg02.jpg','3회 더치커피 정기구매 서비스',64800,99,'R','2023-01-19 10:23');
-Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('R0031','reg03.jpg','4회 더치커피 정기구매 서비스',84600,99,'R','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('R0020','reg01.jpg','2회 더치커피 정기구매 서비스',44640,99,'R','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('R0021','reg02.jpg','3회 더치커피 정기구매 서비스',64800,99,'R','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('R0022','reg03.jpg','4회 더치커피 정기구매 서비스',84600,99,'R','2023-01-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('C0023','latte01.jpg','설명1',84600,99,'C1','2023-03-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('C0024','latte02.jpg','설명2',84600,99,'C1','2023-03-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('C0025','latte03.jpg','설명3',84600,99,'C1','2023-03-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('C0026','latte04.jpg','설명4',84600,99,'C1','2023-03-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('C0027','latte05.jpg','설명5',84600,99,'C1','2023-03-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('C0028','latte06.jpg','설명6',84600,99,'C1','2023-03-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('C0029','latte07.jpg','설명7',84600,99,'C1','2023-03-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('C0030','latte08.jpg','설명8',84600,99,'C1','2023-03-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('C0031','latte09.jpg','설명9',84600,99,'C1','2023-03-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('G0032','goods01.jpg','설명10',84600,99,'G1','2023-03-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('G0033','goods02.jpg','설명11',84600,99,'G1','2023-03-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('G0034','goods03.jpg','설명12',84600,99,'G1','2023-03-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('G0035','goods04.jpg','설명13',84600,99,'G1','2023-03-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('G0036','goods05.jpg','설명14',84600,99,'G1','2023-03-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('G0037','goods06.jpg','설명15',84600,99,'G1','2023-03-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('G0038','goods07.jpg','설명16',84600,99,'G1','2023-03-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('P0039','present01.jpg','설명17',84600,99,'P1','2023-03-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('P0040','present02.jpg','설명18',84600,99,'P1','2023-03-19 10:23');
+Insert into STAR_CAFE.TB_PRODUCT (PRODUCT_CODE,PRODUCT_IMAGE,PRODUCT_NAME,PRODUCT_UNIT_PRICE,PRODUCT_COUNT,PRODUCT_CATEGORY_CD,PRODUCT_REG_DATE) values ('P0041','present03.jpg','설명19',84600,99,'P1','2023-03-19 10:23');
+
+
 
 
 
@@ -244,80 +265,67 @@ maxvalue 9999999
 minvalue 0;
 
 -- 공지사항 데이터
-INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (1, '시스템 개선 및 서비스 점검 안내', '안녕하세요. 카페 천성입니다.
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (1, '시스템 개선 및 서비스 점검 안내', '안녕하세요. 카페 천성입니다.'
+||CHR(10)||CHR(13)||
+'보다 나은 서비스를 제공해 드리고자 시스템 점검 작업을 진행합니다.'
+||CHR(10)||CHR(13)||
+'- 일자 및 시간 : 2023년 2월 22일(수) 23:00 ~ 2월 23일(목) 05:00 (6시간)'
+||CHR(10)||CHR(13)||
+'작업 시간 중 해당 서비스 이용 시 불편사항이 발생할 수 있는 점 양해 부탁드립니다.' 
+||CHR(10)||CHR(13)||
+'감사합니다.', '관리자', sysdate);
 
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (2, '설 연휴 매장 영업시간 변경 안내', '안녕하세요. 카페 천성입니다.'
+||CHR(10)||CHR(13)||
+'설 연휴 기간 동안 스타벅스 일부 매장의 영업시간이 변경됩니다.'
+||CHR(10)||CHR(13)||
+'감사합니다.', '관리자', sysdate);
 
-보다 나은 서비스를 제공해 드리고자 시스템 점검 작업을 진행합니다.
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (3, '개인정보처리방침 개정 안내', '안녕하세요. 카페 천성 개인정보처리방침이 개정되어 변경내용을 안내드립니다.'
+||CHR(10)||CHR(13)||
+'감사합니다.', '관리자', sysdate);
 
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (4, '개인정보처리방침 개정 안내', '안녕하세요. 카페 천성 홈페이지 이용약관이 개정되어 변경내용을 안내 드립니다.'
+||CHR(10)||CHR(13)||
+'감사합니다.', '관리자', sysdate);
 
-- 일자 및 시간 : 2023년 2월 22일(수) 23:00 ~ 2월 23일(목) 05:00 (6시간)
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (5, '홈페이지 이용약관 / 스타벅스 카드 이용약관 개정 안내[정정 안내]', '안녕하세요. 카페 천성 홈페이지 이용약관과 스타벅스 카드 이용약관이 개정되어 변경내용을 안내 드립니다.'
+||CHR(10)||CHR(13)||
+'감사합니다.', '관리자', sysdate);
 
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (6, '시스템 개선 및 서비스 점검 안내', '안녕하세요. 카페 천성입니다.'
+||CHR(10)||CHR(13)||
+'보다 나은 서비스를 제공해 드리고자 시스템 점검 작업을 진행합니다.'
+||CHR(10)||CHR(13)||
+'- 일자 및 시간 : 2023년 2월 22일(수) 23:00 ~ 2월 23일(목) 05:00 (6시간)'
+||CHR(10)||CHR(13)||
+'작업 시간 중 해당 서비스 이용 시 불편사항이 발생할 수 있는 점 양해 부탁드립니다.' 
+||CHR(10)||CHR(13)||
+'감사합니다.', '관리자', sysdate);
 
-작업 시간 중 해당 서비스 이용 시 불편사항이 발생할 수 있는 점 양해 부탁드립니다. 
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (7, '시스템 개선 및 서비스 점검 안내', '안녕하세요. 카페 천성입니다.'
+||CHR(10)||CHR(13)||
+'보다 나은 서비스를 제공해 드리고자 시스템 점검 작업을 진행합니다.'
+||CHR(10)||CHR(13)||
+'- 일자 및 시간 : 2023년 2월 22일(수) 23:00 ~ 2월 23일(목) 05:00 (6시간)'
+||CHR(10)||CHR(13)||
+'작업 시간 중 해당 서비스 이용 시 불편사항이 발생할 수 있는 점 양해 부탁드립니다.' 
+||CHR(10)||CHR(13)||
+'감사합니다.', '관리자', sysdate);
 
-감사합니다.', '관리자', sysdate);
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (8, '추석 연휴 매장 영업시간 변경 안내', '안녕하세요. 카페 천성입니다.'
+||CHR(10)||CHR(13)||
+'추석 연휴 기간 동안 스타벅스 일부 매장의 영업시간이 변경됩니다.'
+||CHR(10)||CHR(13)||
+'감사합니다.', '관리자', sysdate);
 
-INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (2, '설 연휴 매장 영업시간 변경 안내', '안녕하세요. 카페 천성입니다.
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (9, '개인정보처리방침 개정 안내', '안녕하세요. 카페 천성 개인정보처리방침이 개정되어 변경내용을 안내드립니다.'
+||CHR(10)||CHR(13)||
+'감사합니다.', '관리자', sysdate);
 
-
-설 연휴 기간 동안 스타벅스 일부 매장의 영업시간이 변경됩니다.
-
-
-감사합니다.', '관리자', sysdate);
-
-INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (3, '개인정보처리방침 개정 안내', '안녕하세요. 카페 천성 개인정보처리방침이 개정되어 변경내용을 안내드립니다.
-
-감사합니다.', '관리자', sysdate);
-
-INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (4, '개인정보처리방침 개정 안내', '안녕하세요. 카페 천성 홈페이지 이용약관이 개정되어 변경내용을 안내 드립니다.
-
-감사합니다.', '관리자', sysdate);
-
-INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (5, '홈페이지 이용약관 / 스타벅스 카드 이용약관 개정 안내[정정 안내]', '안녕하세요. 카페 천성 홈페이지 이용약관과 스타벅스 카드 이용약관이 개정되어 변경내용을 안내 드립니다.
-
-감사합니다.', '관리자', sysdate);
-
-INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (6, '시스템 개선 및 서비스 점검 안내', '안녕하세요. 카페 천성입니다.
-
-
-보다 나은 서비스를 제공해 드리고자 시스템 점검 작업을 진행합니다.
-
-
-- 일자 및 시간 : 2023년 2월 22일(수) 23:00 ~ 2월 23일(목) 05:00 (6시간)
-
-
-작업 시간 중 해당 서비스 이용 시 불편사항이 발생할 수 있는 점 양해 부탁드립니다. 
-
-감사합니다.', '관리자', sysdate);
-
-INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (7, '시스템 개선 및 서비스 점검 안내', '안녕하세요. 카페 천성입니다.
-
-
-보다 나은 서비스를 제공해 드리고자 시스템 점검 작업을 진행합니다.
-
-
-- 일자 및 시간 : 2023년 2월 22일(수) 23:00 ~ 2월 23일(목) 05:00 (6시간)
-
-
-작업 시간 중 해당 서비스 이용 시 불편사항이 발생할 수 있는 점 양해 부탁드립니다. 
-
-감사합니다.', '관리자', sysdate);
-
-INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (8, '추석 연휴 매장 영업시간 변경 안내', '안녕하세요. 카페 천성입니다.
-
-
-추석 연휴 기간 동안 스타벅스 일부 매장의 영업시간이 변경됩니다.
-
-
-감사합니다.', '관리자', sysdate);
-
-INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (9, '개인정보처리방침 개정 안내', '안녕하세요. 카페 천성 개인정보처리방침이 개정되어 변경내용을 안내드립니다.
-
-감사합니다.', '관리자', sysdate);
-
-INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (10, '개인정보처리방침 개정 안내', '안녕하세요. 카페 천성 홈페이지 이용약관이 개정되어 변경내용을 안내 드립니다.
-
-감사합니다.', '관리자', sysdate);
+INSERT INTO TB_NOTICE(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (10, '개인정보처리방침 개정 안내', '안녕하세요. 카페 천성 홈페이지 이용약관이 개정되어 변경내용을 안내 드립니다.'
+||CHR(10)||CHR(13)||
+'감사합니다.', '관리자', sysdate);
 
 
 
@@ -344,8 +352,8 @@ alter table tb_comm add constraint pk_comm primary key (bno);
 
 -- 커뮤니티 게시판 데이터
 INSERT INTO TB_COMM(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (1, '커뮤니티 게시판입니다.', '안녕하세요 카페 천성입니다. 이 곳은 커뮤니티 게시판입니다.', '관리자', SYSDATE);
-INSERT INTO TB_COMM(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (2, '안녕하세요 기성용입니다.', '회원가입 했습니다 잘 부탁드립니다.', '기성용', SYSDATE);
-INSERT INTO TB_COMM(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (3, '반갑습니다 손흥민입니다.', '회원가입 했습니다 잘 부탁드립니다.', '손흥민', SYSDATE);
+INSERT INTO TB_COMM(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (2, '안녕하세요 기성용입니다.', '회원가입 했습니다 잘 부탁드립니다.', 'ksy', SYSDATE);
+INSERT INTO TB_COMM(BNO, TITLE, CONTENT, WRITER, REGDATE) VALUES (3, '반갑습니다 손흥민입니다.', '회원가입 했습니다 잘 부탁드립니다.', 'shm', SYSDATE);
 
 -- 상담 신청 게시판 정보
 
