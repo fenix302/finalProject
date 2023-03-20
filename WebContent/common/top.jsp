@@ -104,6 +104,8 @@ a {
 									href="${context}/work/comm/retrieveBoardList.do">커뮤니티</a></li>
 								<li><a class="dropdown-item"
 									href="${context}/work/inquiry/retrieveBoardList.do">문의게시판</a></li>
+								<li><a class="dropdown-item"
+									href="http://localhost:3000/CafeRequest">카페요청게시판</a></li>
 							</ul></li>
 
 						<li class="nav-item dropdown" style="margin-right: 0px;"><c:if
