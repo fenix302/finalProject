@@ -260,7 +260,7 @@ drop sequence seq_notice;
 
 create sequence seq_notice
 increment by 1
-start with 0
+start with 11
 maxvalue 9999999
 minvalue 0;
 
@@ -334,7 +334,7 @@ drop sequence seq_comm;
 
 create sequence seq_comm
 increment by 1
-start with 0
+start with 4
 maxvalue 9999999
 minvalue 0;
 

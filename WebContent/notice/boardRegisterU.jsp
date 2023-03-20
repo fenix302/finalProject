@@ -100,7 +100,7 @@
 						</div>
 						<div class="form-group">
 							<label>내용</label> 
-							<textarea class="form-control" rows="3" name="content"><c:out value="${dsBoard.CONTENT}"/></textarea>
+							<textarea class="form-control" rows="15" name="content"><c:out value="${dsBoard.CONTENT}"/></textarea>
 						</div>
 						<div class="form-group">
 							<label>작성자</label> <input class="form-control" name="writer" value='<c:out value="${dsBoard.WRITER}" />' readonly="readonly">
