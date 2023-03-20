@@ -246,7 +246,7 @@
                   <div>
                 	  <button id ="buyBtn" type="button" class="btn btn-primary btn-lg" onclick="fn_buy()"><i class="fa fa-credit-card fa-2x">&nbsp;Buy Now</i></button>
                       <button id ="cartBtn" type="button" class="btn addCartBtn btn-lg" onclick="fn_cart()"><i class="fa fa-shopping-cart fa-2x">&nbsp;Add to Cart</i></button>
-                      
+                      <a href=".my_reply">상품평 보기</a>
                     
                   </div>
                 </div>
@@ -267,15 +267,15 @@
                 <div class="col-md-6" align="center">
         			<img src="/ringImg/${dsProduct.PRODUCT_IMAGE}" id="image1"class="img-rounded-img-responsive"> 
                 	<script type="text/javascript">
-					 	var productCategoryCd = '${dsProduct.PRODUCT_CATEGORY_CD}';
+					 	var productCategoryCd1 = '${dsProduct.PRODUCT_CATEGORY_CD}';
 
-					 	if(productCategoryCd == 'C'){
+					 	if(productCategoryCd1 == 'C'){
 							imageFolder = "coffeeImg_d";
-						}else if(productCategoryCd == 'G'){
+						}else if(productCategoryCd1 == 'G'){
 							imageFolder = "goodsImg_d";
-						}else if(productCategoryCd == 'P'){
+						}else if(productCategoryCd1 == 'P'){
 							imageFolder = "presentImg_d";
-						}else if(productCategoryCd == 'R'){
+						}else if(productCategoryCd1 == 'R'){
 							imageFolder = "regularImg_d";
 						}
 						path = $("#image1").attr("src");
@@ -300,7 +300,7 @@
 			<div class="col-md-12 toppad">
 				<div class="panel panel-info">
 					<div class="panel-heading">
-						<h2 class="panel-title">상품평  ${dsReplyList[0].REPLY_COUNT}</h2>
+						<h2 class="panel-title my_reply">상품평  ${dsReplyList[0].REPLY_COUNT}</h2>
 					</div>
 					<c:forEach items="${dsReplyList}" var="dsReplyList">
 					<div class="panel-body">
