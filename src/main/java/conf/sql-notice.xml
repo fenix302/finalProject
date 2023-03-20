@@ -40,7 +40,7 @@
 				, BOARD.CONTENT
 				, BOARD.WRITER
 				, BOARD.REGDATE 
-			FROM tb_jw_notice BOARD 
+			FROM tb_notice BOARD 
 			WHERE  1=1
 			ORDER BY BOARD.BNO DESC
 		]]>
@@ -87,7 +87,7 @@
 	<update id="updateBoard" parameterType="notice">
 		<![CDATA[
 		/*	updateBoard	*/
-			UPDATE tb_jw_notice
+			UPDATE tb_notice
 			SET TITLE = #{title}
 			, CONTENT = #{content}
 			WHERE BNO = #{bno}
