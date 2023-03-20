@@ -447,6 +447,7 @@ start with 1
 increment by 1;
 
 -- 상담신청 게시판 테이블 생성
+drop table consult_reply;
 create table consult_reply (
   rno number(10,0), 
   bno number(10,0) not null,
@@ -461,6 +462,7 @@ alter table consult_reply add constraint fk_tb_consulting
 foreign key (bno)  references  tb_consulting (bno); 
 
 -- 문의게시판 테이블 정보
+drop table tb_inquiry;
 create table tb_inquiry (
 bno number(10, 0),
 title varchar2(200) not null,
@@ -471,25 +473,8 @@ regdate date default sysdate
 
 alter table tb_inquiry add constraint pk_inquiry primary key (bno);
 
+drop sequence seq_inquiry;
 create sequence seq_inquiry
-increment by 1
-start with 0
-maxvalue 9999999
-minvalue 0;
-
--- 음료 주문요청 게시판 테이블
-create table tb_cafe_request(
-bno number(10, 0),
-title varchar2(200) not null,
-content varchar2(2000) not null,
-writer varchar2(50) not null,
-regdate date default sysdate
-);
-
-alter table tb_cafe_request add constraint pk_cafe_request primary key (bno);
-
--- 음료 주문요청 시퀸스
-create sequence seq_cafe_request
 increment by 1
 start with 0
 maxvalue 9999999

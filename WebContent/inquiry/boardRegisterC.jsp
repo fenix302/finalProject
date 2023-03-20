@@ -66,7 +66,7 @@
 <div class="page_header">
 	 <div class="faq_header">
 	       <div class="name">
-	             <p class="comeText">새 글쓰기</p>
+	             <p class="comeText">문의하기</p>
 	        </div>
 	  </div>
 </div>
@@ -87,7 +87,7 @@
 			<div class="form-group">
 				<label for="boardWriter" class="control-label col-md-1"><b>작성자</b></label>
 				<div class="col-md-11">
-					<input class="form-control" type="text" name="writer" id="writer" required="required" maxlength="50"/>
+					<input class="form-control" type="text" name="writer" id="writer" required="required" value="${sessionScope.id}" maxlength="50" readonly="readonly"/>
 				</div>
 			</div>
 
