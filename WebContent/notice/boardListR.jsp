@@ -48,7 +48,7 @@
 
 
 <!-- 본문 -->
-	<div class="container" style="margin-top: 2%; margin-bottom: 10%;">
+	<div class="container" style="margin-top: 140px; margin-bottom: 140px;">
 		
 		
 		<!-- /.row -->
