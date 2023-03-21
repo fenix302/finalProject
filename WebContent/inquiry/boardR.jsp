@@ -115,8 +115,9 @@ li{
 					<div class="form-group">
 						<label>작성자</label> <input class="form-control" name="writer" value='<c:out value="${dsBoard.WRITER}" />' readonly="readonly">
 					</div>
-					
-					<button id="buttons" data-oper='modify' class="btn btn-dark" onclick="location.href='/inquiry/boardRegisterU.jsp'">수정</button>	
+					<c:if test="${sessionScope.id == dsBoard.WRITER || sessionScope.grade == 'A'}">
+						<button id="buttons" data-oper='modify' class="btn btn-dark" onclick="location.href='/inquiry/boardRegisterU.jsp'">수정</button>
+					</c:if>	
 					<button id="buttons" data-oper='list' class="btn btn-secondary" onclick="location.href='/inquiry/boardListR.jsp'">목록</button>
 					
 					<form id="operForm" action="/inquiry/boardRegisterU" method="get">
