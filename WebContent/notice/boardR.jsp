@@ -76,7 +76,7 @@ li{
             <h1 class="comeText">공지사항</h1>
         </div>
     </div>
-<div class="container" style="margin-top: 140px; margin-bottom: 140px;">
+<div class="container" style="margin-top: 100px; margin-bottom: 140px;">
         <!-- /.col-lg-12 -->
     <!-- /.row -->
     <div class="row">
