@@ -26,6 +26,9 @@
     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
     <link href="${context}/css/buy.css" rel="stylesheet">
+    <!-- 게시판리스트css -->
+    <link href="${context}/css/boradListR.css" rel="stylesheet">
+    
     
 	<script src="${context}/js/jquery-1.9.1.js"></script>
 <!-- 	<script src="../js/bootstrap.bundle.js"></script> -->
@@ -51,7 +54,7 @@
 	  </div>
 </div>
 
-<div class="container" style="margin-top: 2%; margin-bottom: 10%;">
+<div class="container" style="margin-top: 140px; margin-bottom: 140px;">
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header"></h1>
@@ -73,19 +76,19 @@
 							class="table table-striped table-bordered table-hover">
 							<thead>
 								<tr>
-									<th>#번호</th>
-									<th>제목</th>
-									<th>작성자</th>
-									<th>작성일</th>
+									<th class="th_1">No</th>
+									<th class="th_2">제목</th>
+									<th class="th_3">작성자</th>
+									<th class="th_4">작성일</th>
 								</tr>
 							</thead>
 							<tbody>
 		                    	<c:forEach items="${dsBoardList}" var="dsBoardList" varStatus="courseIdx">
 		                         <tr>
-		  							<td><a class="nt" href ="${context}/work/free/retrieveBoard.do?bno=${dsBoardList.bno}" >${dsBoardList.bno}</a></td>
-									<td><a class="nt" href="${context}/work/free/retrieveBoard.do?bno=${dsBoardList.bno}" >${dsBoardList.title}</a></td>
-									<td><c:out value="${dsBoardList.writer}" /></td>
-									<td><fmt:formatDate pattern="yyyy-MM-dd" value="${dsBoardList.regdate}" /></td>
+		  							<td class="td_1"><a class="nt" href ="${context}/work/free/retrieveBoard.do?bno=${dsBoardList.bno}" >${dsBoardList.bno}</a></td>
+									<td class="td_2"><a class="nt" href="${context}/work/free/retrieveBoard.do?bno=${dsBoardList.bno}" >${dsBoardList.title}</a></td>
+									<td class="td_3"><c:out value="${dsBoardList.writer}" /></td>
+									<td class="td_4"><fmt:formatDate pattern="yyyy-MM-dd" value="${dsBoardList.regdate}" /></td>
 	
 		                         </tr>
 			                    </c:forEach>
@@ -108,17 +111,17 @@
 											<option value="TW" <c:out value="${pageMaker.cri.type eq 'TW' ? 'selected': ''}"/>>제목 or 작성자</option>
 											<option value="TWC" <c:out value="${pageMaker.cri.type eq 'TWC' ? 'selected': ''}"/>>제목 or 내용 or 작성자</option>
 									</select>
-									<input type="text" name="keyword" value='<c:out value="${pageMaker.cri.keyword}"/>'/>
+									<input type="text" class="search_write" name="keyword" value='<c:out value="${pageMaker.cri.keyword}"/>'/>
 									<input type="hidden" name="pageNum" value='<c:out value="${pageMaker.cri.pageNum}"/>'/>
 									<input type="hidden" name="amount" value='<c:out value="${pageMaker.cri.amount}"/>'/>
-									<button id="srbtn" class="btn btn-dark">Search</button>
+									<button id="srbtn" class="btn btn-dark searchBtn">검색</button>
 								</form>					
 							</div>
 						</div>
 		
 		
 	<!-- 			tables.html 소스에서 가져오고, 컨트롤 + 쉬프트 + F 로 정렬 처리		 -->
-						<div class="Page pull-right">
+						<div class="Page pull-center">
 							<ul class="pagination">
 								<c:if test="${pageMaker.prev}">
 									<li class="page-item previous"><a href="${pageMaker.startPage-1}">Prev</a></li>
