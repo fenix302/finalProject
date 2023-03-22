@@ -29,7 +29,7 @@
 			<if test="category != null">
 				AND PRODUCT_CATEGORY_CD = #{category}
 			</if>
-			ORDER BY PRODUCT.PRODUCT_REG_DATE DESC
+			
 	</select>
 
 	<select id="retrieveProductListForMain" resultType="map">

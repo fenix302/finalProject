@@ -109,10 +109,10 @@
 			</trim>		    
 		<![CDATA[
 		    PAYMENT.PRODUCT_CATEGORY_CD = 'R'
-			AND ROWNUM <= #{pageNum} * #{amount}
 			ORDER BY PAYMENT.PER_TIME DESC
 			)
-		where RN > (#{pageNum} -1) * #{amount}
+		where ROWNUM <= #{pageNum} * #{amount}
+		AND RN > (#{pageNum} -1) * #{amount}
 		]]>	
 		    
 	</select>

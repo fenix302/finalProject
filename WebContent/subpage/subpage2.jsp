@@ -74,7 +74,7 @@
 				</script>
 				<div class="row">
 					<div class="col-md-12">
-						<h4><b>${dsProductList.PRODUCT_NAME}</b></font></h4>
+						<h4><b>${dsProductList.PRODUCT_NAME}</b></h4>
 			        </div>
 			        <div class="col-md-12">
 			       <p><a href="${context}/work/product/retrieveProduct2.do?productCode=${dsProductList.PRODUCT_CODE}">"${dsProductList.PRODUCT_UNIT_PRICE}원"</a></p>
