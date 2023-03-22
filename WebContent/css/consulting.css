@@ -13,12 +13,10 @@
 
 .panel-body > table > thead > tr > th{
 	text-align: center !important;
-	border: 1px solid #ddd !important;
 }
 
 .panel-body > table > tbody> tr > td{
 	text-align: center !important;
-	border: 1px solid #ddd !important;
 }
 
 .cnr{
