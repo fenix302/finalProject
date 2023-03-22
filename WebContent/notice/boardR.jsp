@@ -71,13 +71,13 @@ li{
 </head>
 <body>
 <jsp:include page="../common/top.jsp"></jsp:include>
-<div class="container" style="margin-top: 2%; margin-bottom: 10%;">
     <div class="row">
         <div class="page_header">
             <h1 class="comeText">공지사항</h1>
         </div>
-        <!-- /.col-lg-12 -->
     </div>
+<div class="container" style="margin-top: 140px; margin-bottom: 140px;">
+        <!-- /.col-lg-12 -->
     <!-- /.row -->
     <div class="row">
         <div class="col-lg-12">
