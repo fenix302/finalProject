@@ -23,14 +23,21 @@
 }
 
 /* 검색 부분수정 */
+.serch_write{
+	display: flex !important;
+}
 
 #searchForm{
-	margin-top: 30px !important;
+	margin-top: 0px !important;
 }
+
+
 #searchForm > select, input{
 	height: 38px !important;
 	margin-top: 5px !important;
 }
+
+
 
 /* 검색 부분 수정 끝 */
 
