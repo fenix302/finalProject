@@ -76,7 +76,7 @@
 							class="table table-striped table-bordered table_bordered2 table-hover">
 							<thead>
 								<tr>
-									<th class="th_1">NO</th>
+									<th class="th_1">No</th>
 									<th class="th_2">제목</th>
 									<th class="th_3">작성자</th>
 									<th class="th_4">작성일</th>
@@ -126,12 +126,17 @@
 										<option value="TWC"
 											<c:out value="${pageMaker.cri.type eq 'TWC' ? 'selected': ''}"/>>제목
 											or 내용 or 작성자</option>
-									</select> <input type="text" name="keyword" class="search_write"
-										value='<c:out value="${pageMaker.cri.keyword}"/>' /> <input
-										type="hidden" name="pageNum"
-										value='<c:out value="${pageMaker.cri.pageNum}"/>' /> <input
-										type="hidden" name="amount"
+									</select> 
+									
+									<input type="text" name="keyword" class="search_write"
+										value='<c:out value="${pageMaker.cri.keyword}"/>' /> 
+										
+									<input type="hidden" name="pageNum"
+										value='<c:out value="${pageMaker.cri.pageNum}"/>' /> 
+										
+									<input type="hidden" name="amount"
 										value='<c:out value="${pageMaker.cri.amount}"/>' />
+										
 									<button class="btn searchBtn">검색</button>
 								</form>
 							</div>

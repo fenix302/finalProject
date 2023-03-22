@@ -32,6 +32,13 @@ tr > .td_1 , .td_2, .td_3, .td_4{
 	text-align: center !important;
 }
 
+.panel-body > table > thead > tr > th{
+	border: 0px !important;	
+}
+
+.panel-body > table > tbody> tr > td{
+	border: 0px !important;
+}
 
 
 /* ------------------------------------------------- */
@@ -63,7 +70,7 @@ tr > .td_1 , .td_2, .td_3, .td_4{
 
 /* 검색 */
 #searchForm> .search_write{
-	min-width: 200px !important;
+	width: 180px !important;
 }
 
 
