@@ -288,7 +288,7 @@
 			<div class="col-md-12 toppad">
 				<div class="panel panel-info">
 					<div class="panel-heading">
-						<h2 class="panel-title">상품평  ${dsReplyList[0].REPLY_COUNT}</h2>
+						<h2 class="panel-title" id="my_reply">상품평  ${dsReplyList[0].REPLY_COUNT}</h2>
 					</div>
 					<c:forEach items="${dsReplyList}" var="dsReplyList">
 					<div class="panel-body">

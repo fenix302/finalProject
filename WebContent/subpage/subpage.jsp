@@ -101,7 +101,7 @@
 			<c:forEach items="${dsProductList}" var="dsProductList" varStatus="dsProductIdx" >
 			<div class="col-md-3" style="margin-bottom: 100px;">
 <!-- 			클래스 img-thumbnail로 사진 스타일 변경 가능 -->
-				<img name="image" src="${context}/coffeeImg/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail mb-3">
+				<a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}"><img name="image" src="${context}/coffeeImg/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail mb-3"></a>
 				<script type="text/javascript">
 				 	var productCategoryCd = '${dsProductList.PRODUCT_CATEGORY_CD}';
 					
