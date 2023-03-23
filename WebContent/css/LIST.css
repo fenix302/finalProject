@@ -30,6 +30,11 @@ button:hover{
 	
 }
 
+
+.reivew{
+	background-color: #B9C4D4 !important;
+}
+
 .fa.fa-shopping-cart.fa-2x{
 	font-size: 14pt !important;
 	width: 223px !important;
@@ -120,3 +125,12 @@ margin-left: 5px
 	margin-top: 0px !important;
 }
 
+.btn reivew btn-lg{
+	font-style: white !important;
+}
+
+
+.img-rounded-img-responsive{
+
+	
+}

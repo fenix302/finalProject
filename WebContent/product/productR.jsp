@@ -246,8 +246,11 @@
                   <div>
                 	  <button id ="buyBtn" type="button" class="btn btn-primary btn-lg" onclick="fn_buy()"><i class="fa fa-credit-card fa-2x">&nbsp;Buy Now</i></button>
                       <button id ="cartBtn" type="button" class="btn addCartBtn btn-lg" onclick="fn_cart()"><i class="fa fa-shopping-cart fa-2x">&nbsp;Add to Cart</i></button>
+                      <button id ="reviewtBtn" type="button" class="btn reivew btn-lg" > <a href="#my_reply">&nbsp;review </a></button>
+                   
+             <!--          
                       <a href="#my_reply">상품평 보기</a>
-                    
+                     -->
                   </div>
                 </div>
                
@@ -264,7 +267,7 @@
 
 			<div class="container">
 				<div class="row listImg">
-                <div class="col-md-6" align="center">
+                <div class="col-md-6_1" align="center">
         			<img src="/ringImg/${dsProduct.PRODUCT_IMAGE}" id="image1"class="img-rounded-img-responsive"> 
                 	<script type="text/javascript">
 					 	var productCategoryCd1 = '${dsProduct.PRODUCT_CATEGORY_CD}';

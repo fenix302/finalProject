@@ -196,7 +196,7 @@
                  </div>
 
                 <div class="col-md-6">
- <!--                <br><br><br> -->
+ <!--                <br><br><br>-->
                   <table class="table table-user-information">
                     <tbody>
                     <tr>
@@ -237,7 +237,7 @@
                   <br><br>
                   <div>
                 	  <button id ="buyBtn" type="button" class="btn btn-primary btn-lg" onclick="fn_buy2()"><i class="fa fa-credit-card fa-2x">&nbsp;Buy Now</i></button>
-                      
+                         <button id ="reviewtBtn" type="button" class="btn reivew btn-lg" > <a href="#my_reply">&nbsp;review </a></button>
                     
                   </div>
                 </div>
@@ -247,6 +247,41 @@
           </div>
       </div>
     </div>
+
+
+
+	<div class="container">
+				<div class="row listImg">
+                <div class="col-md-6_1" align="center">
+        			<img src="/ringImg/${dsProduct.PRODUCT_IMAGE}" id="image1"class="img-rounded-img-responsive"> 
+                	<script type="text/javascript">
+					 	var productCategoryCd1 = '${dsProduct.PRODUCT_CATEGORY_CD}';
+
+					 	if(productCategoryCd1 == 'C'){
+							imageFolder = "coffeeImg_d";
+						}else if(productCategoryCd1 == 'G'){
+							imageFolder = "goodsImg_d";
+						}else if(productCategoryCd1 == 'P'){
+							imageFolder = "presentImg_d";
+						}else if(productCategoryCd1 == 'R'){
+							imageFolder = "regularImg_d";
+						}
+						path = $("#image1").attr("src");
+
+						existFolder = path.split("/")[1];
+						$("#image1").attr("src", path.replace(existFolder, imageFolder));
+					</script>
+                 </div>
+                 </div>
+			</div>
+
+
+
+
+
+
+
+
 
 <div class="container" style="margin-bottom: 50px;">
 		<div class="row">
