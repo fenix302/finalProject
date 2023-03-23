@@ -29,7 +29,9 @@
    margin-bottom: 80px!important;
    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
       url('/css/images/cocktail.jpg')!important;
-	width: 100% !important;}
+	width: 100% !important;
+	
+	}
 .comeText {
    font-size: 30px;
    color: #fff!important;
@@ -51,17 +53,6 @@
     margin:auto;
     display:block;
     margin-top: 28px;
-}
-button{
-    width: 345px;
-    height: 50px;
-    border-radius: 5px !important;
-    background-color: #fff !important;    
-
-}
-button:hover{
-    background-color: black !important;
-
 }
 
 button > a{
@@ -110,7 +101,7 @@ h3{
  .col-md-3{
  border: 1px solid #C7C7C7;
 	padding: 0px !important;
-	margin-left: 20px !important;
+	margin-left: 10px;
 	 box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	 
 	 }
