@@ -161,6 +161,13 @@ a {
 	margin-top: 40px !important;
 }
 
+.f6>a{
+	color:#fff;
+}
+
+.f6>a:hover{
+	color:brown;
+}
 
 /* 컨텐츠2 미디어쿼리 */
 @media (min-width: 1440px){

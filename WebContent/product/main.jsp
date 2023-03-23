@@ -144,7 +144,7 @@
 								<p class="f5"> 카페 천성은 어떤 브랜드고, <br/>
 									어떤 브랜드인지 궁금하신 가요?
 								</p>
-								<p class="f6"> 자세히 알아보기 ▶ </p>													
+								<p class="f6"><a href="http://localhost:3000/AboutUs"> 자세히 알아보기 ▶ </a></p>													
 							</div>
 						</div>							
 					</div>
@@ -157,7 +157,7 @@
 								<p class="f5"> 카페 천성은 어떤 브랜드고, <br/>
 									어떤 브랜드인지 궁금하신 가요?
 								</p>
-								<p class="f6"> 자세히 알아보기 ▶ </p>													
+								<p class="f6"><a href="http://localhost:3000/AboutUs"> 자세히 알아보기 ▶ </a></p>													
 							</div>					
 						</div>
 					</div>
