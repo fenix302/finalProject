@@ -2,174 +2,179 @@
 
 /* 초기화 */
 * {
-   margin: 0;
-   padding: 0;
-   list-style: none;
-   text-decoration: none;
-   word-break: keep-all;
-   font-family: 'Noto Sans KR', sans-serif;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	word-break: keep-all;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* 페이지 헤더 */
-.page_header{
+.page_header {
 	width: 100%
 }
 
-.idFind_header, .pwFind_header, .login_header, .userC_header{
-   max-width: 100%;
-   height: 300px;
-   background-size: cover;
-   background-position: 0%;
-   margin-bottom: 100px;
+.idFind_header, .pwFind_header, .login_header, .userC_header {
+	max-width: 100%;
+	height: 300px;
+	background-size: cover;
+	background-position: 0%;
+	margin-bottom: 100px;
 }
-
 
 /* 페이지 헤더 이미지 */
 /* 로그인 */
-.login_header{
+.login_header {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url('/css/images/login_header.jpg') !important;
-    margin-bottom: 20px !important;
+		url('/css/images/login_header.jpg') !important;
+	margin-bottom: 20px !important;
 }
 
 /* 아이디찾기 */
-.idFind_header{
+.idFind_header {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url('/css/images/idFind_header.jpg') !important;
+		url('/css/images/idFind_header.jpg') !important;
 }
 
 /* 비밀번호찾기 */
 .pwFind_header {
-   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url('/css/images/pwFind_header.jpg') !important;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+		url('/css/images/pwFind_header.jpg') !important;
 }
 
 /* 회원가입 */
-
-.userC_header{
-   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url('/css/images/pwFind_header.jpg') !important;
-   margin-bottom: 120px !important;
+.userC_header {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+		url('/css/images/pwFind_header.jpg') !important;
+	margin-bottom: 120px !important;
 }
-
-
-
 
 /* 콘텐츠 상단-네이밍 */
 .comeText {
-   font-size: 30px;
-   color: #fff;
-   font-weight: 900;
-   line-height: 300px;
-   text-align: center;
+	font-size: 30px;
+	color: #fff;
+	font-weight: 900;
+	line-height: 300px;
+	text-align: center;
 }
 
-
 /* 회원가입 부분 */
-.user-main{
+.user-main {
 	text-align: center !important;
-/* 	margin-top: 40px; */
+	/* 	margin-top: 40px; */
 	border-bottom: 1px solid grey;
 	padding-bottom: 20px;
 }
 
-
-
-.user-post-btn{
-    background-color: black !important;
-    color : #fff !important;
-    border: 1px solid black;
-    font-weight: bold !important;
-    font-size : 16px !important;
-    height: 50px !important;
+.user-post-btn {
+	background-color: black !important;
+	color: #fff !important;
+	border: 1px solid black;
+	font-weight: bold !important;
+	font-size: 16px !important;
+	height: 50px !important;
 }
 
-.user-back-btn{
+.user-back-btn {
 	background-color: silver !important;
 }
 
-.user-submit-btn{
+.user-submit-btn {
 	background-color: skyblue !important;
 }
 
-.user-kakao-btn{
-	list-style: none;	
+.user-kakao-btn {
+	list-style: none;
 	margin: 0 !important;
 	padding: 0 !important;
 }
 
 /* 카카오 로그인 버튼(이미지x) */
-.kakao-btn{
+.kakao-btn {
 	width: 100% !important;
 	height: 50px !important;
-	font-size : 16px !important;
+	font-size: 16px !important;
 	background-color: #fee500;
 }
 
-.kakao-btn:hover{
-	color : #000 !important;
+.kakao-btn:hover {
+	color: #000 !important;
 }
 
-.kakao-btn:active{
+.kakao-btn:active {
 	border: none !important;
 }
 
-
 /* 로그인 부분 */
-.user-find{
+.user-find {
 	text-align: center;
 	margin-top: 20px;
 }
 
-.user-find a{
+.user-find a {
 	text-decoration: none !important;
-	font-size : 14px !important;
+	font-size: 14px !important;
 }
 
-.user-login-btn{
-	background-color: black !important;	
+.user-login-btn {
+	background-color: black !important;
 	height: 50px !important;
-	color : #fff !important;
-	font-size : 16px !important;
+	color: #fff !important;
+	font-size: 16px !important;
 }
 
-.user-kakao-btn{
+.user-login-btn:hover {
+	background-color: #011E41 !important;
+	height: 50px !important;
+	color: #E6EAEC !important;
+	font-size: 16px !important;
+}
+
+.user-kakao-btn {
 	display: block !important;
 }
 
-.kakao-btn{
+.kakao-btn {
 	background-color: #fee500 !important;
-	width : 100% !important;
+	width: 100% !important;
 	height: 50px !important;
 }
 
 /* 회원가입 버튼*/
-.user-join-btn{
-	background-color: pink !important;	
+.user-join-btn {
+	background-color: #fff !important;
 	height: 50px !important;
-	color : #fff !important;
-	font-size : 16px !important;
+	color: #000 !important;
+	font-size: 16px !important;
+	border: 1px solid #000 !important;
 }
 
+
+.user-join-btn:hover {
+	background-color: #011E41 !important;
+	height: 50px !important;
+	color: #E6EAEC !important;
+	font-size: 16px !important;
+	border: 1px solid #434447!important;
+}
 
 /* 아이디찾기/비밀번호찾기 */
-.email-group{
+.email-group {
 	margin-top: 20%;
 }
 
-.id-group{
+.id-group {
 	margin-top: 20%;
 }
-
 
 /* 아이디 비빌먼호 창 높이*/
-.form-control{
+.form-control {
 	height: 50px;
 }
 
-
 /* 아이디,비밀번호 찾기/회원가입 글자 색상+호버링*/
-.form-group>span>a{
+.form-group>span>a {
 	color: #999 !important;
 }
 
