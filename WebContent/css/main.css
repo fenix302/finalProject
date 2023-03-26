@@ -113,16 +113,18 @@ a {
 /* 컨텐츠2 이미지 */
 .ann_img_first {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), 
-		rgba(0, 0, 0, 0.7)),
-		url("../css/images/announce_main01.png");
+		rgba(0, 0, 0, 0.6)),
+		url("../css/images/announce_main01.jpg");
 	background-size: cover;
+	background-position: 0% 15%;
 }
 
 .ann_img_snd {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), 
 		rgba(0, 0, 0, 0.7)),
-		url("../css/images/announce_main02.png");
+		url("../css/images/announce_main02.jpg");
 	background-size: cover;
+	background-position: 0%;
 }
 
 
@@ -166,7 +168,7 @@ a {
 }
 
 .f6>a:hover{
-	color:brown;
+	color:rgb(148, 192, 248);
 }
 
 /* 컨텐츠2 미디어쿼리 */

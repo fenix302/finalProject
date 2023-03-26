@@ -153,11 +153,11 @@
 					<div class="ann_img ann_img_snd">
 						<div class="ann_word">
 							<div class="ann_positon">
-								<p class="f4"> 카페, 천성은?</p>	
-								<p class="f5"> 카페 천성은 어떤 브랜드고, <br/>
-									어떤 브랜드인지 궁금하신 가요?
+								<p class="f4"> 지금, 천성에서는?</p>	
+								<p class="f5"> 다른 사람들의 이야기가 궁금하신가요? <br/>
+									함께 이야기를 나누어보세요.
 								</p>
-								<p class="f6"><a href="http://localhost:3000/AboutUs"> 자세히 알아보기 ▶ </a></p>													
+								<p class="f6"><a href="${context}/work/free/retrieveBoardList.do"> 자세히 알아보기 ▶ </a></p>													
 							</div>					
 						</div>
 					</div>
