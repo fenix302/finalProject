@@ -189,9 +189,6 @@
 				
 				<!-- 이미지 -->
 				<div class="review_img">
-					<a>
-						<img alt="review" src="/css/images/review_large.png"/>
-					</a>
 				</div>
 				
 				<!-- 버튼 -->
