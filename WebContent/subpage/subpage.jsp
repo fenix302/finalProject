@@ -56,7 +56,7 @@
 		<h3 style="font-size: 23px;  font-weight: 900;">HOT</h3>
 <!--        <h4 style="font-size: 14px; font-weight: 100; text-align: right;">see more</h4> -->
 			<c:forEach items="${dsProductList}" var="dsProductList" varStatus="dsProductIdx" begin="0" end="3">
-			<div class="col-md-3" style="margin-bottom: 100px;">
+			<div class="col-md-3" style="margin-bottom: 100px; margin-right: 10px;">
 				<a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}"><img name="image1" src="${context}/goodsImg/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail mb-3"></a>
 				<script type="text/javascript">
 			 	var productCategoryCd = '${dsProductList.PRODUCT_CATEGORY_CD}';
@@ -99,7 +99,7 @@
 		<h3 style="font-size: 23px; font-weight: 900;">상품</h3>
 <!--        <h4 style="font-size: 14px; font-weight: 100; text-align: right;">see more</h4> -->
 			<c:forEach items="${dsProductList}" var="dsProductList" varStatus="dsProductIdx" >
-			<div class="col-md-3" style="margin-bottom: 100px;">
+			<div class="col-md-3" style="margin-bottom: 100px; margin-right: 10px;">
 <!-- 			클래스 img-thumbnail로 사진 스타일 변경 가능 -->
 				<a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}"><img name="image" src="${context}/coffeeImg/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail mb-3"></a>
 				<script type="text/javascript">

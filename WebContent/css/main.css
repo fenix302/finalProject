@@ -57,15 +57,17 @@ a {
 }
 
 .forU_img{
-	margin: 0 
+	margin: 0;
+	overflow: hidden;
 }
 
 .forU_main>.forU_img{
 	text-align: center;
+	margin: 20px 20px 20px 20px;
 }
 
 .forU_main>.forU_img>a>img{
-	margin: 20px 20px 20px 20px;
+	width: 100%;	
 }
 
 .f3{

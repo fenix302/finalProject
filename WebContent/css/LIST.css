@@ -58,6 +58,7 @@ button:hover{
 
 .listImg > div > img {
 	margin-bottom: 20px !important;
+	width: 100% !important;
 }
 
 /* .row{ */
