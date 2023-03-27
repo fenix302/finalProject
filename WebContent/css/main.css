@@ -273,6 +273,26 @@ a {
 		background-position: center center;
 	}
 }
+
+@media (max-width: 500px){
+	.review_img{
+		height: 450px; 
+		background-image: url("../css/images/review_small.png");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+}
+
+@media (max-width: 400px){
+	.review_img{
+		height: 400px; 
+		background-image: url("../css/images/review_small.png");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+}
 /* --------------------------------------------- */
 
 
