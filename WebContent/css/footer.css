@@ -116,7 +116,7 @@ thin{
 
 	#MOVE_TOP_BTN {
 	    position: fixed;
-	    right: 28px !important;
+	    right: 20px !important;
 	    bottom: 90px !important;
 	    display: none;
 	    z-index: 999;
