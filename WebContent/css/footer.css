@@ -103,11 +103,22 @@ thin{
 	
 	.brand_logo>a>img{
 		margin-bottom: 10px;
-}
+	}
 	
 	.sns_logo{
 		float: right;
 		margin-top: 16px;
 	}
-	
-  }
+}
+
+
+	/* top 버튼 */ 
+
+	#MOVE_TOP_BTN {
+	    position: fixed;
+	    right: 28px !important;
+	    bottom: 90px !important;
+	    display: none;
+	    z-index: 999;
+	}
+ 

@@ -59,7 +59,7 @@
 					<strong>점심시간</strong> 12:00-13:00
 				</p>
 			</div>
-			
+			<a id="MOVE_TOP_BTN" href="#"><img alt="top" src="${context}/css/images/topimg.png" style="width: 45px; height: 45px;"></a>
 		</div>
 		<!-- contain_foot 끝 -->
 	</footer>
@@ -69,6 +69,24 @@
   ChannelIO('boot', {
     "pluginKey": "95548666-8777-4edf-8895-642b0c8ef1ed"
   });
+  
+  $(function() {
+      $(window).scroll(function() {
+          if ($(this).scrollTop() > 150) {
+              $('#MOVE_TOP_BTN').fadeIn();
+          } else {
+              $('#MOVE_TOP_BTN').fadeOut();
+          }
+      });
+      
+      $("#MOVE_TOP_BTN").click(function() {
+          $('html, body').animate({
+              scrollTop : 0
+          }, 400);
+          return false;
+      });
+  });
+  
 </script>
 </body>
 </html>
