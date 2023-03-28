@@ -17,6 +17,7 @@
 	<link href="${context}/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
     <link href="${context}/css/process.css" rel="stylesheet">
     <link href="${context}/css/userC.css" rel="stylesheet">
+    <link rel="icon" href="${context}/productimg/Icon_logo.png" />
 
 	<script src="${context}/js/jquery-1.9.1.js"></script>
     <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>

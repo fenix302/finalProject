@@ -31,6 +31,7 @@
 	rel="stylesheet" type="text/css">
 
 <link href="${context}/css/buy.css" rel="stylesheet">
+<link rel="icon" href="${context}/productimg/Icon_logo.png" />
 
 <script src="${context}/js/jquery-1.9.1.js"></script>
 <!-- 	<script src="../js/bootstrap.bundle.js"></script> -->

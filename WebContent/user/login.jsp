@@ -10,8 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="">
 
-    <title>JEWELL 로그인</title>
+    <title>천성 로그인</title>
 
+	<link rel="icon" href="${context}/productimg/Icon_logo.png" />
     <link href="${context}/css/bootstrap.css" rel="stylesheet">
     <link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
     <link href="${context}/css/sb-admin-2.css" rel="stylesheet">
