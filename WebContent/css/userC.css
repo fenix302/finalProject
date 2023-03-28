@@ -114,7 +114,8 @@
 .q1,
 .q2,
 .q3 {
-   margin-left: 20px;
+   margin-left: 10px;
+   margin-right: 10px;
 }
 
 .q1{
@@ -240,7 +241,7 @@ label {
 /* 전화번호 */
 #phoneCd{
 
-   width: 110px !important; 
+   width: 100px !important; 
    height: 50px !important;
    margin-right: 5px;
 /*    padding-left: 10px;
@@ -253,7 +254,7 @@ label {
 }
 
 #phone1, #phone2{
-   width: 138px; 
+   width: 120px; 
    height: 50px;
 }
 #phone1{
