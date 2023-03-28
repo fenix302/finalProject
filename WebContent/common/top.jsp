@@ -67,7 +67,7 @@ a {
 							data-bs-toggle="dropdown" aria-expanded="false">About</a>
 							<ul class="dropdown-menu">
 								<li><a class="dropdown-item"
-									href="http://192.168.0.76:3000/AboutUs">회사소개</a></li>
+									href="http://localhost:3000/AboutUs">회사소개</a></li>
 								<li><a class="dropdown-item"
 									href="http://localhost:3000/location">오시는 길</a></li>
 								<li><a class="dropdown-item"
