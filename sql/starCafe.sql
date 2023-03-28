@@ -434,7 +434,7 @@ create table consult_reply (
   bno number(10,0) not null,
   reply varchar2(1000) not null,
   replyer varchar2(50) not null, 
-  replyDate date default sysdate 
+  replyDate date default sysdate
 );
 
 alter table consult_reply add constraint pk_consult_reply primary key (rno);
